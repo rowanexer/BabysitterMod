@@ -724,11 +724,9 @@
 	{	"LogName": "SecondChild Maru Tue",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
-		"Fields": {
-            "Tue": {
-               0: "800 ArchaeologyHouse 17 12 0"
-            }
-		}
+		"Entries": {
+            "Tue":  "800 ArchaeologyHouse 17 12 0/1200 Hospital 2 15 1 sit_down/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 30 12 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 sit_down"
+		},
 		"When": {
 			"SecondBabysitter": "Maru"
 		}
