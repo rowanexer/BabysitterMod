@@ -1,0 +1,15 @@
+{
+	"9": "GOTO season",
+	"23": "GOTO season",
+	"rain": "800 JoshHouse 15 22 0/1300 JoshHouse 15 4 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down",
+	"summer_16": "800 Town 63 64 2 wave_arms/1030 Hospital 15 15 3/1600 JoshHouse 15 4 2/2400 JoshHouse 19 4 1 sit_down",
+	"winter_17": "900 BathHouse_MensLocker 2 5 2 wave_arms/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down",
+	"winter": "900 BathHouse_MensLocker 2 5 2 wave_arms/1500 JoshHouse 15 5 2/1800 Town 50 69 1/1930 JoshHouse 15 22 0/2100 JoshHouse 18 5 0/2240 JoshHouse 19 4 1 sit_down",
+	"Tue": "800 ArchaeologyHouse 18 12 0",
+	"Wed": "800 ArchaeologyHouse 18 12 0/1200 HaleyHouse 5 20 2/1630 Town 50 69 1/1840 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down",
+	"Fri": "GOTO Tue",
+	"Sat": "900 Town 32 91 0/1200 Town 16 15 1 square_5_3/1700 Town 28 92 2",
+	"summer": "730 Beach 28 13 2 square_7_7/1210 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down",
+	"spring": "800 Town 63 64 2 wave_arms/1300 JoshHouse 15 5 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down",
+	"fall":  "GOTO spring"
+}
