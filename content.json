@@ -8,11 +8,11 @@
   "Format": "1.9",
    "ConfigSchema": {
       "FirstBabysitter": {
-         "AllowValues": "Sebastian, Alex, Abigail, None",
+         "AllowValues": "Sebastian, Alex, Abigail, Maru, None",
          "Default": "None"
       },
 	  "SecondBabysitter": {
-         "AllowValues": "Sebastian, Alex, Abigail, None",
+         "AllowValues": "Sebastian, Alex, Abigail, Maru, None",
          "Default": "None"
       }
    },/*
@@ -98,6 +98,15 @@
       "FromFile": "assets/Abigail.json",
 	  "When": {
 		"FirstBabysitter": "Abigail"
+		}
+    },
+	{
+      "LogName": "FirstChild Schedule Maru",
+      "Action": "Load",
+      "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/Maru.json",
+	  "When": {
+		"FirstBabysitter": "Maru"
 		}
     },
 	
@@ -250,7 +259,6 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
-			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Sebastian"
 		}
@@ -283,7 +291,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 17 12 0/1200 SebastianRoom 7 6 0/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sit_down"
+			"Tue": "800 ArchaeologyHouse 18 12 0/1200 SebastianRoom 7 6 0/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sit_down"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Wednesday",
@@ -295,12 +303,79 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 17 12 0/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0/2130 SebastianRoom 9 9 3 sit_down"
+			"Tue": "800 ArchaeologyHouse 18 12 0/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0/2130 SebastianRoom 9 9 3 sit_down"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Wednesday",
 			"Season": "fall",
 			"FirstBabysitter": "Sebastian"
+		}
+	},
+	
+	//FirstChild Maru Schedule
+	{	"LogName": "FirstChild Maru No School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "Maru"
+		}
+	},
+	{	"LogName": "FirstChild Maru School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO Tue",
+			"23": "GOTO Tue"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "Maru"
+		}
+	},
+	{	"LogName": "FirstChild Maru Wed Fri spring fall",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Wed": "800 ArchaeologyHouse 18 12 0/1200 Town 64 15 2 sit_down/1800 ScienceHouse 7 6 3 sit_down/2200 ScienceHouse 4 4 2 sit_down",
+			"Fri": "800 ArchaeologyHouse 18 12 0/1200 Town 64 15 2 sit_down/1800 ScienceHouse 7 6 3 sit_down/2200 ScienceHouse 4 4 2 sit_down"
+		},
+		"When": {
+			"DayOfWeek": "Wednesday, Friday",
+			"Season": "spring, fall",
+			"FirstBabysitter": "Maru"
+		}
+	},
+	{	"LogName": "FirstChild Maru Wed Fri summer",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Wed": "800 ArchaeologyHouse 18 12 0/1200 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down",
+			"Fri": "800 ArchaeologyHouse 18 12 0/1200 ScienceHouse 22 17 0/1400 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down"
+		},
+		"When": {
+			"DayOfWeek": "Wednesday, Friday",
+			"Season": "summer",
+			"FirstBabysitter": "Maru"
+		}
+	},
+	{	"LogName": "FirstChild Maru Wed Fri winter",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Wed": "800 ArchaeologyHouse 18 12 0/1200 CommunityCenter 17 25 3/1600 ScienceHouse 7 6 3 sit_down/2200 ScienceHouse 4 4 2 sit_down",
+			"Fri": "800 ArchaeologyHouse 18 12 0/1200 CommunityCenter 17 25 3/1600 ScienceHouse 7 6 3 sit_down/2200 ScienceHouse 4 4 2 sit_down"
+		},
+		"When": {
+			"DayOfWeek": "Wednesday, Friday",
+			"Season": "winter",
+			"FirstBabysitter": "Maru"
 		}
 	},
 	
@@ -380,6 +455,15 @@
       "FromFile": "assets/Abigail.json",
 	  "When": {
 		"SecondBabysitter": "Abigail"
+		}
+    },
+	{
+      "LogName": "SecondChild Schedule Maru",
+      "Action": "Load",
+      "Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/Maru.json",
+	  "When": {
+		"SecondBabysitter": "Maru"
 		}
     },
 	{
@@ -533,7 +617,6 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
-			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"SecondBabysitter": "Sebastian"
 		}
@@ -597,6 +680,60 @@
 			"SecondBabysitter": "Sebastian"
 		}
 	},
+	
+	//Maru Schedule
+	{	"LogName": "SecondChild Maru Wed Fri spring fall",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Wed": "800 ArchaeologyHouse 17 12 0/1200 Town 64 15 2 sit_down/1800 ScienceHouse 7 6 3 sit_down/2200 ScienceHouse 4 4 2 sit_down",
+			"Fri": "800 ArchaeologyHouse 17 12 0/1200 Town 64 15 2 sit_down/1800 ScienceHouse 7 6 3 sit_down/2200 ScienceHouse 4 4 2 sit_down"
+		},
+		"When": {
+			"DayOfWeek": "Wednesday, Friday",
+			"Season": "spring, fall",
+			"SecondBabysitter": "Maru"
+		}
+	},
+	{	"LogName": "SecondChild Maru Wed Fri summer",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Wed": "800 ArchaeologyHouse 17 12 0/1200 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down",
+			"Fri": "800 ArchaeologyHouse 17 12 0/1200 ScienceHouse 22 17 0/1400 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down"
+		},
+		"When": {
+			"DayOfWeek": "Wednesday, Friday",
+			"Season": "summer",
+			"SecondBabysitter": "Maru"
+		}
+	},
+	{	"LogName": "SecondChild Maru Wed Fri winter",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Wed": "800 ArchaeologyHouse 17 12 0/1200 CommunityCenter 17 25 3/1600 ScienceHouse 7 6 3 sit_down/2200 ScienceHouse 4 4 2 sit_down",
+			"Fri": "800 ArchaeologyHouse 17 12 0/1200 CommunityCenter 17 25 3/1600 ScienceHouse 7 6 3 sit_down/2200 ScienceHouse 4 4 2 sit_down"
+		},
+		"When": {
+			"DayOfWeek": "Wednesday, Friday",
+			"Season": "winter",
+			"SecondBabysitter": "Maru"
+		}
+	},
+	{	"LogName": "SecondChild Maru Tue",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Fields": {
+            "Tue": {
+               0: "800 ArchaeologyHouse 17 12 0"
+            }
+		}
+		"When": {
+			"SecondBabysitter": "Maru"
+		}
+	},
+	
 	
 	//Dialogue etc
     {
