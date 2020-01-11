@@ -625,7 +625,6 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"rain": "830 SebastianRoom 7 6 0/1500 Saloon 43 18 3/2110 SebastianRoom 9 9 3 sit_down"
 		},
 		"When": {
 			"Hearts:Sebastian": "{{Range: 2, 14}}",
