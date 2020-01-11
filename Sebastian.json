@@ -6,7 +6,7 @@
 	"rain": "830 Beach 11 39 2/1700 SebastianRoom 4 4 3 sit_down",
 	"Tue": "800 ArchaeologyHouse 18 12 0",
 	"Wed": "GOTO Tue",
-	"Sat": "900 Town 32 91 0/1200 Town 16 15 1 square_5_3/1700 Town 28 92 1/1900 Town 10 94 1 sit_down/1930 SebastianRoom 4 4 3 sit_down",
+	"Sat": "900 Town 32 91 0/1200 Town 16 15 1 square_5_3/1700 Town 28 92 1/1830 Town 10 94 1 sit_down/1930 SebastianRoom 4 4 3 sit_down",
 	"Thu": "800 SebastianRoom 7 6 0/1400 Railroad 32 46 1 sit_down/1800 Railroad 64 46 3/1930 Railroad 5 46 1/2130 SebastianRoom 4 4 3 sit_down/2140 SebastianRoom 4 4 3 sleep",
 	"Fri": "800 ArchaeologyHouse 18 12 0/1200 SebastianRoom 7 6 0/1500 Saloon 41 19 2/2110 SebastianRoom 4 4 3 sit_down",
 	"winter_16": "800 SebastianRoom 7 6 0/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0/1650 Beach 12 39 2/2340 SebastianRoom 4 4 3 sit_down",
