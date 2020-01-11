@@ -369,7 +369,7 @@
       "Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			  "Sat": "900 Town 32 91 0/1200 Town 16 15 1 square_5_3/1700 Town 28 92 2"
+			  "Sat": "900 Town 33 90 3/1200 Town 23 11 2 wave_arms/1700 Town 28 92 2"
 		},
 	  "When": {
 		"DayOfWeek": "Saturday"
