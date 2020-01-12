@@ -1405,6 +1405,25 @@
 		}
 	},
 	
+	//Third Child Dialogue and Images
+    {
+      "LogName": "ThirdChild Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+      "FromFile": "assets/schedule_dialogue.json"
+    },
+	{	"LogName": "ThirdChild Sprites",
+		"Action": "Load",
+		"Target": "Characters/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"FromFile": "assets/toddler3.png"
+	},	
+	{
+      "LogName": "Portraits",
+      "Action": "Load",
+      "Target": "Portraits/{{Loe2run.ChildToNPC/ThirdChildName}}",
+      "FromFile": "assets/portraits3.png",
+    },
+	
 	//Fourth Child Base Schedules
 	{
       "LogName": "FourthChild Schedule No Babysitter",
@@ -1815,6 +1834,25 @@
 			"FourthBabysitter": "Abigail"
 		}
 	},
+	
+	/FourthChild Dialogue and Images//Dialogue etc
+    {
+      "LogName": "FourthChild Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+      "FromFile": "assets/schedule_dialogue.json"
+    },
+	{	"LogName": "FourthChild Sprites",
+		"Action": "Load",
+		"Target": "Characters/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"FromFile": "assets/toddler4.png"
+	},	
+	{
+      "LogName": "Portraits",
+      "Action": "Load",
+      "Target": "Portraits/{{Loe2run.ChildToNPC/FourthChildName}}",
+      "FromFile": "assets/portraits4.png",
+    },
 	
 	//Animations for all children
     {
