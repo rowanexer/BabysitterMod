@@ -1,7 +1,7 @@
 //After school, non school days. Visit Vincent and Jas
 
 {
-  "Tue": "800 ArchaeologyHouse 17 12 0/1400 Town 87 99 2/1620 Town 15 91 0/1750 AnimalShop 4 4 1 sleep",
+  "Tue": "800 ArchaeologyHouse 18 9 2/1400 Town 87 99 2/1620 Town 15 91 0/1750 AnimalShop 4 4 1 sleep",
   "Wed": "GOTO Tue",
   "Fri": "GOTO Tue",
   "Sat": "900 Town 32 91 0/1200 Town 16 15 1 square_5_3/1700 Town 28 92 2",
