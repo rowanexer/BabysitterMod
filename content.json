@@ -1045,7 +1045,7 @@
       "Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			  "Sat": "800 ArchaeologyHouse 16 11 1/1400 Town 82 90 3/1620 Town 17 91 0/1740 SamHouse 5 7 3/2000 SamHouse 1 13 1 sleep"
+			  "Sat": "900 Town 33 89 3/1200 Town 18 16 1 square_3_3/1700 Town 28 88 1/2000 SamHouse 1 13 1 sleep"
 		},
 	  "When": {
 		"DayOfWeek": "Saturday"
@@ -1424,6 +1424,7 @@
       "FromFile": "assets/portraits3.png",
     },
 	
+	
 	//Fourth Child Base Schedules
 	{
       "LogName": "FourthChild Schedule No Babysitter",
@@ -1475,7 +1476,7 @@
       "Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			  "Sat": "800 ArchaeologyHouse 18 9 2/1400 Town 87 99 2/1620 Town 15 91 0/1750 AnimalShop 4 4 1 sleep"
+			  "Sat": "900 Town 31 91 0/1200 Town 19 14 2 wave_arms/1700 Town 29 98 2/1750 AnimalShop 4 4 1 sleep"
 		},
 	  "When": {
 		"DayOfWeek": "Saturday"
@@ -1835,7 +1836,8 @@
 		}
 	},
 	
-	/FourthChild Dialogue and Images//Dialogue etc
+	//FourthChild Dialogue and Images
+	
     {
       "LogName": "FourthChild Schedule Dialogue",
       "Action": "Load",

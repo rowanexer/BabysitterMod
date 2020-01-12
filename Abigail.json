@@ -15,7 +15,7 @@
 	"Tue": "GOTO season",
 	"Wed": "800 ArchaeologyHouse 18 12 0/1200 ArchaeologyHouse 11 9 0/1800 Town 51 87 0/2200 SeedShop 3 6 1 sit_down",
 	"Fri": "800 ArchaeologyHouse 18 12 0/1200 SeedShop 4 20 2/1500 Saloon 35 18 0/2100 SeedShop 3 6 1 sit_down",
-	"Sat": "900 Town 32 91 0/1200 Town 16 15 1 square_5_3/1700 Town 28 92 1/2000 SamHouse 9 22 1 sleep",
+	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 1/2000 SamHouse 9 22 1 sleep",
 	"fall": "830 SeedShop 2 19 3/1300 BusStop 22 5 2/1700 SeedShop 2 6 0/1930 SeedShop 3 6 1 sit_down",
 	"winter": "800 SeedShop 39 5 0/1030 ScienceHouse 5 19 1/1430 SeedShop 2 6 0/1930 SeedShop 3 6 1 sit_down",
 	"summer": "800 SeedShop 39 5 0/1030 Railroad 30 45 0/1400 Mountain 49 31 1/1740 SeedShop 2 6 0/1930 SeedShop 3 6 1 sit_down",
