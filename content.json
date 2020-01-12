@@ -458,7 +458,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"rain": "800 SeedShop 10 5 0/1100 SeedShop 13 20 0/1300 SeedShop 39 5 0/1500 SeedShop 7 9 2/1800 SeedShop 10 5 0/2200 SeedShop 3 6 1 sleep"
+			"rain": "800 SeedShop 33 5 0/1100 SeedShop 5 19 0/1400 Saloon 35 18 0/2000 SeedShop 3 6 1 sit_down"
 		},
 		"When": {
 			"Hearts:Abigail": "{{Range: 2, 14}}",
@@ -470,7 +470,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"rain": "830 Beach 11 39 2/1700 AbigailRoom 9 9 3 sit_down"
+			"rain": "900 SeedShop 9 5 0/1100 SeedShop 13 20 0/1300 SeedShop 39 5 0/1500 SeedShop 7 9 2/1900 SeedShop 6 4 0/2200 SeedShop 1 9 3"
 		},
 		"When": {
 			"Hearts:Abigail": "{{Range: 0, 1}}",
@@ -491,6 +491,12 @@
 		"Target": "Characters/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"FromFile": "assets/toddler1.png"
 	},	
+	{
+      "LogName": "Portraits",
+      "Action": "Load",
+      "Target": "Portraits/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/portraits1.png",
+    },
 	
 	//Second Child
 	{
@@ -911,7 +917,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"rain": "800 SeedShop 10 5 0/1100 SeedShop 13 20 0/1300 SeedShop 39 5 0/1500 SeedShop 7 9 2/1800 SeedShop 10 5 0/2200 SeedShop 3 6 1 sleep"
+			"rain": "800 SeedShop 33 5 0/1100 SeedShop 5 19 0/1400 Saloon 35 18 0/2000 SeedShop 3 6 1 sit_down"
 		},
 		"When": {
 			"Hearts:Abigail": "{{Range: 2, 14}}",
@@ -923,7 +929,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"rain": "830 Beach 11 39 2/1700 AbigailRoom 9 9 3 sit_down"
+			"rain": "900 SeedShop 9 5 0/1100 SeedShop 13 20 0/1300 SeedShop 39 5 0/1500 SeedShop 7 9 2/1900 SeedShop 6 4 0/2200 SeedShop 1 9 3"
 		},
 		"When": {
 			"Hearts:Abigail": "{{Range: 0, 1}}",
@@ -943,8 +949,13 @@
 		"Action": "Load",
 		"Target": "Characters/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"FromFile": "assets/toddler2.png"
-	},		
-	
+	},	
+	{
+      "LogName": "Portraits",
+      "Action": "Load",
+      "Target": "Portraits/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/portraits2.png",
+    },	
     {
       "LogName": "Child Animations",
       "Action": "EditData",
