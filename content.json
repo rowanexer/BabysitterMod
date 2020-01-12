@@ -356,7 +356,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 18 12 0/1200 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down",
+			"Wed": "800 ArchaeologyHouse 18 12 0/1200 ScienceHouse 22 17 0/1400 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down",
 			"Fri": "800 ArchaeologyHouse 18 12 0/1200 ScienceHouse 22 17 0/1400 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down"
 		},
 		"When": {
@@ -805,7 +805,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 17 12 0/1200 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down",
+			"Wed": "800 ArchaeologyHouse 17 12 0/1200 ScienceHouse 22 17 0/1400 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down",
 			"Fri": "800 ArchaeologyHouse 17 12 0/1200 ScienceHouse 22 17 0/1400 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down"
 		},
 		"When": {
