@@ -6,7 +6,7 @@
 	"Wed": "800 ArchaeologyHouse 18 12 0",
 	"Thu": "820 Hospital 2 15 1 sit_down/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 30 12 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 sit_down",
 	"Fri": "800 ArchaeologyHouse 18 12 0",
-	"Mon": "800 ScienceHouse 22 17 0/1330 Town 42 77 2 sit_down/1830 ScienceHouse 7 6 3/2300 ScienceHouse 4 4 2 sit_down",
+	"Mon": "800 ScienceHouse 22 17 0/1330 Town 42 77 2/1830 ScienceHouse 7 6 3/2300 ScienceHouse 4 4 1 sit_down",
 	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 1/2000 SamHouse 9 22 1 sleep",
 	"Sun": "GOTO Mon",
 	"Summer_Mon": "800 ScienceHouse 22 17 0/1310 Town 63 16 3/1830 ScienceHouse 7 6 3/2300 ScienceHouse 4 4 2 sit_down",
