@@ -3,7 +3,7 @@
 {
   "9": "NOT friendship Sam 6 Penny 6/GOTO winter",
   "23": "NOT friendship Sam 6 Penny 6/GOTO winter",
-  "fall_14": "800 AnimalShop 6 7 0/1100 SamHouse 3 16 0/1400 Town 47 87 2/1700 Town 36 96 3/2000 CommunityCenter 23 9 1 sleep",
+  "fall_14": "800 AnimalShop 6 7 0/1050 SamHouse 3 16 0/1330 Town 47 87 2/1700 Town 36 96 3/2000 CommunityCenter 23 9 1 sleep",
   "rain": "800 CommunityCenter 26 9 0/1300 CommunityCenter 8 9 3/1500 CommunityCenter 9 23 3/1700 CommunityCenter 27 16 3/2000 CommunityCenter 23 9 1 sleep",
   "Tue": "800 ArchaeologyHouse 17 12 0/1400 Town 84 92 1/1620 Town 16 89 2/1750 AnimalShop 2 7 1 sleep",
   "Wed": "GOTO Tue",
