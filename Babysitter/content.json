@@ -189,6 +189,15 @@
     },
 	
 	//Alex schedule
+	{
+      "LogName": "FirstChild Alex Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Alex.json",
+	  "When": {
+			"FirstBabysitter": "Alex"
+		}
+    },
 	{	"LogName": "FirstChild Alex No School 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
@@ -316,7 +325,16 @@
 		}
 	},
 	
+	{
 	//Sebastian Schedule
+      "LogName": "FirstChild Sebastian Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Sebastian.json",
+	  "When": {
+			"FirstBabysitter": "Sebastian"
+		}
+    },
 	{	"LogName": "FirstChild Sebastian No School 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
@@ -716,6 +734,15 @@
     },
 	
 	//Alex schedule
+	{
+      "LogName": "SecondChild Alex Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/Alex.json",
+	  "When": {
+			"SecondBabysitter": "Alex"
+		}
+    },
 	{	"LogName": "SecondChild Alex No School 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
@@ -833,6 +860,15 @@
 	},
 	
 	//Sebastian Schedule
+	{
+      "LogName": "SecondChild Sebastian Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/Sebastian.json",
+	  "When": {
+			"SecondBabysitter": "Sebastian"
+		}
+    },
 	{	"LogName": "SecondChild Sebastian No School 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
@@ -1216,6 +1252,15 @@
 	},
 	
 	//Alex schedule
+	{
+      "LogName": "ThirdChild Alex Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+      "FromFile": "assets/dialogue/Alex.json",
+	  "When": {
+			"ThirdBabysitter": "Alex"
+		}
+    },
 	{	"LogName": "ThirdChild Alex No School 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
@@ -1333,6 +1378,15 @@
 	},
 	
 	//Sebastian Schedule
+	{
+      "LogName": "ThirdChild Sebastian Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+      "FromFile": "assets/dialogue/Sebastian.json",
+	  "When": {
+			"ThirdBabysitter": "Sebastian"
+		}
+    },
 	{	"LogName": "ThirdChild Sebastian No School 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
@@ -1717,6 +1771,15 @@
 	},
 	
 	//Alex schedule
+	{
+      "LogName": "FourthChild Alex Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+      "FromFile": "assets/dialogue/Alex.json",
+	  "When": {
+			"FourthBabysitter": "Alex"
+		}
+    },
 	{	"LogName": "FourthChild Alex No School 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
@@ -1834,6 +1897,15 @@
 	},
 	
 	//Sebastian Schedule
+	{
+      "LogName": "FourthChild Sebastian Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+      "FromFile": "assets/dialogue/Sebastian.json",
+	  "When": {
+			"FourthBabysitter": "Sebastian"
+		}
+    },
 	{	"LogName": "FourthChild Sebastian No School 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
