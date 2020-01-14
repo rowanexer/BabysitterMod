@@ -42,6 +42,27 @@
 		},
 	},
 	],*/
+	"DynamicTokens": [
+	
+	//Use this with specific dialogues
+	{
+		"Name": "Spouse",
+		"Value": "Papa",
+		"When": {
+				"HasValue:{{spouse}}": "true",
+				"{{spouse}}": "Elliott, Sam, Sebastian, Harvey, Shane"
+		},
+	},
+	{
+		{
+		"Name": "Spouse",
+		"Value": "Mama",
+		"When": {
+				"HasValue:{{spouse}}": "true",
+				"{{spouse}}": "Abigail, Penny, Haley, Emily, Maru"
+		},
+	},
+	],
   "Changes": [
     
 	//First Child
@@ -515,7 +536,7 @@
         "{{Loe2run.ChildToNPC/SecondChildName}}": "SecondChild/neutral/neutral/neutral/{{Loe2run.ChildToNPC/SecondChildGender}}/non-datable/null/Town/{{Loe2run.ChildToNPC/SecondChildBirthday}}/null/{{Loe2run.ChildToNPC/SecondChildBed}}/{{Loe2run.ChildToNPC/SecondChildName}}"
       },
       "When": {
-	"Loe2run.ChildToNPC/NumberTotalChildren": "1"	
+	"Loe2run.ChildToNPC/NumberTotalChildren": "2"	
       }
     },
     {
@@ -974,7 +995,7 @@
         "{{Loe2run.ChildToNPC/ThirdChildName}}": "ThirdChild/neutral/neutral/neutral/{{Loe2run.ChildToNPC/ThirdChildGender}}/non-datable/null/Town/{{Loe2run.ChildToNPC/ThirdChildBirthday}}/null/{{Loe2run.ChildToNPC/ThirdChildBed}}/{{Loe2run.ChildToNPC/ThirdChildName}}"
       },
       "When": {
-	"Loe2run.ChildToNPC/NumberTotalChildren": "1"	
+	"Loe2run.ChildToNPC/NumberTotalChildren": "3"	
       }
     },
     {
@@ -1425,7 +1446,35 @@
     },
 	
 	
-	//Fourth Child Base Schedules
+	//Fourth Child 
+	{
+      "LogName": "NPC Dispositions",
+      "Action": "EditData",
+      "Target": "Data/NPCDispositions",
+      "Entries": {
+        "{{Loe2run.ChildToNPC/FourthChildName}}": "FourthChild/neutral/neutral/neutral/{{Loe2run.ChildToNPC/FourthChildGender}}/non-datable/null/Town/{{Loe2run.ChildToNPC/FourthChildBirthday}}/null/{{Loe2run.ChildToNPC/FourthChildBed}}/{{Loe2run.ChildToNPC/FourthChildName}}"
+      },
+      "When": {
+	"Loe2run.ChildToNPC/NumberTotalChildren": "4"	
+      }
+    },
+    {
+      "LogName": "NPC Gift Tastes",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "{{Loe2run.ChildToNPC/FourthChildName}}": "This is my absolute favorite!/211 340 200 480 140/Thank you, I love it!/-80 -79 300/Um... Okay./-8 -4/Why would you give me this? So mean!/346 348 303 304 459/Thank you!/-5 -2 -81 -75 -79/"
+      }
+    },
+    {
+      "LogName": "FourthChild Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FourthChildName}}",
+      "FromFile": "assets/dialogue.json"
+    },
+	
+	
+	//Base Schedules
 	{
       "LogName": "FourthChild Schedule No Babysitter",
       "Action": "Load",
