@@ -1,0 +1,39 @@
+{
+	"Wed10": "Ssh, I've got a secret to tell you.#$e#...#$b#I love you.$4",
+	"summer_24": "Vincent told me there's a monster in the sewers...#$b#...Is that true?$s",
+	"fall_7": "#$q 7000/7001 monster_followup #You'd fight the sewer monster if it came out, wouldn't you Daddy?^You'd fight the sewer monster if it came out, wouldn't you Mummy?^#$b#$r 7000 50 monster_yes Of course! #$r 7001 0 monster_no $r No, it's too scary...",
+	"monster_yes": "Yeah, Daddy's the strongest!^Yeah, Mommy's the strongest!$h",
+	"monster_no": "...$s",
+	"monster_followup": "#$p 7000#And then...Pow! POW!$a #$b#You'll blast it into the sun!$h|...Don't worry, Daddy. I'll protect you instead.^Don't worry, Mommy. I'll protect you instead.",
+	"Mon": "Daddy, Daddy!^Mommy, Mommy!$h#$b#Pick me up like you used to!$h",
+	"spring_1": "I picked some flowers for you...$4 [591 597]",
+	"summer_1": "I picked some flowers for you...$4 [402 376]",
+	"fall_1": "I picked some flowers for you...$4 [595 421]",
+	"winter_1": "I picked some flowers for you...$4 [418]",
+	"winter_Fri": "#$c .7 #Can we have Shepherd's Pie tonight?$h #No, I won't eat any more brussel sprouts!$a",
+	"Rainy_Day_1": "Rain rain go away~$h",
+	"Rainy_Day_2": "Down came the rain and washed poor Incy out~ $h",
+	"Rainy_Day_3": "Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h",
+	"Tue6": "I'm going to be a farmer just like you!",
+	"winter_Wed": "%spouse told me off because I pulled $pet 's tail...$s",	
+	"Thu": "Miss Penny says we're going to learn about dinosaurs today!$h",
+	"Sun": "Marnie has so many cows! She must have a hundred millions!"
+	}
+	
+	
+	
+/*        "Introduction": "Oh, a stranger! My name's Vincent.#$b#Momma says not to talk to strangers... But you seem okay.",
+        "Mon": "I wanna be just like my big brother when I grow up!$h#$e#Okay! Bye!",
+        "Mon4": "$d kent#I'm glad Dad's back... but he's different than I remember...$s|Dad's not around much... I miss playing with him.$s",
+        "Tue": "*sigh*... Mom won't let me have any more gummies today.$s",
+        "Tue6": "Can you keep a secret, mister?^Can you keep a secret, miss?$u#$b#I wanna marry Miss Penny when I grow up.#$e#Just don't tell her, okay?$u",
+        "Wed": "I wanna look for bugs, but Mom gets mad when I'm all dirty.$u#$b#It's a tough choice.",
+        "Thu": "I'm hungry... where's Mom?$s",
+        "Thu2": "You're not as boring as most grown-ups!",
+        "Fri": "#$c .3#Ew, it's boiled beet night again...$s#$e#Oh no... Mom's making lentil soup tonight.$s",
+        "Sat_1": "Dad's coming back soon!#$b#I hope he brings me some toys.$u",
+        "Sat": "Miss Penny makes me read a new book every week.$s#$b#At least she lets me pick them, sometimes!",
+        "Sat8": "$d kent#Dad seems weird since he came back. I wonder what happened to him?$s#$b#He doesn't play with me anymore.$s|I wonder if Dad will ever come home...$s",
+        "Sun": "Hi there, mister!^Hi there, miss.",
+        "Sun10": "Hi Uncle @!^Hi Auntie @!#$e#Don't tell Mom... but you're my favorite grown-up.$h"
+    }*/
