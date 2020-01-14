@@ -1,6 +1,6 @@
 {
-  "9": "NOT friendship Sam 6 Penny 6/GOTO winter",
-  "23": "NOT friendship Sam 6 Penny 6/GOTO winter",
+  "9": "GOTO winter",
+  "23": "GOTO winter",
   "rain": "800 CommunityCenter 27 16 3/1300 CommunityCenter 5 7 2/1500 CommunityCenter 16 19 0/1700 CommunityCenter 23 17 0/2000 CommunityCenter 37 21 1 sleep",
   "fall_14": "800 AnimalShop 6 5 1/1050 SamHouse 2 16 0/1330 Town 47 89 0/1700 Town 34 97 0/2000 CommunityCenter 37 21 1 sleep",
   "Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 17 90 3/1740 SamHouse 2 8 0/2000 SamHouse 8 22 1 sleep",

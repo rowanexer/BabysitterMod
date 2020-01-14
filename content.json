@@ -46,21 +46,20 @@
 	
 	//Use this with specific dialogues
 	{
-		"Name": "Spouse",
+		"Name": "Parent",
 		"Value": "Papa",
 		"When": {
 				"HasValue:{{spouse}}": "true",
-				"{{spouse}}": "Elliott, Sam, Sebastian, Harvey, Shane"
-		},
+				"spouse": "Elliott, Sam, Sebastian, Harvey, Shane"
+		}
 	},
 	{
-		{
-		"Name": "Spouse",
+		"Name": "Parent",
 		"Value": "Mama",
 		"When": {
 				"HasValue:{{spouse}}": "true",
-				"{{spouse}}": "Abigail, Penny, Haley, Emily, Maru"
-		},
+				"spouse": "Abigail, Penny, Haley, Emily, Maru"
+		}
 	},
 	],
   "Changes": [
@@ -139,6 +138,36 @@
 		}
     },
 	
+	/None Schedule
+	{	"LogName": "FirstChild None No School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "None"
+		}
+	},
+	{	"LogName": "FirstChild None School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO Tue",
+			"23": "GOTO Tue"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "None"
+		}
+	},
+	
 	//Alex schedule
 	{	"LogName": "FirstChild Alex No School 9 23",
 		"Action": "EditData",
@@ -149,6 +178,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Alex"
 		}
@@ -162,6 +192,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Alex"
 		}
@@ -275,6 +306,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Sebastian"
 		}
@@ -288,6 +320,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Sebastian"
 		}
@@ -351,6 +384,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Maru"
 		}
@@ -364,6 +398,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Maru"
 		}
@@ -418,6 +453,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Abigail"
 		}
@@ -431,6 +467,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Abigail"
 		}
@@ -533,7 +570,7 @@
       "Action": "EditData",
       "Target": "Data/NPCDispositions",
       "Entries": {
-        "{{Loe2run.ChildToNPC/SecondChildName}}": "SecondChild/neutral/neutral/neutral/{{Loe2run.ChildToNPC/SecondChildGender}}/non-datable/null/Town/{{Loe2run.ChildToNPC/SecondChildBirthday}}/null/{{Loe2run.ChildToNPC/SecondChildBed}}/{{Loe2run.ChildToNPC/SecondChildName}}"
+        "{{Loe2run.ChildToNPC/SecondChildName}}": "SecondChild/neutral/shy/positive/{{Loe2run.ChildToNPC/SecondChildGender}}/non-datable/null/Town/{{Loe2run.ChildToNPC/SecondChildBirthday}}/null/{{Loe2run.ChildToNPC/SecondChildBed}}/{{Loe2run.ChildToNPC/SecondChildName}}"
       },
       "When": {
 	"Loe2run.ChildToNPC/NumberTotalChildren": "2"	
@@ -613,6 +650,35 @@
 		}
     },
 	
+	/None Schedule
+	{	"LogName": "SecondChild None No School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"SecondBabysitter": "None"
+		}
+	},
+	{	"LogName": "SecondChild None School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO Tue",
+			"23": "GOTO Tue"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
+			"Day": "9, 23",
+			"SecondBabysitter": "None"
+		}
+	},
 	
 	//Alex schedule
 	{	"LogName": "SecondChild Alex No School 9 23",
@@ -624,6 +690,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"SecondBabysitter": "Alex"
 		}
@@ -637,6 +704,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"SecondBabysitter": "Alex"
 		}
@@ -739,6 +807,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"SecondBabysitter": "Sebastian"
 		}
@@ -752,6 +821,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"SecondBabysitter": "Sebastian"
 		}
@@ -925,6 +995,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"SecondBabysitter": "Abigail"
 		}
@@ -938,6 +1009,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"SecondBabysitter": "Abigail"
 		}
@@ -992,7 +1064,7 @@
       "Action": "EditData",
       "Target": "Data/NPCDispositions",
       "Entries": {
-        "{{Loe2run.ChildToNPC/ThirdChildName}}": "ThirdChild/neutral/neutral/neutral/{{Loe2run.ChildToNPC/ThirdChildGender}}/non-datable/null/Town/{{Loe2run.ChildToNPC/ThirdChildBirthday}}/null/{{Loe2run.ChildToNPC/ThirdChildBed}}/{{Loe2run.ChildToNPC/ThirdChildName}}"
+        "{{Loe2run.ChildToNPC/ThirdChildName}}": "ThirdChild/neutral/outgoing/positive/{{Loe2run.ChildToNPC/ThirdChildGender}}/non-datable/null/Town/{{Loe2run.ChildToNPC/ThirdChildBirthday}}/null/{{Loe2run.ChildToNPC/ThirdChildBed}}/{{Loe2run.ChildToNPC/ThirdChildName}}"
       },
       "When": {
 	"Loe2run.ChildToNPC/NumberTotalChildren": "3"	
@@ -1073,6 +1145,36 @@
 		}
     },
 	
+	/None Schedule
+	{	"LogName": "ThirdChild None No School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"ThirdBabysitter": "None"
+		}
+	},
+	{	"LogName": "ThirdChild None School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"9": "GOTO Tue",
+			"23": "GOTO Tue"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
+			"Day": "9, 23",
+			"ThirdBabysitter": "None"
+		}
+	},
+	
 	//Alex schedule
 	{	"LogName": "ThirdChild Alex No School 9 23",
 		"Action": "EditData",
@@ -1083,6 +1185,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"ThirdBabysitter": "Alex"
 		}
@@ -1096,6 +1199,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"ThirdBabysitter": "Alex"
 		}
@@ -1198,6 +1302,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"ThirdBabysitter": "Sebastian"
 		}
@@ -1211,6 +1316,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"ThirdBabysitter": "Sebastian"
 		}
@@ -1384,6 +1490,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"ThirdBabysitter": "Abigail"
 		}
@@ -1397,6 +1504,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"ThirdBabysitter": "Abigail"
 		}
@@ -1452,7 +1560,7 @@
       "Action": "EditData",
       "Target": "Data/NPCDispositions",
       "Entries": {
-        "{{Loe2run.ChildToNPC/FourthChildName}}": "FourthChild/neutral/neutral/neutral/{{Loe2run.ChildToNPC/FourthChildGender}}/non-datable/null/Town/{{Loe2run.ChildToNPC/FourthChildBirthday}}/null/{{Loe2run.ChildToNPC/FourthChildBed}}/{{Loe2run.ChildToNPC/FourthChildName}}"
+        "{{Loe2run.ChildToNPC/FourthChildName}}": "FourthChild/neutral/shy/positive/{{Loe2run.ChildToNPC/FourthChildGender}}/non-datable/null/Town/{{Loe2run.ChildToNPC/FourthChildBirthday}}/null/{{Loe2run.ChildToNPC/FourthChildBed}}/{{Loe2run.ChildToNPC/FourthChildName}}"
       },
       "When": {
 	"Loe2run.ChildToNPC/NumberTotalChildren": "4"	
@@ -1532,6 +1640,36 @@
 		}
     },
 	
+	/None Schedule
+	{	"LogName": "FourthChild None No School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FourthBabysitter": "None"
+		}
+	},
+	{	"LogName": "FourthChild None School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"9": "GOTO Tue",
+			"23": "GOTO Tue"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
+			"Day": "9, 23",
+			"FourthBabysitter": "None"
+		}
+	},
+	
 	//Alex schedule
 	{	"LogName": "FourthChild Alex No School 9 23",
 		"Action": "EditData",
@@ -1542,6 +1680,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FourthBabysitter": "Alex"
 		}
@@ -1555,6 +1694,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"FourthBabysitter": "Alex"
 		}
@@ -1657,6 +1797,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FourthBabysitter": "Sebastian"
 		}
@@ -1670,6 +1811,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"FourthBabysitter": "Sebastian"
 		}
@@ -1843,6 +1985,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FourthBabysitter": "Abigail"
 		}
@@ -1856,6 +1999,7 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"FourthBabysitter": "Abigail"
 		}
