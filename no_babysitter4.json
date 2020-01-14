@@ -1,0 +1,16 @@
+//After school, non school days. Visit Vincent and Jas
+
+{
+  "9": "NOT friendship Sam 6 Penny 6/GOTO winter",
+  "23": "NOT friendship Sam 6 Penny 6/GOTO winter",
+  "fall_14": "800 AnimalShop 6 12 2/1050 SamHouse 8 15 1/1330 Town 48 88 3/1700 Town 34 97 0/1700 Town 33 96 1/2000 CommunityCenter 25 9 1 sleep",
+  "rain": "800 CommunityCenter 26 15 2/1300 CommunityCenter 8 8 3/1500 CommunityCenter 15 27 0/1700 CommunityCenter 18 20 1/2000 CommunityCenter 25 9 1 sleep",
+  "Tue": "800 ArchaeologyHouse 18 9 2/1400 Town 87 99 2/1620 Town 15 91 0/1750 AnimalShop 4 4 1 sleep",
+  "Wed": "GOTO Tue",
+  "Fri": "GOTO Tue",
+  "Sat": "900 Town 31 91 0/1200 Town 19 14 2 wave_arms/1700 Town 29 98 2/1750 AnimalShop 4 4 1 sleep",
+  "spring": "800 Forest 97 23 0/1200 Town 27 26 2 wave_arms/1600 Town 91 51 0/2000 CommunityCenter 25 9 1 sleep",
+  "summer": "800 CommunityCenter 27 16 3/1230 Beach 51 21 1 square_3_3/1900 CommunityCenter 25 9 1 sleep",
+  "fall": "800 Town 34 75 2/1200 Town 60 18 3/1700 CommunityCenter 15 27 0/2000 CommunityCenter 25 9 1 sleep",
+  "winter": "800 CommunityCenter 26 15 2/1300 CommunityCenter 8 8 3/1500 CommunityCenter 15 27 0/1700 CommunityCenter 18 20 1/2000 CommunityCenter 25 9 1 sleep"
+}
