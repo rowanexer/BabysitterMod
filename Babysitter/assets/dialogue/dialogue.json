@@ -1,24 +1,22 @@
 {
-	"Wed10": "Ssh, I've got a secret to tell you.#$e#...#$b#I love you.$4",
+	"spring_Thu10": "Ssh, I've got a secret to tell you.#$e#...#$b#I love you.$4",
 	"summer_24": "Vincent told me there's a monster in the sewers...#$b#...Is that true?$s",
+	"fall_2": "I had a bad dream about the sewer monster...$s",
 	"fall_7": "#$q 7000/7001 monster_followup #You'd fight the sewer monster if it came out, wouldn't you Daddy?^You'd fight the sewer monster if it came out, wouldn't you Mummy?^#$b#$r 7000 50 monster_yes Of course! #$r 7001 0 monster_no $r No, it's too scary...",
 	"monster_yes": "Yeah, Daddy's the strongest!^Yeah, Mommy's the strongest!$h",
 	"monster_no": "...$s",
 	"monster_followup": "#$p 7000#And then...Pow! POW!$a #$b#You'll blast it into the sun!$h|...Don't worry, Daddy. I'll protect you instead.^Don't worry, Mommy. I'll protect you instead.",
-	"Mon": "Daddy, Daddy!^Mommy, Mommy!$h#$b#Pick me up like you used to!$h",
 	"spring_1": "I picked some flowers for you...$4 [591 597]",
 	"summer_1": "I picked some flowers for you...$4 [402 376]",
 	"fall_1": "I picked some flowers for you...$4 [595 421]",
 	"winter_1": "I picked some flowers for you...$4 [418]",
-	"winter_Fri": "#$c .7 #Can we have Shepherd's Pie tonight?$h #No, I won't eat any more brussel sprouts!$a",
-	"Rainy_Day_1": "Rain rain go away~$h",
-	"Rainy_Day_2": "Down came the rain and washed poor Incy out~ $h",
-	"Rainy_Day_3": "Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h",
-	"Tue6": "I'm going to be a farmer just like you!",
+	"winter_Fri": "#$c .7 #Can we have Shepherd's Pie tonight?$h #No, I won't eat any more brussel sprouts!$a",	
 	"winter_Wed": "%spouse told me off because I pulled $pet 's tail...$s",	
-	"Thu": "Miss Penny says we're going to learn about dinosaurs today!$h",
+	//"Mon": "Daddy, Daddy!^Mommy, Mommy!$h#$b#Pick me up like you used to!$h",
+	//"Tue": "I'm going to be a farmer just like you!",
+	//"Fri": "Miss Penny says we're going to learn about dinosaurs today!$h",
 	"Sun": "Marnie has so many cows! She must have a hundred millions!"
-	}
+}
 	
 	
 	
