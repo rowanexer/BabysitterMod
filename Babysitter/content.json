@@ -107,7 +107,7 @@
       "LogName": "FirstChild Schedule No Babysitter",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-      "FromFile": "assets/schedule/no_babysitter1.json",
+      "FromFile": "assets/schedules/no_babysitter1.json",
 	  "When": {
 		"FirstBabysitter": "None"
 		}
@@ -116,7 +116,7 @@
       "LogName": "FirstChild Schedule Sebastian",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-      "FromFile": "assets/schedule/Sebastian.json",
+      "FromFile": "assets/schedules/Sebastian.json",
 	  "When": {
 		"FirstBabysitter": "Sebastian"
 		}
@@ -125,7 +125,7 @@
       "LogName": "FirstChild Schedule Alex",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-      "FromFile": "assets/schedule/Alex.json",
+      "FromFile": "assets/schedules/Alex.json",
 	  "When": {
 		"FirstBabysitter": "Alex"
 		}
@@ -134,7 +134,7 @@
       "LogName": "FirstChild Schedule Abigail",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-      "FromFile": "assets/schedule/Abigail.json",
+      "FromFile": "assets/schedules/Abigail.json",
 	  "When": {
 		"FirstBabysitter": "Abigail"
 		}
@@ -143,7 +143,7 @@
       "LogName": "FirstChild Schedule Maru",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-      "FromFile": "assets/schedule/Maru.json",
+      "FromFile": "assets/schedules/Maru.json",
 	  "When": {
 		"FirstBabysitter": "Maru"
 		}
@@ -587,13 +587,13 @@
 	{	"LogName": "FirstChild Sprites",
 		"Action": "Load",
 		"Target": "Characters/{{Loe2run.ChildToNPC/FirstChildName}}",
-		"FromFile": "assets/toddler1.png"
+		"FromFile": "assets/images/toddler1.png"
 	},	
 	{
       "LogName": "Portraits",
       "Action": "Load",
       "Target": "Portraits/{{Loe2run.ChildToNPC/FirstChildName}}",
-      "FromFile": "assets/portraits1.png",
+      "FromFile": "assets/images/portraits1.png",
     },
 	
 	//Second Child
@@ -640,7 +640,7 @@
       "LogName": "SecondChild Schedule No Babysitter",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
-      "FromFile": "assets/schedule/no_babysitter2.json",
+      "FromFile": "assets/schedules/no_babysitter2.json",
 	  "When": {
 		"SecondBabysitter": "None"
 		}
@@ -650,7 +650,7 @@
       "LogName": "SecondChild Schedule Sebastian",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
-      "FromFile": "assets/schedule/Sebastian.json",
+      "FromFile": "assets/schedules/Sebastian.json",
 	  "When": {
 		"SecondBabysitter": "Sebastian"
 		}
@@ -659,7 +659,7 @@
       "LogName": "SecondChild Schedule Alex",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
-      "FromFile": "assets/schedule/Alex.json",
+      "FromFile": "assets/schedules/Alex.json",
 	  "When": {
 		"SecondBabysitter": "Alex"
 		}
@@ -668,7 +668,7 @@
       "LogName": "SecondChild Schedule Abigail",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
-      "FromFile": "assets/schedule/Abigail.json",
+      "FromFile": "assets/schedules/Abigail.json",
 	  "When": {
 		"SecondBabysitter": "Abigail"
 		}
@@ -677,7 +677,7 @@
       "LogName": "SecondChild Schedule Maru",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
-      "FromFile": "assets/schedule/Maru.json",
+      "FromFile": "assets/schedules/Maru.json",
 	  "When": {
 		"SecondBabysitter": "Maru"
 		}
@@ -1114,13 +1114,13 @@
 	{	"LogName": "SecondChild Sprites",
 		"Action": "Load",
 		"Target": "Characters/{{Loe2run.ChildToNPC/SecondChildName}}",
-		"FromFile": "assets/toddler2.png"
+		"FromFile": "assets/images/toddler2.png"
 	},	
 	{
       "LogName": "Portraits",
       "Action": "Load",
       "Target": "Portraits/{{Loe2run.ChildToNPC/SecondChildName}}",
-      "FromFile": "assets/portraits2.png",
+      "FromFile": "assets/images/portraits2.png",
     },	
 	{	"LogName": "Parent Penny",
 		"Action": "EditData",
@@ -1167,7 +1167,7 @@
       "LogName": "ThirdChild Schedule No Babysitter",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
-      "FromFile": "assets/schedule/no_babysitter2.json",
+      "FromFile": "assets/schedules/no_babysitter2.json",
 	  "When": {
 		"ThirdBabysitter": "None"
 		}
@@ -1177,7 +1177,7 @@
       "LogName": "ThirdChild Schedule Sebastian",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
-      "FromFile": "assets/schedule/Sebastian.json",
+      "FromFile": "assets/schedules/Sebastian.json",
 	  "When": {
 		"ThirdBabysitter": "Sebastian"
 		}
@@ -1186,7 +1186,7 @@
       "LogName": "ThirdChild Schedule Alex",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
-      "FromFile": "assets/schedule/Alex.json",
+      "FromFile": "assets/schedules/Alex.json",
 	  "When": {
 		"ThirdBabysitter": "Alex"
 		}
@@ -1195,7 +1195,7 @@
       "LogName": "ThirdChild Schedule Abigail",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
-      "FromFile": "assets/schedule/Abigail.json",
+      "FromFile": "assets/schedules/Abigail.json",
 	  "When": {
 		"ThirdBabysitter": "Abigail"
 		}
@@ -1204,7 +1204,7 @@
       "LogName": "ThirdChild Schedule Maru",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
-      "FromFile": "assets/schedule/Maru.json",
+      "FromFile": "assets/schedules/Maru.json",
 	  "When": {
 		"ThirdBabysitter": "Maru"
 		}
@@ -1633,13 +1633,13 @@
 		"LogName": "ThirdChild Sprites",
 		"Action": "Load",
 		"Target": "Characters/{{Loe2run.ChildToNPC/ThirdChildName}}",
-		"FromFile": "assets/toddler3.png"
+		"FromFile": "assets/images/toddler3.png"
 	},	
 	{
       "LogName": "Portraits",
       "Action": "Load",
       "Target": "Portraits/{{Loe2run.ChildToNPC/ThirdChildName}}",
-      "FromFile": "assets/portraits3.png",
+      "FromFile": "assets/images/portraits3.png",
     },
 	
 	
@@ -1687,7 +1687,7 @@
       "LogName": "FourthChild Schedule No Babysitter",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
-      "FromFile": "assets/schedule/no_babysitter2.json",
+      "FromFile": "assets/schedules/no_babysitter2.json",
 	  "When": {
 		"FourthBabysitter": "None"
 		}
@@ -1696,7 +1696,7 @@
       "LogName": "FourthChild Schedule Sebastian",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
-      "FromFile": "assets/schedule/Sebastian.json",
+      "FromFile": "assets/schedules/Sebastian.json",
 	  "When": {
 		"FourthBabysitter": "Sebastian"
 		}
@@ -1705,7 +1705,7 @@
       "LogName": "FourthChild Schedule Alex",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
-      "FromFile": "assets/schedule/Alex.json",
+      "FromFile": "assets/schedules/Alex.json",
 	  "When": {
 		"FourthBabysitter": "Alex"
 		}
@@ -1714,7 +1714,7 @@
       "LogName": "FourthChild Schedule Abigail",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
-      "FromFile": "assets/schedule/Abigail.json",
+      "FromFile": "assets/schedules/Abigail.json",
 	  "When": {
 		"FourthBabysitter": "Abigail"
 		}
@@ -1723,7 +1723,7 @@
       "LogName": "FourthChild Schedule Maru",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
-      "FromFile": "assets/schedule/Maru.json",
+      "FromFile": "assets/schedules/Maru.json",
 	  "When": {
 		"FourthBabysitter": "Maru"
 		}
@@ -2152,13 +2152,13 @@
 	{	"LogName": "FourthChild Sprites",
 		"Action": "Load",
 		"Target": "Characters/{{Loe2run.ChildToNPC/FourthChildName}}",
-		"FromFile": "assets/toddler4.png"
+		"FromFile": "assets/images/toddler4.png"
 	},	
 	{
       "LogName": "Portraits",
       "Action": "Load",
       "Target": "Portraits/{{Loe2run.ChildToNPC/FourthChildName}}",
-      "FromFile": "assets/portraits4.png",
+      "FromFile": "assets/images/portraits4.png",
     },
 	
 	//Animations for all children
