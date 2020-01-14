@@ -5,7 +5,7 @@
  * -> The reason that I repeated the same frame so many times in the animationdescription is that it seems like the easiest way to seem like the animation is finished. There may be better ways out there.
  */
 {
-  "Format": "1.9",
+  "Format": "1.11.0",
    "ConfigSchema": {
       "FirstBabysitter": {
          "AllowValues": "Sebastian, Alex, Abigail, Maru, None",
@@ -94,13 +94,35 @@
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Thu": "Mama says we're going to learn about dinosaurs today!$h"
+			"Fri": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
 			"HasValue:{{spouse}}": "true",
-			"spouse": "Penny"
+			"spouse": "Penny",
+			"DayOfWeek": "Friday"
 		}
 	},
+	{	"LogName": "Teacher Penny",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Fri": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
+		},
+		"When": {
+			"DayOfWeek": "Friday"
+		}
+	},/*
+	{	"LogName": "FirstChild Rainy",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/rainy",
+		"Entries": {
+			"{{Loe2run.ChildToNPC/FirstChildName}}": "{{Random:♫Rain rain go away~♪$h, ♫Down came the rain and washed poor Incy out~♪$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, ♫It's raining~♪$h#$b#It's pouring~♪$h}}"
+		},
+		"When": {
+			"Weather": "Rain"
+		}
+	},*/
+	
 	
 	//Base Schedules First Child
     {
@@ -627,13 +649,34 @@
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Thu": "Mama says we're going to learn about dinosaurs today!$h"
+			"Fri": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
 			"HasValue:{{spouse}}": "true",
 			"spouse": "Penny"
 		}
 	},
+	{	"LogName": "Teacher Penny",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Fri": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, do origami, do writing practice, read stories | school}} today!$h"
+		},
+		"When": {
+			"DayOfWeek": "Friday"
+		}
+	},/*
+	{	"LogName": "SecondChild Rainy",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/rainy",
+		"Entries": {
+			"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:♫Rain rain go away~♪$h, ♫Down came the rain and washed poor Incy out~♪$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, ♫It's raining~♪ $h#$b#It's pouring~♪$h}}"
+		},
+		"When": {
+			"Weather": "Rain"
+		}
+	},*/
+	
 	
 	//Base Schedules Second Child
     {
@@ -1126,13 +1169,34 @@
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"Thu": "Mama says we're going to learn about dinosaurs today!$h"
+			"Fri": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
 			"HasValue:{{spouse}}": "true",
 			"spouse": "Penny"
 		}
 	},
+	{	"LogName": "Teacher Penny",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"Fri": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, do origami, do writing practice, read stories | school}} today!$h"
+		},
+		"When": {
+			"DayOfWeek": "Friday"
+		}
+	},
+	{	"LogName": "ThirdChild Rainy",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/rainy",
+		"Entries": {
+			"{{Loe2run.ChildToNPC/ThirdChildName}}": "{{Random:♫Rain rain go away~♪$h, ♫Down came the rain and washed poor Incy out~♪$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, ♫It's raining~♪$h#$b#It's pouring~♪$h}}"
+		},
+		"When": {
+			"Weather": "Rain"
+		}
+	},
+	
 	
 	//Third Child
 	{
@@ -1673,13 +1737,34 @@
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"Thu": "Mama says we're going to learn about dinosaurs today!$h"
+			"Fri": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
 			"HasValue:{{spouse}}": "true",
 			"spouse": "Penny"
 		}
 	},
+	{	"LogName": "Teacher Penny",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"Fri": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, do origami, do writing practice, read stories | school}} today!$h"
+		},
+		"When": {
+			"DayOfWeek": "Friday"
+		}
+	},/*
+	{	"LogName": "FourthChild Rainy",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/rainy",
+		"Entries": {
+			"{{Loe2run.ChildToNPC/FourthChildName}}": "{{Random:♫Rain rain go away~♪$h, ♫Down came the rain and washed poor Incy out~♪$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, ♫It's raining~♪$h#$b#It's pouring~♪$h}}"
+		},
+		"When": {
+			"Weather": "Rain"
+		}
+	},*/
+	
 	
 	
 	//Base Schedules
