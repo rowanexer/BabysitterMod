@@ -10,7 +10,7 @@
   "Fri": "GOTO Tue",
   "Sat": "900 Town 33 90 3/1200 Town 23 12 2 wave_arms/1700 Town 29 92 0/1750 AnimalShop 2 7 1 sleep",
   "spring": "800 Forest 92 21 1/1200 Town 26 26 2 wave_arms/1600 Town 93 51 0/2000 CommunityCenter 23 9 1 sleep",
-  "fall": "800 Town 32 77 1/1200 Town 63 17 0/1700 CommunityCenter 9 23 3/2000 CommunityCenter 23 9 1 sleep",
+  "fall": "800 Town 32 77 1/1200 Town 63 17 0\"Strings\\schedules\\no_babysitter1:fall.000"/1700 CommunityCenter 9 23 3/2000 CommunityCenter 23 9 1 sleep",
   "summer": "800 CommunityCenter 39 10 0/1230 Beach 44 17 2 wave_arms/1900 CommunityCenter 23 9 1 sleep",
   "winter": "800 CommunityCenter 26 9 0/1300 CommunityCenter 8 9 3/1500 CommunityCenter 9 23 3/1700 CommunityCenter 27 16 3/2000 CommunityCenter 23 9 1 sleep"
 }
