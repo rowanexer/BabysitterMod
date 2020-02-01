@@ -1,9 +1,3 @@
-/* Notes on some of the things here:
- * -> Anywhere you would put a character's name, put the token for their name instead.
- * -> You'll note that I edit "Characters/schedules/<name>" twice, once to Load the file, and once to edit one of the fields. This is because I found (with a lot of help from MissCoriel#7989) that putting the token {{Loe2run.ChildToNPC/FirstChildName}} in the Strings call for dialogue at the end of a route in a separate file leads to a problems with Content Patcher parsing the token. So if you want to have dialogue in your schedule, you should put those fields into the content.json like I did below.
- * -> If you want to put a token in the When field, remove the brackets, or else it won't parse.
- * -> The reason that I repeated the same frame so many times in the animationdescription is that it seems like the easiest way to seem like the animation is finished. There may be better ways out there.
- */
 {
   "Format": "1.11.0",
    "ConfigSchema": {
@@ -43,9 +37,6 @@
 				"spouse": "Abigail, Penny, Haley, Emily, Maru"
 		}
 	},
-	],
-	"RepeatResponse": [
-		7000,7001,7002,7003
 	],
   "Changes": [
 	
@@ -107,11 +98,11 @@
 			"Weather": "Rain"
 		}
 	},
-	{	"LogName": "FirstChild How Day",
+	{	"LogName": "FirstChild How School",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"how_day_ask": "{{Random:It was okay..., I don't want to go to school anymore...$s, Miss Penny gave me a gold star!$h, It was really fun!$h, I played with Jas lots! She's my bestest friend.$h, I played with Vincent lots! He's my bestest friend.$h}}",
+			"Fri": "%How's school, {{Loe2run.ChildToNPC/FirstChildName}}? #$b#{{Random:It was okay..., I don't want to go to school anymore...$s, Miss Penny gave me a gold star!$h, It was really fun!$h, I played with Jas lots! She's my bestest friend.$h, I played with Vincent lots! He's my bestest friend.$h, I learnt lots and lots and Miss Penny said I was super smart!$h}}",
 		},
 		"When": {
 			"DayOfWeek": "Friday"
@@ -702,6 +693,16 @@
 			"DayOfWeek": "Sunday"
 		}
 	},
+	{	"LogName": "SecondChild How School",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Fri": "%How's school, {{Loe2run.ChildToNPC/SecondChildName}}? #$b#{{Random:It was okay..., I don't want to go to school anymore...$s, Miss Penny gave me a gold star!$h, It was really fun!$h, I played with Jas lots! She's my bestest friend.$h, I played with Vincent lots! He's my bestest friend.$h, I learnt lots and lots and Miss Penny said I was super smart!$h}}",
+		},
+		"When": {
+			"DayOfWeek": "Friday"
+		}
+	},
 	
 	
 	//Base Schedules Second Child
@@ -1243,6 +1244,16 @@
 			"DayOfWeek": "Sunday"
 		}
 	},
+	{	"LogName": "ThirdChild How School",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"Fri": "%How's school, {{Loe2run.ChildToNPC/ThirdChildName}}? #$b#{{Random:It was okay..., I don't want to go to school anymore...$s, Miss Penny gave me a gold star!$h, It was really fun!$h, I played with Jas lots! She's my bestest friend.$h, I played with Vincent lots! He's my bestest friend.$h, I learnt lots and lots and Miss Penny said I was super smart!$h}}",
+		},
+		"When": {
+			"DayOfWeek": "Friday"
+		}
+	},
 	
 	
 	//Third Child
@@ -1358,6 +1369,25 @@
 			"Hearts:Penny": "{{Range: 6, 14}}",
 			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
+			"ThirdBabysitter": "None"
+		}
+	},
+		{
+      "LogName": "ThirdChild None Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+      "FromFile": "assets/dialogue/no_babysitter3.json",
+	  "When": {
+				"ThirdBabysitter": "None"
+		}
+    },
+	{	"LogName": "ThirdChild None Schedule Dialogue Edit",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"fall": "800 Town 34 75 2/1200 Town 64 17 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:fall.000\"/1700 CommunityCenter 15 27 0/2000 CommunityCenter 25 9 1 sleep"
+		},
+		"When": {
 			"ThirdBabysitter": "None"
 		}
 	},
@@ -1822,7 +1852,16 @@
 			"DayOfWeek": "Sunday"
 		}
 	},
-	
+	{	"LogName": "FourthChild How School",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"Fri": "%How's school, {{Loe2run.ChildToNPC/FourthChildName}}? #$b#{{Random:It was okay..., I don't want to go to school anymore...$s, Miss Penny gave me a gold star!$h, It was really fun!$h, I played with Jas lots! She's my bestest friend.$h, I played with Vincent lots! He's my bestest friend.$h, I learnt lots and lots and Miss Penny said I was super smart!$h}}",
+		},
+		"When": {
+			"DayOfWeek": "Friday"
+		}
+	},
 	
 	
 	//Base Schedules
