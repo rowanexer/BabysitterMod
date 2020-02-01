@@ -11,6 +11,6 @@
   "Sat": "900 Town 33 89 3/1200 Town 18 16 1 square_3_3/1700 Town 28 88 1/2000 SamHouse 1 13 1 sleep",
   "spring": "800 Forest 96 23 0/1200 Town 23 26 1/1600 Town 92 53 2 wave_arms/2000 CommunityCenter 27 10 1 sleep",
   "summer": "800 CommunityCenter 26 15 2/1230 Beach 47 21 1/2000 CommunityCenter 27 10 1 sleep",
-  "fall": "800 Town 36 77 3/1200 Town 59 18 1/1700 CommunityCenter 11 27 3/2000 CommunityCenter 27 10 1 sleep",
+  "fall": "800 Town 36 77 3/1200 Town 64 15 1 sleep/1700 CommunityCenter 11 27 3/2000 CommunityCenter 27 10 1 sleep",
   "winter": "800 CommunityCenter 39 10 0/1300 CommunityCenter 6 10 0/1500 CommunityCenter 11 27 3/1700 CommunityCenter 14 19 0/2000 CommunityCenter 27 10 1 sleep"
 }

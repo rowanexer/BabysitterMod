@@ -23,25 +23,7 @@
          "AllowValues": "Sebastian, Alex, Abigail, Maru, None",
          "Default": "None"
       }
-   },/*
-   "DynamicTokens": [
-	{
-		"Name": "Elliot",
-		"Value": "elliotgirl",
-		"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Elliott",
-				"Loe2run.ChildToNPC/FirstChildGender": "female"
-		},
-	},
-	{
-		"Name": "Elliot",
-		"Value": "elliotboy",
-		"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Elliott",
-				"Loe2run.ChildToNPC/FirstChildGender": "male"
-		},
-	},
-	],*/
+   },
 	"DynamicTokens": [
 	
 	//Use this with specific dialogues
@@ -61,6 +43,9 @@
 				"spouse": "Abigail, Penny, Haley, Emily, Maru"
 		}
 	},
+	],
+	"RepeatResponse": [
+		7000,7001,7002,7003
 	],
   "Changes": [
 	
@@ -94,34 +79,54 @@
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Fri": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
+			"Wed": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
 			"HasValue:{{spouse}}": "true",
 			"spouse": "Penny",
-			"DayOfWeek": "Friday"
+			"DayOfWeek": "Wednesday"
 		}
 	},
 	{	"LogName": "Teacher Penny",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Fri": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
+			"Wed": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
-			"DayOfWeek": "Friday"
+			"DayOfWeek": "Wednesday"
 		}
-	},/*
+	},
 	{	"LogName": "FirstChild Rainy",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/rainy",
 		"Entries": {
-			"{{Loe2run.ChildToNPC/FirstChildName}}": "{{Random:♫Rain rain go away~♪$h, ♫Down came the rain and washed poor Incy out~♪$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, ♫It's raining~♪$h#$b#It's pouring~♪$h}}"
+			"{{Loe2run.ChildToNPC/FirstChildName}}": "{{Random:Rain rain go away~$h, Down came the rain and washed poor Incy out~$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, It's raining~~It's pouring~~$h}}"
 		},
 		"When": {
 			"Weather": "Rain"
 		}
-	},*/
+	},
+	{	"LogName": "FirstChild How Day",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"how_day_ask": "{{Random:It was okay..., I don't want to go to school anymore...$s, Miss Penny gave me a gold star!$h, It was really fun!$h, I played with Jas lots! She's my bestest friend.$h, I played with Vincent lots! He's my bestest friend.$h}}",
+		},
+		"When": {
+			"DayOfWeek": "Friday"
+		}
+	},
+	{	"LogName": "FirstChild Dinner",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Sun": "I want {{Random:omelet, pancakes, chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup, survival burgers}} for dinner tonight!",
+		},
+		"When": {
+			"DayOfWeek": "Sunday"
+		}
+	},
 	
 	
 	//Base Schedules First Child
@@ -209,6 +214,16 @@
 			"FirstBabysitter": "None"
 		}
     },
+	{	"LogName": "FirstChild None Schedule Dialogue Edit",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"fall": "800 Town 34 79 0/1200 Town 63 15 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.000\"/1700 CommunityCenter 16 19 0/2000 CommunityCenter 37 21 1 sleep"
+		},
+		"When": {
+			"FirstBabysitter": "None"
+		}
+	},
 	
 	//Alex schedule
 	{
@@ -649,33 +664,44 @@
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Fri": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
+			"Wed": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
 			"HasValue:{{spouse}}": "true",
-			"spouse": "Penny"
+			"spouse": "Penny",
+			"DayOfWeek": "Wednesday"
 		}
-	},
+	},	
 	{	"LogName": "Teacher Penny",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Fri": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, do origami, do writing practice, read stories | school}} today!$h"
+			"Wed": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
-			"DayOfWeek": "Friday"
+			"DayOfWeek": "Wednesday"
 		}
-	},/*
+	},
 	{	"LogName": "SecondChild Rainy",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/rainy",
 		"Entries": {
-			"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:♫Rain rain go away~♪$h, ♫Down came the rain and washed poor Incy out~♪$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, ♫It's raining~♪ $h#$b#It's pouring~♪$h}}"
+			"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:Down came the rain and washed poor Incy out~$h, Rain rain go away~$h, It's raining~ $h#$b#It's pouring~$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h}}"
 		},
 		"When": {
 			"Weather": "Rain"
 		}
-	},*/
+	},
+	{	"LogName": "SecondChild Dinner",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Sun": "I want {{Random:omelet, pancakes, chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup, survival burgers}} for dinner tonight!",
+		},
+		"When": {
+			"DayOfWeek": "Sunday"
+		}
+	},
 	
 	
 	//Base Schedules Second Child
@@ -767,7 +793,7 @@
 		}
 	},
 	{
-      "LogName": "SecondChild Schedule Dialogue",
+      "LogName": "SecondChild None Schedule Dialogue",
       "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/no_babysitter2.json",
@@ -775,6 +801,16 @@
 				"SecondBabysitter": "None"
 		}
     },
+	{	"LogName": "SecondChild None Schedule Dialogue Edit",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"fall": "800 Town 32 77 1/1200 Town 63 17 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.000\"/1700 CommunityCenter 9 23 3/2000 CommunityCenter 23 9 1 sleep"
+		},
+		"When": {
+			"SecondBabysitter": "None"
+		}
+	},
 	
 	//Alex schedule
 	{
@@ -1169,31 +1205,42 @@
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"Fri": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
+			"Wed": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
 			"HasValue:{{spouse}}": "true",
-			"spouse": "Penny"
+			"spouse": "Penny",
+			"DayOfWeek": "Wednesday"
 		}
 	},
 	{	"LogName": "Teacher Penny",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"Fri": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, do origami, do writing practice, read stories | school}} today!$h"
+			"Wed": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
-			"DayOfWeek": "Friday"
+			"DayOfWeek": "Wednesday"
 		}
 	},
 	{	"LogName": "ThirdChild Rainy",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/rainy",
 		"Entries": {
-			"{{Loe2run.ChildToNPC/ThirdChildName}}": "{{Random:♫Rain rain go away~♪$h, ♫Down came the rain and washed poor Incy out~♪$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, ♫It's raining~♪$h#$b#It's pouring~♪$h}}"
+			"{{Loe2run.ChildToNPC/ThirdChildName}}": "{{Random:Rain rain go away~$h, Down came the rain and washed poor Incy out~$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, It's raining~$h#$b#It's pouring~$h}}"
 		},
 		"When": {
 			"Weather": "Rain"
+		}
+	},
+	{	"LogName": "ThirdChild Dinner",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"Sun": "I want {{Random:omelet, pancakes, chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup, survival burgers}} for dinner tonight!",
+		},
+		"When": {
+			"DayOfWeek": "Sunday"
 		}
 	},
 	
@@ -1231,7 +1278,7 @@
       "LogName": "ThirdChild Schedule No Babysitter",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
-      "FromFile": "assets/schedules/no_babysitter2.json",
+      "FromFile": "assets/schedules/no_babysitter3.json",
 	  "When": {
 		"ThirdBabysitter": "None"
 		}
@@ -1737,33 +1784,44 @@
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"Fri": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
+			"Wed": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
 			"HasValue:{{spouse}}": "true",
-			"spouse": "Penny"
+			"spouse": "Penny",
+			"DayOfWeek": "Wednesday"
 		}
 	},
 	{	"LogName": "Teacher Penny",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"Fri": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, do origami, do writing practice, read stories | school}} today!$h"
+			"Wed": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
-			"DayOfWeek": "Friday"
+			"DayOfWeek": "Wednesday"
 		}
-	},/*
+	},
 	{	"LogName": "FourthChild Rainy",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/rainy",
 		"Entries": {
-			"{{Loe2run.ChildToNPC/FourthChildName}}": "{{Random:♫Rain rain go away~♪$h, ♫Down came the rain and washed poor Incy out~♪$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, ♫It's raining~♪$h#$b#It's pouring~♪$h}}"
+			"{{Loe2run.ChildToNPC/FourthChildName}}": "{{Random:Rain rain go away~$h, Down came the rain and washed poor Incy out~$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, It's raining~$h#$b#It's pouring~$h}}"
 		},
 		"When": {
 			"Weather": "Rain"
 		}
-	},*/
+	},
+	{	"LogName": "FourthChild Dinner",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"Sun": "I want {{Random:omelet, pancakes, chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup, survival burgers}} for dinner tonight!",
+		},
+		"When": {
+			"DayOfWeek": "Sunday"
+		}
+	},
 	
 	
 	
@@ -1772,7 +1830,7 @@
       "LogName": "FourthChild Schedule No Babysitter",
       "Action": "Load",
       "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
-      "FromFile": "assets/schedules/no_babysitter2.json",
+      "FromFile": "assets/schedules/no_babysitter4.json",
 	  "When": {
 		"FourthBabysitter": "None"
 		}
@@ -1854,6 +1912,26 @@
 			"FourthBabysitter": "None"
 		}
 	},
+	{
+      "LogName": "FourthChild None Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+      "FromFile": "assets/dialogue/no_babysitter4.json",
+	  "When": {
+			"FourthBabysitter": "None"
+		}
+    },
+	{	"LogName": "FourthChild None Schedule Dialogue Edit",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"fall": "800 Town 34 75 2/1200 Town 64 17 0  \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:fall.000\"/1700 CommunityCenter 15 27 0/2000 CommunityCenter 25 9 1 sleep",		
+		},
+		"When": {
+			"FourthBabysitter": "None"
+		}
+	},
+	
 	
 	//Alex schedule
 	{
