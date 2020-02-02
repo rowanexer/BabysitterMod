@@ -65,19 +65,7 @@
       "Action": "Load",
       "Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/dialogue.json"
-    },	
-	{	"LogName": "Parent Penny",
-		"Action": "EditData",
-		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
-		"Entries": {
-			"Wed": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
-		},
-		"When": {
-			"HasValue:{{spouse}}": "true",
-			"spouse": "Penny",
-			"DayOfWeek": "Wednesday"
-		}
-	},
+    },
 	{	"LogName": "Teacher Penny",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
@@ -209,7 +197,11 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"fall": "800 Town 34 79 0/1200 Town 63 15 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.000\"/1700 CommunityCenter 16 19 0/2000 CommunityCenter 37 21 1 sleep"
+			"rain": "800 CommunityCenter 27 16 3/1300 CommunityCenter 8 5 0/1410 CommunityCenter 14 19 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.000\"/1700 CommunityCenter 24 17 0/2000 CommunityCenter 37 21 1 sleep",
+			"spring": "800 Forest 92 20 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.000\"/1200 Town 33 26 3/1600 Town 97 52 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.001\"/2000 CommunityCenter 37 21 1 sleep",
+			"summer": "800 Beach 47 21 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.000\"/2000 CommunityCenter 37 21 1 sleep",
+			"fall": "800 Town 34 79 0/1200 Town 63 15 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.000\"/1700 CommunityCenter 16 19 0/2000 CommunityCenter 37 21 1 sleep",
+			"winter": "800 Town 34 79 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter.000\"/1300 Town 55 104 1/1500 CommunityCenter 24 17 0/2000 CommunityCenter 37 21 1 sleep"
 		},
 		"When": {
 			"FirstBabysitter": "None"
@@ -650,19 +642,6 @@
       "Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/dialogue.json"
     },
-	{	
-		"LogName": "Parent Penny",
-		"Action": "EditData",
-		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
-		"Entries": {
-			"Wed": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
-		},
-		"When": {
-			"HasValue:{{spouse}}": "true",
-			"spouse": "Penny",
-			"DayOfWeek": "Wednesday"
-		}
-	},	
 	{	"LogName": "Teacher Penny",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
@@ -806,7 +785,11 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"fall": "800 Town 32 77 1/1200 Town 63 17 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.000\"/1700 CommunityCenter 9 23 3/2000 CommunityCenter 23 9 1 sleep"
+		    "rain": "800 CommunityCenter 26 9 0/1300 CommunityCenter 8 9 3/1410 CommunityCenter 16 19 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.000\"/1700 CommunityCenter 27 16 3/2000 CommunityCenter 23 9 1 sleep",
+			"spring": "800 Forest 92 21 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.000\"/1200 Town 29 26 3/1600 Town 93 51 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.001\"/2000 CommunityCenter 23 9 1 sleep",
+			"summer": "800 Beach 42 24 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.000\"/1900 CommunityCenter 23 9 1 sleep",
+			"fall": "800 Town 32 77 1/1200 Town 63 17 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.000\"/1700 CommunityCenter 9 23 3/2000 CommunityCenter 23 9 1 sleep",
+			"winter": "800 Town 32 77 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter.000\"/1300 Town 55 105 1/1500 CommunityCenter 27 16 3/2000 CommunityCenter 23 9 1 sleep"
 		},
 		"When": {
 			"SecondBabysitter": "None"
@@ -1202,18 +1185,6 @@
       "Target": "Portraits/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/images/portraits2.png",
     },	
-	{	"LogName": "Parent Penny",
-		"Action": "EditData",
-		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/ThirdChildName}}",
-		"Entries": {
-			"Wed": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
-		},
-		"When": {
-			"HasValue:{{spouse}}": "true",
-			"spouse": "Penny",
-			"DayOfWeek": "Wednesday"
-		}
-	},
 	{	"LogName": "Teacher Penny",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/ThirdChildName}}",
@@ -1385,7 +1356,11 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"fall": "800 Town 34 75 2/1200 Town 64 17 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:fall.000\"/1700 CommunityCenter 15 27 0/2000 CommunityCenter 25 9 1 sleep"
+		    "rain": "800 CommunityCenter 39 10 0/1300 CommunityCenter 6 10 0/1410 CommunityCenter 19 22 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:rain.000\"/1700 CommunityCenter 14 19 0/2000 CommunityCenter 27 10 1 sleep",
+			"spring": "800 Forest 96 23 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:spring.000\"/1200 Town 23 26 1/1600 Town 92 53 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:spring.001\"/2000 CommunityCenter 27 10 1 sleep",
+			"summer": "800 Beach 44 17 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:summer.000\"/2000 CommunityCenter 27 10 1 sleep",
+			"fall": "800 Town 34 75 2/1200 Town 64 17 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:fall.000\"/1700 CommunityCenter 15 27 0/2000 CommunityCenter 25 9 1 sleep",
+			"winter": "800 Town 32 78 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:winter.000\"/1300 Town 53 104 3/1500 CommunityCenter 11 27 3/1700 CommunityCenter 14 19 0/2000 CommunityCenter 27 10 1 sleep"
 		},
 		"When": {
 			"ThirdBabysitter": "None"
@@ -1810,18 +1785,6 @@
       "Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FourthChildName}}",
       "FromFile": "assets/dialogue/dialogue.json"
     },
-	{	"LogName": "Parent Penny",
-		"Action": "EditData",
-		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FourthChildName}}",
-		"Entries": {
-			"Wed": "Mama says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
-		},
-		"When": {
-			"HasValue:{{spouse}}": "true",
-			"spouse": "Penny",
-			"DayOfWeek": "Wednesday"
-		}
-	},
 	{	"LogName": "Teacher Penny",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FourthChildName}}",
@@ -1964,7 +1927,11 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"fall": "800 Town 34 75 2/1200 Town 64 17 0  \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:fall.000\"/1700 CommunityCenter 15 27 0/2000 CommunityCenter 25 9 1 sleep",		
+			"rain": "800 CommunityCenter 26 17 0/1300 CommunityCenter 8 8 3/1410 CommunityCenter 15 27 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:spring.000\"/1700 CommunityCenter 18 20 1/2000 CommunityCenter 25 9 1 sleep",
+			"spring": "800 Forest 97 23 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:spring.000\"/1200 Town 29 27 3/1600 Town 91 51 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:spring.001\"/2000 CommunityCenter 25 9 1 sleep",
+			"summer": "800 Beach 48 19 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:summer.000\"/1900 CommunityCenter 25 9 1 sleep",
+			"fall": "800 Town 34 75 2/1200 Town 64 17 0  \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:fall.000\"/1700 CommunityCenter 15 27 0/2000 CommunityCenter 25 9 1 sleep",
+			"winter": "800 Town 36 77 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:winter.000\"/1300 Town 53 105 3/1500 CommunityCenter 18 20 1/2000 CommunityCenter 25 9 1 sleep"
 		},
 		"When": {
 			"FourthBabysitter": "None"
