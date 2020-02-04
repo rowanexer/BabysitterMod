@@ -57,7 +57,7 @@
       "Action": "EditData",
       "Target": "Data/NPCGiftTastes",
       "Entries": {
-        "{{Loe2run.ChildToNPC/FirstChildName}}": "This is my absolute favorite!/211 340 200 480 140/Thank you, I love it!/-80 -79 300/Um... Okay./-8 -4/Why would you give me this? So mean!/346 348 303 304 459/Thank you!/-5 -2 -81 -75 -79/"
+        "{{Loe2run.ChildToNPC/FirstChildName}}": "Wow! It's my favorite!/223 206 211 577 597 340 480 107 279/Yay, thank you!/203 224 233 213 232 234 221 220 -80 -79 300/...Why?/-8 -4 200 -22 -28/Nooo! I don't want it!/342 397 226 200 205 346 348 303 304 445 800 459/Thanks!/-5 -2 -81 -75 -79/"
       }
     },
     {
@@ -83,7 +83,7 @@
 			"{{Loe2run.ChildToNPC/FirstChildName}}": "{{Random:Rain rain go away~$h, Down came the rain and washed poor Incy out~$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, It's raining~~It's pouring~~$h}}"
 		},
 		"When": {
-			"Weather": "Rain"
+			"Weather": "Rain, Storm"
 		}
 	},
 	{	"LogName": "FirstChild How School",
@@ -156,7 +156,7 @@
     },
 	
 	//None Schedule
-	{	"LogName": "FirstChild None No School 9 23",
+	{	"LogName": "FirstChild None No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
@@ -165,6 +165,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "None"
+		}
+	},
+	{	"LogName": "FirstChild None No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "None"
@@ -218,7 +230,20 @@
 			"FirstBabysitter": "Alex"
 		}
     },
-	{	"LogName": "FirstChild Alex No School 9 23",
+	{	"LogName": "FirstChild Alex Schedule Dialogue Edit",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"rain": "800 JoshHouse 15 22 0/1300 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.000\"/1600 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.001\"/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+			"spring": "800 Town 63 64 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.000\"/1300 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.001\"/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+			"summer": "730 Beach 28 13 2 square_3_3/1210 Town 86 93 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.000\"/1700 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.001\"/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+			"winter": "900 BathHouse_MensLocker 2 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter.000\"/1500 JoshHouse 15 5 2/1800 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter.001\"/1930 JoshHouse 15 22 0/2100 JoshHouse 18 5 0/2240 JoshHouse 19 4 1 sit_down/2250 JoshHouse 19 4 1 sleep"
+		},
+		"When": {
+			"FirstBabysitter": "Alex"
+		}
+	},
+	{	"LogName": "FirstChild Alex No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
@@ -227,6 +252,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "Alex"
+		}
+	},
+	{	"LogName": "FirstChild Alex No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Alex"
@@ -250,18 +287,19 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 18 12 0/1200 HaleyHouse 5 20 2/1630 Town 50 69 1/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 18 12 0/1200 HaleyHouse 5 20 2/1630 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Wed.001\"/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 0, 5}}",
 			"DayOfWeek": "Wednesday",
 			"FirstBabysitter": "Alex"
 		}
-	},{	"LogName": "FirstChild Alex Wed Haley 6 Spring Fall",
+	},
+	{	"LogName": "FirstChild Alex Wed Haley 6 Spring Fall",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 18 12 0/1200 JoshHouse 15 5 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 18 12 0/1200 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Wed.000\"/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
@@ -274,7 +312,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 18 12 0/1210 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 18 12 0/1210 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Wed.000\"/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
@@ -287,7 +325,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 18 12 0/1200 BathHouse_MensLocker 2 5 2 wave_arms/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 18 12 0/1200 BathHouse_MensLocker 2 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Wed.000\"/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
@@ -300,7 +338,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 18 12 0/1200 HaleyHouse 5 20 2/1630 Town 50 69 1/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 18 12 0/1200 HaleyHouse 5 20 2/1630 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Wed.001\"/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 0, 5}}",
@@ -312,7 +350,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 12 0/1200 JoshHouse 15 5 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
+			"Tue": "800 ArchaeologyHouse 18 12 0/1200 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Tue.000\"/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
@@ -324,7 +362,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 12 0/1200 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
+			"Tue": "800 ArchaeologyHouse 18 12 0/1230 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Tue.000\"/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
@@ -336,17 +374,17 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 12 0/1200 BathHouse_MensLocker 2 5 2 wave_arms/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down/2410 JoshHouse 19 4 1 sleep"
+			"Tue": "800 ArchaeologyHouse 18 12 0/1200 BathHouse_MensLocker 2 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Tue.000\"/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down/2410 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
-			"Season": "summer",
+			"Season": "winter",
 			"FirstBabysitter": "Alex"
 		}
 	},
 	
-	{
 	//Sebastian Schedule
+	{
       "LogName": "FirstChild Sebastian Schedule Dialogue",
       "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
@@ -355,7 +393,23 @@
 			"FirstBabysitter": "Sebastian"
 		}
     },
-	{	"LogName": "FirstChild Sebastian No School 9 23",
+	{	"LogName": "FirstChild Sebastian Schedule Dialogue Edit",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"11": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:11.000\"/1710 ScienceHouse 29 11 0/1800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:11.001\"/2130 SebastianRoom 4 4 3 sleep",
+			"spring": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0\"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 4 4 3 sit_down/2140 SebastianRoom 4 4 3 sleep",
+			"Tue": "800 ArchaeologyHouse 18 12 0/1200 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Tue.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Tue.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sleep",	
+			"Fri": "800 ArchaeologyHouse 18 12 0/1200 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Fri.000\"/1500 Saloon 41 19 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Fri.000\"/2110 SebastianRoom 4 4 3 sleep",
+			"Thu": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Thu.000\"/1400 Railroad 30 46 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Thu.001\"/1800 Railroad 64 46 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Thu.002\"/1930 Railroad 5 46 1 sleep/2130 SebastianRoom 4 4 3 sleep",
+			"fall": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.000\"/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.001\"/2130 SebastianRoom 4 4 3 sleep",
+			"winter_16": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_16.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_16.001\"/1650 Beach 12 39 2/2340 SebastianRoom 4 4 3 sleep"
+		},
+		"When": {
+			"FirstBabysitter": "Sebastian"
+		}
+	},
+	{	"LogName": "FirstChild Sebastian No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
@@ -364,6 +418,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "Sebastian"
+		}
+	},
+	{	"LogName": "FirstChild Sebastian No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Sebastian"
@@ -387,7 +453,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"rain": "830 SebastianRoom 7 6 0/1500 Saloon 43 18 3/2110 SebastianRoom 9 9 3 sit_down"
+			"rain": "830 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.000\"/1500 Saloon 43 18 3/2110 SebastianRoom 9 9 3 sit_down"
 		},
 		"When": {
 			"Hearts:Sebastian": "{{Range: 2, 14}}",
@@ -399,7 +465,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"rain": "830 Beach 11 39 2/1700 SebastianRoom 9 9 3 sit_down"
+			"rain": "830 Beach 11 39 2/1700 SebastianRoom 9 9 3 sleep"
 		},
 		"When": {
 			"Hearts:Sebastian": "{{Range: 0, 1}}",
@@ -411,7 +477,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 12 0/1200 SebastianRoom 7 6 0/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sit_down"
+			"Tue": "800 ArchaeologyHouse 18 12 0/1200 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Tue.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Tue.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Wednesday",
@@ -423,7 +489,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 12 0/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0/2130 SebastianRoom 9 9 3 sit_down"
+			"Tue": "800 ArchaeologyHouse 18 12 0/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Tue.000\"/2130 SebastianRoom 9 9 3 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Wednesday",
@@ -433,15 +499,46 @@
 	},
 	
 	//FirstChild Maru Schedule
-	{	"LogName": "FirstChild Maru No School 9 23",
+	{
+      "LogName": "FirstChild Maru Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Maru.json",
+	  "When": {
+			"FirstBabysitter": "Maru"
+		}
+    },
+	{	"LogName": "FirstChild Maru Schedule Dialogue Edit",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"9": "GOTO {{season}}",
-			"23": "GOTO {{season}}"
+			"rain": "800 ScienceHouse 5 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.000\"/1230 ScienceHouse 3 21 3/1430 ScienceHouse 22 17 0/1630 ScienceHouse 7 6 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.001\"/1800 ScienceHouse 1 7 0/2000 ScienceHouse 5 5 0/2300 ScienceHouse 4 4 1 sleep",
+			"Tue": "800 ArchaeologyHouse 18 12 0/1200 Hospital 4 17 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Tue.000\"/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 27 11 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 sleep"		},
+		"When": {
+			"FirstBabysitter": "Maru"
+		}
+	},
+	{	"LogName": "FirstChild Maru No School Penny 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "820 Hospital 2 15 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:9.000\"/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 27 11 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 sleep",
+			"23": "GOTO 9"
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "Maru"
+		}
+	},
+	{	"LogName": "FirstChild Maru No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "820 Hospital 2 15 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:9.000\"/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 27 11 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 sleep",
+			"23": "GOTO 9"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Maru"
@@ -478,8 +575,8 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 18 12 0/1200 ScienceHouse 22 17 0/1400 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down",
-			"Fri": "800 ArchaeologyHouse 18 12 0/1200 ScienceHouse 22 17 0/1400 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down"
+			"Wed": "800 ArchaeologyHouse 18 12 0/1200 ScienceHouse 22 17 0/1400 Mountain 56 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down",
+			"Fri": "800 ArchaeologyHouse 18 12 0/1200 ScienceHouse 22 17 0/1400 Mountain 56 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sit_down"
 		},
 		"When": {
 			"DayOfWeek": "Wednesday, Friday",
@@ -502,7 +599,7 @@
 	},
 	
 	//FirstChild Abigail Schedule
-	{	"LogName": "FirstChild Abigail No School 9 23",
+	{	"LogName": "FirstChild Abigail No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
@@ -511,6 +608,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "Abigail"
+		}
+	},
+	{	"LogName": "FirstChild Abigail No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FirstBabysitter": "Abigail"
@@ -625,7 +734,7 @@
         "{{Loe2run.ChildToNPC/SecondChildName}}": "SecondChild/neutral/shy/positive/{{Loe2run.ChildToNPC/SecondChildGender}}/non-datable/null/Town/{{Loe2run.ChildToNPC/SecondChildBirthday}}/null/{{Loe2run.ChildToNPC/SecondChildBed}}/{{Loe2run.ChildToNPC/SecondChildName}}"
       },
       "When": {
-	"Loe2run.ChildToNPC/NumberTotalChildren": "2"	
+		"Loe2run.ChildToNPC/NumberTotalChildren": "2"	
       }
     },
     {
@@ -633,8 +742,8 @@
       "Action": "EditData",
       "Target": "Data/NPCGiftTastes",
       "Entries": {
-        "{{Loe2run.ChildToNPC/SecondChildName}}": "This is my absolute favorite!/211 340 200 480 140/Thank you, I love it!/-80 -79 300/Um... Okay./-8 -4/Why would you give me this? So mean!/346 348 303 304 459/Thank you!/-5 -2 -81 -75 -79/"
-      }
+        "{{Loe2run.ChildToNPC/SecondChildName}}": "Wow! It's my favorite!/223 206 211 577 597 340 480 107 279/Yay, thank you!/203 224 233 213 232 234 221 220 -80 -79 300/...Why?/-8 -4 200 -22 -28/Nooo! I don't want it!/342 397 226 200 205 346 348 303 304 445 800 459/Thanks!/-5 -2 -81 -75 -79/"
+		}
     },
     {
       "LogName": "SecondChild Dialogue",
@@ -659,7 +768,7 @@
 			"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:Down came the rain and washed poor Incy out~$h, Rain rain go away~$h, It's raining~ $h#$b#It's pouring~$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h}}"
 		},
 		"When": {
-			"Weather": "Rain"
+			"Weather": "Rain, Storm"
 		}
 	},
 	{	"LogName": "SecondChild Dinner",
@@ -744,7 +853,7 @@
     },
 	
 	//None Schedule
-	{	"LogName": "SecondChild None No School 9 23",
+	{	"LogName": "SecondChild None No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
@@ -753,6 +862,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"SecondBabysitter": "None"
+		}
+	},
+	{	"LogName": "SecondChild None No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"SecondBabysitter": "None"
@@ -806,7 +927,20 @@
 			"SecondBabysitter": "Alex"
 		}
     },
-	{	"LogName": "SecondChild Alex No School 9 23",
+	{	"LogName": "SecondChild Alex Schedule Dialogue Edit",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"rain": "800 JoshHouse 15 22 0/1300 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.000\"/1600 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.001\"/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+			"spring": "800 Town 63 64 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.000\"/1300 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.001\"/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+			"summer": "730 Beach 28 13 2 square_3_3/1210 Town 86 93 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.000\"/1700 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.001\"/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+			"winter": "900 BathHouse_MensLocker 2 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter.000\"/1500 JoshHouse 15 5 2/1800 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter.001\"/1930 JoshHouse 15 22 0/2100 JoshHouse 18 5 0/2240 JoshHouse 19 4 1 sit_down/2250 JoshHouse 19 4 1 sleep"
+		},
+		"When": {
+			"SecondBabysitter": "Alex"
+		}
+	},
+	{	"LogName": "SecondChild Alex No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
@@ -815,7 +949,19 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
-			"Hearts:Sam": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"SecondBabysitter": "Alex"
+		}
+	},
+	{	"LogName": "SecondChild Alex No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"SecondBabysitter": "Alex"
 		}
@@ -834,11 +980,22 @@
 			"SecondBabysitter": "Alex"
 		}
 	},
-	{	"LogName": "SecondChild Alex Wed Haley 6 Spring Fall",
+	{	"LogName": "SecondChild Alex Wed Not Haley 6",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 17 12 0/1200 JoshHouse 15 5 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 18 12 0/1200 HaleyHouse 5 20 2/1630 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Wed.001\"/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
+		},
+		"When": {
+			"Hearts:Haley": "{{Range: 0, 5}}",
+			"DayOfWeek": "Wednesday",
+			"SecondBabysitter": "Alex"
+		}
+	},{	"LogName": "SecondChild Alex Wed Haley 6 Spring Fall",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Wed": "800 ArchaeologyHouse 17 12 0/1200 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Wed.000\"/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
@@ -851,7 +1008,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 17 12 0/1210 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 17 12 0/1210 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Wed.000\"/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
@@ -864,7 +1021,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 17 12 0/1200 BathHouse_MensLocker 2 5 2 wave_arms/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 17 12 0/1200 BathHouse_MensLocker 2 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Wed.000\"/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
@@ -877,7 +1034,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 17 12 0/1200 HaleyHouse 5 20 2/1630 Town 50 69 1/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 17 12 0/1200 HaleyHouse 5 20 2/1630 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Wed.001\"/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 0, 5}}",
@@ -889,7 +1046,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 17 12 0/1200 JoshHouse 15 5 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
+			"Tue": "800 ArchaeologyHouse 17 12 0/1200 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.000\"/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
@@ -901,7 +1058,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 17 12 0/1200 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
+			"Tue": "800 ArchaeologyHouse 17 12 0/1230 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.000\"/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
@@ -913,11 +1070,11 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 17 12 0/1200 BathHouse_MensLocker 2 5 2 wave_arms/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down/2410 JoshHouse 19 4 1 sleep"
+			"Tue": "800 ArchaeologyHouse 17 12 0/1200 BathHouse_MensLocker 2 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.000\"/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down/2410 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
-			"Season": "summer",
+			"Season": "winter",
 			"SecondBabysitter": "Alex"
 		}
 	},
@@ -932,7 +1089,23 @@
 			"SecondBabysitter": "Sebastian"
 		}
     },
-	{	"LogName": "SecondChild Sebastian No School 9 23",
+	{	"LogName": "SecondChild Sebastian Schedule Dialogue Edit",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"11": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:11.000\"/1710 ScienceHouse 29 11 0/1800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:11.001\"/2130 SebastianRoom 4 4 3 sleep",
+			"spring": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0\"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 4 4 3 sit_down/2140 SebastianRoom 4 4 3 sleep",
+			"Tue": "800 ArchaeologyHouse 17 12 0/1200 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sleep",	
+			"Fri": "800 ArchaeologyHouse 17 12 0/1200 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Fri.000\"/1500 Saloon 41 19 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Fri.000\"/2110 SebastianRoom 4 4 3 sleep",
+			"Thu": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Thu.000\"/1400 Railroad 30 46 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Thu.001\"/1800 Railroad 64 46 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Thu.002\"/1930 Railroad 5 46 1 sleep/2130 SebastianRoom 4 4 3 sleep",
+			"fall": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.000\"/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.001\"/2130 SebastianRoom 4 4 3 sleep",
+			"winter_16": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_16.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_16.001\"/1650 Beach 12 39 2/2340 SebastianRoom 4 4 3 sleep"
+		},
+		"When": {
+			"SecondBabysitter": "Sebastian"
+		}
+	},
+	{	"LogName": "SecondChild Sebastian No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
@@ -941,6 +1114,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"SecondBabysitter": "Sebastian"
+		}
+	},
+	{	"LogName": "SecondChild Sebastian No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"SecondBabysitter": "Sebastian"
@@ -964,7 +1149,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"rain": "830 SebastianRoom 7 6 0/1500 Saloon 41 19 2/2110 SebastianRoom 9 9 3 sit_down"
+			"rain": "830 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.000\"/1500 Saloon 43 18 3/2110 SebastianRoom 9 9 3 sit_down"
 		},
 		"When": {
 			"Hearts:Sebastian": "{{Range: 2, 14}}",
@@ -976,7 +1161,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"rain": "830 Beach 11 39 2/1700 SebastianRoom 9 9 3 sit_down"
+			"rain": "830 Beach 11 39 2/1700 SebastianRoom 9 9 3 sleep"
 		},
 		"When": {
 			"Hearts:Sebastian": "{{Range: 0, 1}}",
@@ -988,7 +1173,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 17 12 0/1200 SebastianRoom 7 6 0/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sit_down"
+			"Tue": "800 ArchaeologyHouse 17 12 0/1200 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Wednesday",
@@ -1000,22 +1185,11 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 17 12 0/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0/2130 SebastianRoom 9 9 3 sit_down"
+			"Tue": "800 ArchaeologyHouse 17 12 0/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.000\"/2130 SebastianRoom 9 9 3 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Wednesday",
 			"Season": "fall",
-			"SecondBabysitter": "Sebastian"
-		}
-	},
-	{	"LogName": "SecondChild Sebastian Fri",
-		"Action": "EditData",
-		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
-		"Entries": {
-			"Fri": "800 ArchaeologyHouse 17 12 0/1200 SebastianRoom 7 6 0/1500 Saloon 41 19 2/2110 SebastianRoom 9 9 3 sit_down"
-		},
-		"When": {
-			"DayOfWeek": "Friday",
 			"SecondBabysitter": "Sebastian"
 		}
 	},
@@ -1120,7 +1294,7 @@
 			"SecondBabysitter": "Abigail"
 		}
 	},
-	{	"LogName": "SecondChild Abigail No School 9 23",
+	{	"LogName": "SecondChild Abigail No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
@@ -1129,6 +1303,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"SecondBabysitter": "Abigail"
+		}
+	},
+	{	"LogName": "SecondChild Abigail No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"SecondBabysitter": "Abigail"
@@ -1202,7 +1388,7 @@
 			"{{Loe2run.ChildToNPC/ThirdChildName}}": "{{Random:Rain rain go away~$h, Down came the rain and washed poor Incy out~$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, It's raining~$h#$b#It's pouring~$h}}"
 		},
 		"When": {
-			"Weather": "Rain"
+			"Weather": "Rain, Storm"
 		}
 	},
 	{	"LogName": "ThirdChild Dinner",
@@ -1244,8 +1430,8 @@
       "Action": "EditData",
       "Target": "Data/NPCGiftTastes",
       "Entries": {
-        "{{Loe2run.ChildToNPC/ThirdChildName}}": "This is my absolute favorite!/211 340 200 480 140/Thank you, I love it!/-80 -79 300/Um... Okay./-8 -4/Why would you give me this? So mean!/346 348 303 304 459/Thank you!/-5 -2 -81 -75 -79/"
-      }
+        "{{Loe2run.ChildToNPC/ThirdChildName}}": "Wow! It's my favorite!/223 206 211 577 597 340 480 107 279/Yay, thank you!/203 224 233 213 232 234 221 220 -80 -79 300/...Why?/-8 -4 200 -22 -28/Nooo! I don't want it!/342 397 226 200 205 346 348 303 304 445 800 459/Thanks!/-5 -2 -81 -75 -79/"
+		}
     },
     {
       "LogName": "ThirdChild Dialogue",
@@ -1264,8 +1450,7 @@
 	  "When": {
 		"ThirdBabysitter": "None"
 		}
-    },
-	
+    },	
 	{
       "LogName": "ThirdChild Schedule Sebastian",
       "Action": "Load",
@@ -1315,7 +1500,7 @@
     },
 	
 	//None Schedule
-	{	"LogName": "ThirdChild None No School 9 23",
+	{	"LogName": "ThirdChild None No School Penny9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
@@ -1324,6 +1509,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"ThirdBabysitter": "None"
+		}
+	},
+	{	"LogName": "ThirdChild None No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"ThirdBabysitter": "None"
@@ -1343,8 +1540,7 @@
 			"ThirdBabysitter": "None"
 		}
 	},
-		{
-      "LogName": "ThirdChild None Schedule Dialogue",
+    { "LogName": "ThirdChild None Schedule Dialogue",
       "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
       "FromFile": "assets/dialogue/no_babysitter3.json",
@@ -1377,7 +1573,20 @@
 			"ThirdBabysitter": "Alex"
 		}
     },
-	{	"LogName": "ThirdChild Alex No School 9 23",
+	{	"LogName": "ThirdChild Alex Schedule Dialogue Edit",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"rain": "800 JoshHouse 15 22 0/1300 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:rain.000\"/1600 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:rain.001\"/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+			"spring": "800 Town 63 64 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:spring.000\"/1300 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:spring.001\"/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+			"summer": "730 Beach 28 13 2 square_3_3/1210 Town 86 93 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:summer.000\"/1700 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:summer.001\"/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+			"winter": "900 BathHouse_MensLocker 2 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:winter.000\"/1500 JoshHouse 15 5 2/1800 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:winter.001\"/1930 JoshHouse 15 22 0/2100 JoshHouse 18 5 0/2240 JoshHouse 19 4 1 sit_down/2250 JoshHouse 19 4 1 sleep"
+		},
+		"When": {
+			"ThirdBabysitter": "Alex"
+		}
+	},
+	{	"LogName": "ThirdChild Alex No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
@@ -1386,7 +1595,19 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
-			"Hearts:Sam": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"ThirdBabysitter": "Alex"
+		}
+	},
+	{	"LogName": "ThirdChild Alex No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"ThirdBabysitter": "Alex"
 		}
@@ -1405,11 +1626,22 @@
 			"ThirdBabysitter": "Alex"
 		}
 	},
-	{	"LogName": "ThirdChild Alex Wed Haley 6 Spring Fall",
+	{	"LogName": "ThirdChild Alex Wed Not Haley 6",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 16 11 1/1200 JoshHouse 15 5 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 18 12 0/1200 HaleyHouse 5 20 2/1630 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Wed.001\"/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
+		},
+		"When": {
+			"Hearts:Haley": "{{Range: 0, 5}}",
+			"DayOfWeek": "Wednesday",
+			"ThirdBabysitter": "Alex"
+		}
+	},{	"LogName": "ThirdChild Alex Wed Haley 6 Spring Fall",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"Wed": "800 ArchaeologyHouse 16 11 1/1200 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Wed.000\"/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
@@ -1422,7 +1654,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 16 11 1/1210 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 16 11 1/1210 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Wed.000\"/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
@@ -1435,7 +1667,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 16 11 1/1200 BathHouse_MensLocker 2 5 2 wave_arms/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 16 11 1/1200 BathHouse_MensLocker 2 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Wed.000\"/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
@@ -1448,7 +1680,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 16 11 1/1200 HaleyHouse 5 20 2/1630 Town 50 69 1/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 16 11 1/1200 HaleyHouse 5 20 2/1630 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Wed.001\"/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 0, 5}}",
@@ -1460,7 +1692,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 16 11 1/1200 JoshHouse 15 5 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
+			"Tue": "800 ArchaeologyHouse 16 11 1/1200 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Tue.000\"/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
@@ -1472,7 +1704,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 16 11 1/1200 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
+			"Tue": "800 ArchaeologyHouse 16 11 1/1230 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Tue.000\"/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
@@ -1484,11 +1716,11 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 16 11 1/1200 BathHouse_MensLocker 2 5 2 wave_arms/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down/2410 JoshHouse 19 4 1 sleep"
+			"Tue": "800 ArchaeologyHouse 16 11 1/1200 BathHouse_MensLocker 2 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Tue.000\"/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down/2410 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
-			"Season": "summer",
+			"Season": "winter",
 			"ThirdBabysitter": "Alex"
 		}
 	},
@@ -1503,7 +1735,23 @@
 			"ThirdBabysitter": "Sebastian"
 		}
     },
-	{	"LogName": "ThirdChild Sebastian No School 9 23",
+	{	"LogName": "ThirdChild Sebastian Schedule Dialogue Edit",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"11": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:11.000\"/1710 ScienceHouse 29 11 0/1800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:11.001\"/2130 SebastianRoom 4 4 3 sleep",
+			"spring": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:spring.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0\"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:spring.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 4 4 3 sit_down/2140 SebastianRoom 4 4 3 sleep",
+			"Tue": "800 ArchaeologyHouse 16 11 1/1200 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Tue.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Tue.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sleep",	
+			"Fri": "800 ArchaeologyHouse 16 11 1/1200 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Fri.000\"/1500 Saloon 41 19 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Fri.000\"/2110 SebastianRoom 4 4 3 sleep",
+			"Thu": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Thu.000\"/1400 Railroad 30 46 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Thu.001\"/1800 Railroad 64 46 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Thu.002\"/1930 Railroad 5 46 1 sleep/2130 SebastianRoom 4 4 3 sleep",
+			"fall": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:fall.000\"/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:fall.001\"/2130 SebastianRoom 4 4 3 sleep",
+			"winter_16": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:winter_16.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:winter_16.001\"/1650 Beach 12 39 2/2340 SebastianRoom 4 4 3 sleep"
+		},
+		"When": {
+			"ThirdBabysitter": "Sebastian"
+		}
+	},
+	{	"LogName": "ThirdChild Sebastian No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
@@ -1512,6 +1760,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"ThirdBabysitter": "Sebastian"
+		}
+	},
+	{	"LogName": "ThirdChild Sebastian No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"ThirdBabysitter": "Sebastian"
@@ -1525,7 +1785,7 @@
 			"23": "GOTO Tue"
 		},
 		"When": {
-			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Penny": "{{Range: 6, 14}}",			
 			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"ThirdBabysitter": "Sebastian"
@@ -1535,7 +1795,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"rain": "830 SebastianRoom 7 6 0/1500 Saloon 41 19 2/2110 SebastianRoom 9 9 3 sit_down"
+			"rain": "830 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:rain.000\"/1500 Saloon 43 18 3/2110 SebastianRoom 9 9 3 sit_down"
 		},
 		"When": {
 			"Hearts:Sebastian": "{{Range: 2, 14}}",
@@ -1547,7 +1807,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"rain": "830 Beach 11 39 2/1700 SebastianRoom 9 9 3 sit_down"
+			"rain": "830 Beach 11 39 2/1700 SebastianRoom 9 9 3 sleep"
 		},
 		"When": {
 			"Hearts:Sebastian": "{{Range: 0, 1}}",
@@ -1559,7 +1819,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 16 11 1/1200 SebastianRoom 7 6 0/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sit_down"
+			"Tue": "800 ArchaeologyHouse 16 11 1/1200 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Tue.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Tue.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Wednesday",
@@ -1571,22 +1831,11 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 16 11 1/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0/2130 SebastianRoom 9 9 3 sit_down"
+			"Tue": "800 ArchaeologyHouse 16 11 1/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/ThirdChildName}}:Tue.000\"/2130 SebastianRoom 9 9 3 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Wednesday",
 			"Season": "fall",
-			"ThirdBabysitter": "Sebastian"
-		}
-	},
-	{	"LogName": "ThirdChild Sebastian Fri",
-		"Action": "EditData",
-		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
-		"Entries": {
-			"Fri": "800 ArchaeologyHouse 16 11 1/1200 SebastianRoom 7 6 0/1500 Saloon 41 19 2/2110 SebastianRoom 9 9 3 sit_down"
-		},
-		"When": {
-			"DayOfWeek": "Friday",
 			"ThirdBabysitter": "Sebastian"
 		}
 	},
@@ -1691,7 +1940,7 @@
 			"ThirdBabysitter": "Abigail"
 		}
 	},
-	{	"LogName": "ThirdChild Abigail No School 9 23",
+	{	"LogName": "ThirdChild Abigail No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
 		"Entries": {
@@ -1700,6 +1949,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"ThirdBabysitter": "Abigail"
+		}
+	},
+	{	"LogName": "ThirdChild Abigail No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/ThirdChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"ThirdBabysitter": "Abigail"
@@ -1713,7 +1974,7 @@
 			"23": "GOTO Tue"
 		},
 		"When": {
-			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Penny": "{{Range: 6, 14}}",			
 			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"ThirdBabysitter": "Abigail"
@@ -1776,8 +2037,8 @@
       "Action": "EditData",
       "Target": "Data/NPCGiftTastes",
       "Entries": {
-        "{{Loe2run.ChildToNPC/FourthChildName}}": "This is my absolute favorite!/211 340 200 480 140/Thank you, I love it!/-80 -79 300/Um... Okay./-8 -4/Why would you give me this? So mean!/346 348 303 304 459/Thank you!/-5 -2 -81 -75 -79/"
-      }
+        "{{Loe2run.ChildToNPC/FourthChildName}}": "Wow! It's my favorite!/223 206 211 577 597 340 480 107 279/Yay, thank you!/203 224 233 213 232 234 221 220 -80 -79 300/...Why?/-8 -4 200 -22 -28/Nooo! I don't want it!/342 397 226 200 205 346 348 303 304 445 800 459/Thanks!/-5 -2 -81 -75 -79/"
+		}
     },
     {
       "LogName": "FourthChild Dialogue",
@@ -1802,7 +2063,7 @@
 			"{{Loe2run.ChildToNPC/FourthChildName}}": "{{Random:Rain rain go away~$h, Down came the rain and washed poor Incy out~$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, It's raining~$h#$b#It's pouring~$h}}"
 		},
 		"When": {
-			"Weather": "Rain"
+			"Weather": "Rain, Storm"
 		}
 	},
 	{	"LogName": "FourthChild Dinner",
@@ -1886,7 +2147,7 @@
     },
 	
 	//None Schedule
-	{	"LogName": "FourthChild None No School 9 23",
+	{	"LogName": "FourthChild None No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
@@ -1895,6 +2156,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FourthBabysitter": "None"
+		}
+	},
+	{	"LogName": "FourthChild None No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FourthBabysitter": "None"
@@ -1949,7 +2222,20 @@
 			"FourthBabysitter": "Alex"
 		}
     },
-	{	"LogName": "FourthChild Alex No School 9 23",
+	{	"LogName": "FourthChild Alex Schedule Dialogue Edit",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"rain": "800 JoshHouse 15 22 0/1300 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:rain.000\"/1600 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:rain.001\"/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+			"spring": "800 Town 63 64 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:spring.000\"/1300 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:spring.001\"/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+			"summer": "730 Beach 28 13 2 square_3_3/1210 Town 86 93 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:summer.000\"/1700 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:summer.001\"/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+			"winter": "900 BathHouse_MensLocker 2 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:winter.000\"/1500 JoshHouse 15 5 2/1800 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:winter.001\"/1930 JoshHouse 15 22 0/2100 JoshHouse 18 5 0/2240 JoshHouse 19 4 1 sit_down/2250 JoshHouse 19 4 1 sleep"
+		},
+		"When": {
+			"FourthBabysitter": "Alex"
+		}
+	},
+	{	"LogName": "FourthChild Alex No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
@@ -1958,7 +2244,19 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
-			"Hearts:Sam": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FourthBabysitter": "Alex"
+		}
+	},
+		{	"LogName": "FourthChild Alex No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
+			"Hearts:Sam": "{{Range: 6, 14}}",
 			"Day": "9, 23",
 			"FourthBabysitter": "Alex"
 		}
@@ -1977,11 +2275,23 @@
 			"FourthBabysitter": "Alex"
 		}
 	},
-	{	"LogName": "FourthChild Alex Wed Haley 6 Spring Fall",
+	
+	{	"LogName": "FourthChild Alex Wed Not Haley 6",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 18 9 2/1200 JoshHouse 15 5 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 18 9 2/1200 HaleyHouse 5 20 2/1630 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Wed.001\"/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
+		},
+		"When": {
+			"Hearts:Haley": "{{Range: 0, 5}}",
+			"DayOfWeek": "Wednesday",
+			"FourthBabysitter": "Alex"
+		}
+	},{	"LogName": "FourthChild Alex Wed Haley 6 Spring Fall",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"Wed": "800 ArchaeologyHouse 18 9 2/1200 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Wed.000\"/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
@@ -1994,7 +2304,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 18 9 2/1210 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 18 9 2/1210 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Wed.000\"/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
@@ -2007,7 +2317,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 18 9 2/1200 BathHouse_MensLocker 2 5 2 wave_arms/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 18 9 2/1200 BathHouse_MensLocker 2 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Wed.000\"/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
@@ -2020,7 +2330,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"Wed": "800 ArchaeologyHouse 18 9 2/1200 HaleyHouse 5 20 2/1630 Town 50 69 1/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down"
+			"Wed": "800 ArchaeologyHouse 18 9 2/1200 HaleyHouse 5 20 2/1630 Town 50 69 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Wed.001\"/1840 JoshHouse 9 21 1 square_5_3/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"Hearts:Haley": "{{Range: 0, 5}}",
@@ -2032,7 +2342,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 9 2/1200 JoshHouse 15 5 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
+			"Tue": "800 ArchaeologyHouse 18 9 2/1200 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Tue.000\"/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
@@ -2044,7 +2354,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 9 2/1200 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
+			"Tue": "800 ArchaeologyHouse 18 9 2/1230 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Tue.000\"/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
@@ -2056,11 +2366,11 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 9 2/1200 BathHouse_MensLocker 2 5 2 wave_arms/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down/2410 JoshHouse 19 4 1 sleep"
+			"Tue": "800 ArchaeologyHouse 18 9 2/1200 BathHouse_MensLocker 2 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Tue.000\"/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down/2410 JoshHouse 19 4 1 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
-			"Season": "summer",
+			"Season": "winter",
 			"FourthBabysitter": "Alex"
 		}
 	},
@@ -2075,7 +2385,23 @@
 			"FourthBabysitter": "Sebastian"
 		}
     },
-	{	"LogName": "FourthChild Sebastian No School 9 23",
+	{	"LogName": "FourthChild Sebastian Schedule Dialogue Edit",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"11": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:11.000\"/1710 ScienceHouse 29 11 0/1800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:11.001\"/2130 SebastianRoom 4 4 3 sleep",
+			"spring": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:spring.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0\"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:spring.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 4 4 3 sit_down/2140 SebastianRoom 4 4 3 sleep",
+			"Tue": "800 ArchaeologyHouse 18 12 0/1200 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Tue.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Tue.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sleep",	
+			"Fri": "800 ArchaeologyHouse 18 12 0/1200 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Fri.000\"/1500 Saloon 41 19 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Fri.000\"/2110 SebastianRoom 4 4 3 sleep",
+			"Thu": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Thu.000\"/1400 Railroad 30 46 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Thu.001\"/1800 Railroad 64 46 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Thu.002\"/1930 Railroad 5 46 1 sleep/2130 SebastianRoom 4 4 3 sleep",
+			"fall": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:fall.000\"/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:fall.001\"/2130 SebastianRoom 4 4 3 sleep",
+			"winter_16": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:winter_16.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:winter_16.001\"/1650 Beach 12 39 2/2340 SebastianRoom 4 4 3 sleep"
+		},
+		"When": {
+			"FourthBabysitter": "Sebastian"
+		}
+	},
+	{	"LogName": "FourthChild Sebastian No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
@@ -2084,6 +2410,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FourthBabysitter": "Sebastian"
+		}
+	},
+	{	"LogName": "FourthChild Sebastian No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FourthBabysitter": "Sebastian"
@@ -2107,7 +2445,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"rain": "830 SebastianRoom 7 6 0/1500 Saloon 41 19 2/2110 SebastianRoom 9 9 3 sit_down"
+			"rain": "830 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:rain.000\"/1500 Saloon 43 18 3/2110 SebastianRoom 9 9 3 sit_down"
 		},
 		"When": {
 			"Hearts:Sebastian": "{{Range: 2, 14}}",
@@ -2119,7 +2457,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"rain": "830 Beach 11 39 2/1700 SebastianRoom 9 9 3 sit_down"
+			"rain": "830 Beach 11 39 2/1700 SebastianRoom 9 9 3 sleep"
 		},
 		"When": {
 			"Hearts:Sebastian": "{{Range: 0, 1}}",
@@ -2131,7 +2469,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 9 2/1200 SebastianRoom 7 6 0/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sit_down"
+			"Tue": "800 ArchaeologyHouse 18 9 2/1200 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Tue.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Tue.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 9 9 3 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Wednesday",
@@ -2143,22 +2481,11 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 9 2/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0/2130 SebastianRoom 9 9 3 sit_down"
+			"Tue": "800 ArchaeologyHouse 18 9 2/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FourthChildName}}:Tue.000\"/2130 SebastianRoom 9 9 3 sleep"
 		},
 		"When": {
 			"DayOfWeek": "Tuesday, Wednesday",
 			"Season": "fall",
-			"FourthBabysitter": "Sebastian"
-		}
-	},
-	{	"LogName": "FourthChild Sebastian Fri",
-		"Action": "EditData",
-		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
-		"Entries": {
-			"Fri": "800 ArchaeologyHouse 18 9 2/1200 SebastianRoom 7 6 0/1500 Saloon 41 19 2/2110 SebastianRoom 9 9 3 sit_down"
-		},
-		"When": {
-			"DayOfWeek": "Friday",
 			"FourthBabysitter": "Sebastian"
 		}
 	},
@@ -2263,7 +2590,7 @@
 			"FourthBabysitter": "Abigail"
 		}
 	},
-	{	"LogName": "FourthChild Abigail No School 9 23",
+	{	"LogName": "FourthChild Abigail No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
 		"Entries": {
@@ -2272,6 +2599,18 @@
 		},
 		"When": {
 			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FourthBabysitter": "Abigail"
+		}
+	},
+	{	"LogName": "FourthChild Abigail No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FourthChildName}}",
+		"Entries": {
+			"9": "GOTO {{season}}",
+			"23": "GOTO {{season}}"
+		},
+		"When": {
 			"Hearts:Sam": "{{Range: 0, 5}}",
 			"Day": "9, 23",
 			"FourthBabysitter": "Abigail"
