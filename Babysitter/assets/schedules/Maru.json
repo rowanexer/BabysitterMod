@@ -4,17 +4,17 @@
 	"rain": "800 ScienceHouse 5 5 0/1230 ScienceHouse 3 21 3/1430 ScienceHouse 22 17 0/1630 ScienceHouse 7 6 3/1800 ScienceHouse 1 7 0/2000 ScienceHouse 5 5 0/2300 ScienceHouse 4 4 1 sleep",
 	"Tue": "800 ArchaeologyHouse 18 12 0/1200 Hospital 4 17 0/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 27 11 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 sleep",
 	"Wed": "GOTO Tue",
-	"Thu": "820 Hospital 2 15 2/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 27 11 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 sleep",,
-	"Fri": "800 ArchaeologyHouse 18 12 0/1200 Town 64 15 2 sit_down/1800 ScienceHouse 7 6 3 sit_down/2200 ScienceHouse 4 4 2 sleep",
+	"Thu": "830 Hospital 2 15 2/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 27 11 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 sleep",
+	"Fri": "800 ArchaeologyHouse 18 12 0/1200 Town 64 15 2/1800 ScienceHouse 7 6 3/2200 ScienceHouse 4 4 2 sleep",
 	"Mon": "800 ScienceHouse 22 17 0/1330 Town 42 77 2/1830 ScienceHouse 7 6 3/2300 ScienceHouse 4 4 1 sleep",
 	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 1/2000 SamHouse 9 22 1 sleep",
 	"Sun": "GOTO Mon",
 	"Summer_Mon": "800 ScienceHouse 22 17 0/1310 Town 63 16 3/1830 ScienceHouse 7 6 3/2300 ScienceHouse 4 4 2 sleep",
 	"Summer_Sun": "800 ScienceHouse 22 17 0/1230 ScienceHouse 8 6 3/1810 ScienceHouse 7 6 3/2300 ScienceHouse 4 4 2 sleep",
-	"winter": "800 ScienceHouse 22 17 0/1100 CommunityCenter 17 25 3/1600 ScienceHouse 7 6 3/2200 ScienceHouse 4 4 2 sleep",
+	"winter": "800 ScienceHouse 22 17 0/1100 CommunityCenter 17 26 3/1600 ScienceHouse 7 6 3/2200 ScienceHouse 4 4 2 sleep",
 	"winter_16": "800 ScienceHouse 22 17 0/1100 ScienceHouse 7 6 3/1540 Beach 11 32 3/2330 ScienceHouse 4 4 2 sleep",
 	"CommunityCenter_Replacement": "ScienceHouse 6 20 0",
-	"summer": "800 ScienceHouse 22 17 0/1400 Mountain 55 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sleep",
-	"spring": "800 ScienceHouse 22 17 0/1400 Town 64 15 2 sit_down/1800 ScienceHouse 7 6 3/2200 ScienceHouse 4 4 2 sleep",
-	"fall": "800 ScienceHouse 22 17 0/1400 Town 64 15 2 sit_down/1800 ScienceHouse 7 6 3/2200 ScienceHouse 4 4 2 sleep"
+	"summer": "800 ScienceHouse 22 17 0/1400 Mountain 56 31 0/1900 Mountain 7 22 2/2400 ScienceHouse 4 4 2 sleep",
+	"spring": "800 ScienceHouse 22 17 0/1400 Town 64 15 2/1800 ScienceHouse 7 6 3/2200 ScienceHouse 4 4 2 sleep",
+	"fall": "800 ScienceHouse 22 17 0/1400 Town 64 15 2/1800 ScienceHouse 7 6 3/2200 ScienceHouse 4 4 2 sleep"
 }
