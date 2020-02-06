@@ -1,0 +1,15 @@
+{
+	"9": "GOTO season",
+	"23": "GOTO season",
+	"rain": "800 JoshHouse 15 22 0/1300 JoshHouse 15 5 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+	"summer_16": "800 Town 63 64 2 wave_arms/1030 Hospital 15 15 3/1600 JoshHouse 15 5 2 wave_arms/2400 JoshHouse 19 4 1 sit_down/2410 JoshHouse 19 4 1 sleep",
+	"winter_17": "900 BathHouse_MensLocker 5 5 2 wave_arms/1500 Beach 27 25 1/2400 JoshHouse 19 4 1 sit_down/2410 JoshHouse 19 4 1 sleep",
+	"winter": "800 BathHouse_MensLocker 2 5 2 wave_arms/1500 JoshHouse 15 5 2 wave_arms/1800 Town 50 69 1/1930 JoshHouse 15 22 0/2100 JoshHouse 18 5 0/2240 JoshHouse 19 4 1 sit_down/2250 JoshHouse 19 4 1 sleep",
+	"Tue": "800 ArchaeologyHouse 18 12 0/1200 JoshHouse 15 5 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+	"Wed": "800 ArchaeologyHouse 18 12 0/1200 HaleyHouse 3 21 1/1630 Town 50 69 1/1840 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+	"Fri": "GOTO Tue",
+	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 1/2000 SamHouse 9 22 1 sleep",
+	"summer": "800 Beach 20 11 2/1210 Town 86 93 2/1700 JoshHouse 15 5 2 wave_arms/1900 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+	"spring": "800 Town 63 64 2 wave_arms/1300 JoshHouse 15 5 2 wave_arms/1600 Town 50 69 1/1830 JoshHouse 15 22 0/2000 JoshHouse 18 5 0/2200 JoshHouse 19 4 1 sit_down/2210 JoshHouse 19 4 1 sleep",
+	"fall":  "GOTO spring"
+}

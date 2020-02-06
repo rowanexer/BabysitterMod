@@ -1,0 +1,21 @@
+{
+	"spring_Thu10_2": "Ssh, I've got a secret to tell you.#$e#...#$b#I love you.$4",
+	"summer_24_2": "Vincent told me there's a monster in the sewers...#$b#...Is that true?$s",
+	"fall_2_2": "I had a bad dream about the sewer monster...$s",
+	"fall_7_2": "You'd fight the sewer monster if it came out, wouldn't you Daddy?^You'd fight the sewer monster if it came out, wouldn't you Mommy?#$q 7000/7001 monster_followup #... #$b#$r 7000 50 monster_yes #Of course! #$r 7001 0 monster_no #No, it's too scary...",
+	"monster_yes": "Yeah, Daddy's the strongest!^Yeah, Mommy's the strongest!$h",
+	"monster_no": "...$s",
+	"monster_followup": "$p 7000#And then...Pow! POW!$a #$b#You'll fight the monster and blast it into the sun!$h|...Don't worry, Daddy. I'll protect you from the monster instead.^Don't worry, Mommy. I'll protect you from the monster instead.",
+	"spring_1_2": "I picked some flowers for you...$4 [591 597]",
+	"summer_1_2": "I picked some flowers for you...$4 [402 376]",
+	"fall_1_2": "I picked some flowers for you...$4 [595 421]",
+	"winter_1_2": "I picked some flowers for you...$4 [418]",
+	"winter_Thu_2": "%spouse told me off because I pulled %pet 's tail...$s",	
+	"Mon": "Daddy, Daddy!^Mommy, Mommy!$h#$b#Pick me up like you used to!$h",
+	"Tue": "I'm going to be a farmer just like you!$e#Test.",
+	"Wed": "Miss Penny says we're going to learn about dinosaurs today!$h",
+	"Thu": "Play with me today, Daddy!^Play with me today, Mommy!$h",
+	"Fri": "%How's school? #$b#It was okay...",
+	"Sat": "I wanna come with you today!$h #$b#I'm big enough for adventures, I swear!#$n",
+	"Sun": "I want sushi for dinner tonight!$h"
+}
