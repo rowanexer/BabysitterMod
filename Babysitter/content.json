@@ -10,6 +10,7 @@
          "Default": "None"
       }
    },
+
   "Changes": [
 	
 	//First Child
@@ -318,6 +319,7 @@
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
 			"Tue": "800 ArchaeologyHouse 17 12 0/1120 BathHouse_MensLocker 5 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.000\"/1330 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.000\"/1800 Town 50 69 1/1930 JoshHouse 15 22 0/2100 JoshHouse 18 5 0/2240 JoshHouse 19 4 1 sit_down/2250 JoshHouse 19 4 1 sleep"		},
+		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
 			"Season": "winter",
@@ -548,120 +550,6 @@
 			"DayOfWeek": "Wednesday, Friday",
 			"Season": "winter",
 			"FirstBabysitter": "Maru"
-		}
-	},
-	
-	//FirstChild Abigail Schedule
-	{	"LogName": "FirstChild Abigail No School Penny 9 23",
-		"Action": "EditData",
-		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-		"Entries": {
-			"9": "GOTO {{season}}",
-			"23": "GOTO {{season}}"
-		},
-		"When": {
-			"Hearts:Penny": "{{Range: 0, 5}}",
-			"Day": "9, 23",
-			"FirstBabysitter": "Abigail"
-		}
-	},
-	{	"LogName": "FirstChild Abigail No School Sam 9 23",
-		"Action": "EditData",
-		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-		"Entries": {
-			"9": "GOTO {{season}}",
-			"23": "GOTO {{season}}"
-		},
-		"When": {
-			"Hearts:Sam": "{{Range: 0, 5}}",
-			"Day": "9, 23",
-			"FirstBabysitter": "Abigail"
-		}
-	},
-	{	"LogName": "FirstChild Abigail School 9 23",
-		"Action": "EditData",
-		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-		"Entries": {
-			"9": "GOTO Tue",
-			"23": "GOTO Tue"
-		},
-		"When": {
-			"Hearts:Penny": "{{Range: 6, 14}}",
-			"Hearts:Sam": "{{Range: 6, 14}}",
-			"Day": "9, 23",
-			"FirstBabysitter": "Abigail"
-		}
-	},
-	{	"LogName": "FirstChild Abigail Tue Spring",
-		"Action": "EditData",
-		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 12 0/1200 Town 72 54 2/1630 SeedShop 2 6 0/1930 SeedShop 3 6 1 sit_down"
-		},
-		"When": {
-			"DayOfWeek": "Tuesday",
-			"Season": "spring",
-			"FirstBabysitter": "Abigail"
-		}
-	},
-	{	"LogName": "FirstChild Abigail Tue Summer",
-		"Action": "EditData",
-		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 12 0/1200 Mountain 49 31 1/1740 SeedShop 2 6 0/1930 SeedShop 3 6 1 sit_down"
-		},
-		"When": {
-			"DayOfWeek": "Tuesday",
-			"Season": "summer",
-			"FirstBabysitter": "Abigail"
-		}
-	},
-	{	"LogName": "FirstChild Abigail Tue Fall",
-		"Action": "EditData",
-		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 12 0/1200 BusStop 22 5 2/1700 SeedShop 2 6 0/1930 SeedShop 3 6 1 sit_down"
-		},
-		"When": {
-			"DayOfWeek": "Tuesday",
-			"Season": "fall",
-			"FirstBabysitter": "Abigail"
-		}
-	},
-	{	"LogName": "FirstChild Abigail Tue Winter",
-		"Action": "EditData",
-		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-		"Entries": {
-			"Tue": "800 ArchaeologyHouse 18 12 0/1200 ScienceHouse 5 19 1/1430 SeedShop 2 6 0/1930 SeedShop 3 6 1 sit_dow"
-		},
-		"When": {
-			"DayOfWeek": "Tuesday",
-			"Season": "winter",
-			"FirstBabysitter": "Abigail"
-		}
-	},
-	{	"LogName": "FirstChild Abigail Friend Rain",
-		"Action": "EditData",
-		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-		"Entries": {
-			"rain": "800 SeedShop 33 5 0/1100 SeedShop 5 19 0/1400 Saloon 35 18 0/2000 SeedShop 3 6 1 sit_down"
-		},
-		"When": {
-			"Hearts:Abigail": "{{Range: 2, 14}}",
-			"Weather": "rain",
-			"FirstBabysitter": "Abigail"
-		}
-	},
-	{	"LogName": "FirstChild Abigail Not Friend Rain",
-		"Action": "EditData",
-		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-		"Entries": {
-			"rain": "900 SeedShop 9 5 0/1100 SeedShop 13 20 0/1300 SeedShop 39 5 0/1500 SeedShop 7 9 2/1900 SeedShop 6 4 0/2200 SeedShop 1 9 3"
-		},
-		"When": {
-			"Hearts:Abigail": "{{Range: 0, 1}}",
-			"Weather": "rain",
-			"FirstBabysitter": "Abigail"
 		}
 	},
 	
@@ -945,10 +833,9 @@
 		"When": {
 			"Hearts:Haley": "{{Range: 6, 14}}",
 			"DayOfWeek": "Wednesday",
-			//"Season": "spring, fall",
 			"SecondBabysitter": "Alex"
 		}
-	},
+	},	
 	{	"LogName": "SecondChild Alex Tue Spring Fall",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
@@ -977,7 +864,8 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Tue": "800 ArchaeologyHouse 17 12 0/1120 BathHouse_MensLocker 5 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.000\"/1330 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.000\"/1800 Town 50 69 1/1930 JoshHouse 15 22 0/2100 JoshHouse 18 5 0/2240 JoshHouse 19 4 1 sit_down/2250 JoshHouse 19 4 1 sleep"		},
+			"Tue": "800 ArchaeologyHouse 17 12 0/1120 BathHouse_MensLocker 5 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.000\"/1330 JoshHouse 15 5 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Tue.000\"/1800 Town 50 69 1/1930 JoshHouse 15 22 0/2100 JoshHouse 18 5 0/2240 JoshHouse 19 4 1 sit_down/2250 JoshHouse 19 4 1 sleep"	
+		},
 		"When": {
 			"DayOfWeek": "Tuesday, Friday",
 			"Season": "winter",
@@ -1222,8 +1110,7 @@
       "Action": "Load",
       "Target": "Portraits/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/images/portraits2.png",
-    },	
-	
+    },		
 	//Animations for all children
     {
       "LogName": "Child Animations",
