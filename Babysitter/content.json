@@ -414,7 +414,7 @@
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"6": "800 SeedShop 5 19 0 dance/1040 SeedShop 5 22 3/1510 Mountain 47 24 2 dance \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:6.000\"/2000 SeedShop 3 6 1 child_sleep",
+			"6": "800 SeedShop 33 6 1/1040 SeedShop 5 22 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:6.000\"/1510 Mountain 47 24 2 dance \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:6.001\"/2000 SeedShop 3 6 1 child_sleep",
 			"spring_4": "800 SeedShop 10 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring_4.000\"/1230 Hospital 4 17 0/1330 Hospital 12 14 0/1600 SeedShop 8 4 1/2000 SeedShop 3 6 1 child_sleep",
 			"Sun": "800 SeedShop 10 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Sun.000\"/1030 SeedShop 26 7 3/1300 Forest 13 40 1  \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Sun.001\"/2000 SeedShop 3 6 1 child_sleep",
 			"fall_Mon": "800 SeedShop 8 4 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall_Mon.000\"/1100 Beach 13 39 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall_Mon.001\"/1800 SeedShop 3 6 1 child_sleep",
@@ -907,11 +907,11 @@
 			"SecondBabysitter": "Abigail"
 		}
     },
-	{	"LogName": "AFirstChild Abigail Schedule Dialogue Edit",
+	{	"LogName": "ASecondChild Abigail Schedule Dialogue Edit",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"6": "800 SeedShop 5 19 0 dance/1040 SeedShop 5 22 3/1510 Mountain 47 24 2 dance \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:6.000\"/2000 SeedShop 3 6 1 child_sleep",
+			"6": "800 SeedShop 33 6 1/1040 SeedShop 5 22 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:6.000\"/1510 Mountain 47 24 2 dance \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:6.001\"/2000 SeedShop 3 6 1 child_sleep",
 			"spring_4": "800 SeedShop 10 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring_4.000\"/1230 Hospital 4 17 0/1330 Hospital 12 14 0/1600 SeedShop 8 4 1/2000 SeedShop 3 6 1 child_sleep",
 			"Sun": "800 SeedShop 10 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Sun.000\"/1030 SeedShop 26 7 3/1300 Forest 13 40 1  \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Sun.001\"/2000 SeedShop 3 6 1 child_sleep",
 			"fall_Mon": "800 SeedShop 8 4 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall_Mon.000\"/1100 Beach 13 39 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall_Mon.001\"/1800 SeedShop 3 6 1 child_sleep",
