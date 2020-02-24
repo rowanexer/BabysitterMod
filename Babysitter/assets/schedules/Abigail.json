@@ -6,7 +6,7 @@
 	"25": "GOTO 11",
 	"rain": "800 SeedShop 8 4 1/1100 SeedShop 8 19 0/1300 SeedShop 33 6 1/1500 SeedShop 6 10 1/1800 SeedShop 8 4 1/2200 SeedShop 3 6 1 child_sleep",
 	"rain2": "800 SeedShop 33 5 0/1100 SeedShop 8 19 0/1400 Saloon 35 18 0/2000 SeedShop 3 6 1 child_sleep",
-	"winter_15": "800 SeedShop 33 6 1/1030 ScienceHouse 6 20 0/1430 Beach 32 34 2/2400 SeedShop 3 6 1 child_sleep",
+	"winter_15": "800 SeedShop 33 6 1/1030 ScienceHouse 6 20 0/1430 Beach 29 34 2/2400 SeedShop 3 6 1 child_sleep",
 	"fall_Mon": "800 SeedShop 8 4 1/1100 Beach 12 39 2/1800 SeedShop 3 6 1 child_sleep",
 	"spring_4": "800 SeedShop 10 5 0/1230 Hospital 4 17 0/1330 Hospital 12 14 0/1600 SeedShop 8 4 1/2000 SeedShop 3 6 1 child_sleep",
 	"Sun": "800 SeedShop 10 5 0/1030 SeedShop 26 7 3/1300 Forest 13 40 1/2000 SeedShop 3 6 1 child_sleep",

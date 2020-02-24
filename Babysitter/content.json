@@ -2,11 +2,11 @@
   "Format": "1.11.0",
    "ConfigSchema": {
       "FirstBabysitter": {
-         "AllowValues": "Sebastian, Alex, Abigail, Maru, None",
+         "AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, None",
          "Default": "None"
       },
 	  "SecondBabysitter": {
-         "AllowValues": "Sebastian, Alex, Abigail, Maru, None",
+         "AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, None",
          "Default": "None"
       },
 	},
@@ -49,8 +49,17 @@
       "Action": "EditData",
       "Target": "Data/NPCGiftTastes",
       "Entries": {
-        "{{Loe2run.ChildToNPC/FirstChildName}}": "Wow! It's my favorite!/223 206 211 577 597 340 480 107 279/Yay, thank you!/203 224 233 213 232 234 221 220 -80 -79 300/...Why?/-8 -4 200 -22 -28/Nooo! I don't want it!/342 397 226 200 205 346 348 303 304 445 800 459/Thanks!/-5 -2 -81 -75 -79/"
+        "{{Loe2run.ChildToNPC/FirstChildName}}": "Wow! It's my favorite!/223 206 211 577 597 107 279/Yay, thank you!/203 224 233 213 232 234 221 220 -80 -79 392 119 123 124/...Why?/-8 -4 200 -22 -28 -19 -24 209 -75 -81/Nooo! I don't want it!/342 397 226 200 205 346 348 303 304 445 800 459 257 205/Thanks!/408 18 22 283 -5 -2 -79/"
       }
+    },
+	{
+      "LogName": "NPC Gift Tastes Language",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "FromFile": "assets/dialogue/NPCGiftTastes-{{Language}}.json",
+		"When": {
+			"HasFile: assets/dialogue/NPCGiftTastes-{{Language}}.json": "true"
+		}
     },
     {
       "LogName": "FirstChild Dialogue",
@@ -58,6 +67,15 @@
       "Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/dialogue.json"
     },
+	{
+      "LogName": "FirstChild Dialogue Language",
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/dialogue-{{Language}}.json",
+		"When": {
+			"HasFile: assets/dialogue/dialogue-{{Language}}.json": "true"
+		}
+    },	
 	{	"LogName": "Teacher Penny",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
@@ -68,6 +86,17 @@
 			"DayOfWeek": "Wednesday"
 		}
 	},
+	{	"LogName": "Teacher Penny PT",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Wed": "Sinto falta da Penny dizendo que íamos {{Random:aprender sobre dinossauros, aprender sobre planetas, aprender sobre estrelas, aprender sobre flores, aprender sobre animais, fazer desenhos de macarrão, fazer origami, praticar escrever, ler histórias}} hoje!$h"	
+		},
+		"When": {
+			"DayOfWeek": "Wednesday",
+			"Language": "pt"
+		}
+	},		
 	{	"LogName": "FirstChild Rainy",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/rainy",
@@ -78,14 +107,36 @@
 			"Weather": "Rain, Storm"
 		}
 	},
+	{	"LogName": "FirstChild Rainy PT",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/rainy",
+		"Entries": {
+			"{{Loe2run.ChildToNPC/FirstChildName}}": "{{Random:Chuva chuva vá embora~$h, Entrou um pouco de água pela porta~$h, Fecha a janela...$h#$b#...Está chovendo!$h, Está chovendo~~Está alagando~~$h}}"
+		},
+		"When": {
+			"Weather": "Rain, Storm",
+			"Language": "pt"
+		}
+	},
 	{	"LogName": "FirstChild How School",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Fri": "%How's school, {{Loe2run.ChildToNPC/FirstChildName}}? #$b#{{Random:It was okay..., I don't want to go to school anymore...$s, Miss Penny gave me a gold star!$h, It was really fun!$h, I played with Jas lots! She's my bestest friend.$h, I played with Vincent lots! He's my bestest friend.$h, I learnt lots and lots and Miss Penny said I was super smart!$h}}",
+			"Fri": "%How's school, {{Loe2run.ChildToNPC/FirstChildName}}? #$b#{{Random:It was okay..., I don't want to go to school anymore...$s, Miss Penny gave me a gold star!$h, It was really fun!$h, I played with Jas lots! She's my bestest friend.$h, I played with Vincent lots! He's my bestest friend.$h, I learnt lots and lots and Miss Penny said I was super smart!$h}}"
 		},
 		"When": {
 			"DayOfWeek": "Friday"
+		}
+	},
+	{	"LogName": "FirstChild How School PT",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Fri": "%Na escola, {{Loe2run.ChildToNPC/FirstChildName}}? #$b#{{Random:Estava legal..., Eu não quero mais ir para a escola...$s, A senhora Penny me dava estrelas de ouro!$h, Era realmente divertido!$h, Eu brinquei muito com Jas! Ela é minha melhor amiga.$h, eu brinquei muito com Vincent! Ele é meu melhor amigo.$h, Eu aprendi muito com a senhora Penny, ela disse que eu sou inteligente!$h}}"
+		},
+		"When": {
+			"DayOfWeek": "Friday",
+			"Language": "pt"
 		}
 	},
 	{	"LogName": "FirstChild Dinner",
@@ -98,6 +149,17 @@
 			"DayOfWeek": "Sunday"
 		}
 	},
+	{	"LogName": "FirstChild Dinner PT",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Sun": "Eu quero {{Random:omelete, panquecas, bolo de chocolate, sorvete, batata frita, salada de fruta, bolinho de carangueijo, cocktail, sashimi, brownie, feijão, espaguete, sopa de abóbora, hamburguer}} para o jantar hoje á noite!"
+		},
+		"When": {
+			"DayOfWeek": "Sunday",
+			"Language": "pt"
+		}
+	},	
 	
 	//Base Schedules First Child
     {
@@ -144,7 +206,17 @@
 	  "When": {
 		"FirstBabysitter": "Maru"
 		}
+    },
+	{
+      "LogName": "AFirstChild Schedule Shane",
+      "Action": "Load",
+      "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/schedules/Shane.json",
+	  "When": {
+		"FirstBabysitter": "Shane"
+		}
     },	
+	
 	//None Schedule
 	{	"LogName": "FirstChild None No School Penny 9 23",
 		"Action": "EditData",
@@ -193,6 +265,16 @@
 			"FirstBabysitter": "None"
 		}
     },
+	{
+      "LogName": "FirstChild None Schedule Dialogue Language",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/no_babysitter1-{{Language}}.json",
+	  "When": {
+			"FirstBabysitter": "None",
+			"HasFile: assets/dialogue/no_babysitter1-{{Language}}.json": "true"
+		}
+    },
 	{	"LogName": "FirstChild None Schedule Dialogue Edit",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
@@ -216,6 +298,16 @@
       "FromFile": "assets/dialogue/Alex.json",
 	  "When": {
 			"FirstBabysitter": "Alex"
+		}
+    },
+	{
+      "LogName": "FirstChild Alex Schedule Dialogue Language",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Alex-{{Language}}.json",
+	  "When": {
+			"FirstBabysitter": "Alex",
+			"HasFile: assets/dialogue/Alex-{{Language}}.json": "true"
 		}
     },
 	{	"LogName": "FirstChild Alex Schedule Dialogue Edit",
@@ -280,6 +372,16 @@
 			"FirstBabysitter": "Sebastian"
 		}
     },
+	{
+      "LogName": "FirstChild Sebastian Schedule Dialogue Language",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Sebastian-{{Language}}.json",
+	  "When": {
+			"FirstBabysitter": "Sebastian",
+			"HasFile: assets/dialogue/Sebastian-{{Language}}.json": "true"
+		}
+    },
 	{	"LogName": "FirstChild Sebastian Schedule Dialogue Edit",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
@@ -341,6 +443,16 @@
       "FromFile": "assets/dialogue/Maru.json",
 	  "When": {
 			"FirstBabysitter": "Maru"
+		}
+    },
+	{
+      "LogName": "FirstChild Maru Schedule Dialogue Language",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Maru-{{Language}}.json",
+	  "When": {
+			"FirstBabysitter": "Maru",
+			"HasFile: assets/dialogue/Maru-{{Language}}.json": "true"
 		}
     },
 	{	"LogName": "AFirstChild Maru Schedule Dialogue Edit",
@@ -410,6 +522,16 @@
 			"FirstBabysitter": "Abigail"
 		}
     },
+	{
+      "LogName": "FirstChild Abigail Schedule Dialogue Language",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Abigail-{{Language}}.json",
+	  "When": {
+			"FirstBabysitter": "Abigail",
+			"HasFile: assets/dialogue/Abigail-{{Language}}.json": "true"
+		}
+    },
 	{	"LogName": "AFirstChild Abigail Schedule Dialogue Edit",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
@@ -467,7 +589,7 @@
 			"FirstBabysitter": "Abigail"
 		}
 	},
-	{	"LogName": "FirstChild Sebastian Not Friend 25 11",
+	{	"LogName": "FirstChild Abigail Sebastian Not Friend 25 11",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
@@ -478,7 +600,7 @@
 			"FirstBabysitter": "Abigail"
 		}
 	},
-	{	"LogName": "FirstChild Sebastian Friend 25 11",
+	{	"LogName": "FirstChild Abigail Sebastian Friend 25 11",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
@@ -487,6 +609,109 @@
 		"When": {
 			"Hearts:Sebastian": "{{Range: 6, 14}}",
 			"FirstBabysitter": "Abigail"
+		}
+	},
+	
+	//FirstChild Shane Schedule
+	{
+      "LogName": "FirstChild Shane Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Shane.json",
+	  "When": {
+			"FirstBabysitter": "Shane"
+		}
+    },
+	{
+      "LogName": "FirstChild Shane Schedule Dialogue Language",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Shane-{{Language}}.json",
+	  "When": {
+			"FirstBabysitter": "Shane",
+			"HasFile: assets/dialogue/Shane-{{Language}}.json": "true"
+		}
+    },
+	{
+      "LogName": "FirstChild Shane Schedule Dialogue Edit Dialogue",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+	  "Entries": {
+			"Sun.001": "%{{Loe2run.ChildToNPC/FirstChildName}} seems transfixed.",
+			"summer_Sun.001": "%{{Loe2run.ChildToNPC/FirstChildName}} seems transfixed.",
+			"default.003": "%{{Loe2run.ChildToNPC/FirstChildName}} seems transfixed.",
+			"spring.001": "%{{Loe2run.ChildToNPC/FirstChildName}} seems transfixed.",
+	  },
+	  "When": {
+			"FirstBabysitter": "Shane"
+		}
+    },
+	{
+      "LogName": "FirstChild Shane Schedule Dialogue Edit Dialogue PT",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+	  "Entries": {
+			"Sun.001": "%{{Loe2run.ChildToNPC/FirstChildName}} parece paralisada.",
+			"summer_Sun.001": "%{{Loe2run.ChildToNPC/FirstChildName}} parece paralisada.",
+			"default.003": "%{{Loe2run.ChildToNPC/FirstChildName}} parece paralisada.",
+			"spring.001": "%{{Loe2run.ChildToNPC/FirstChildName}} parece paralisada.",
+	  },
+	  "When": {
+			"FirstBabysitter": "Shane",
+			"Language": "pt"
+		}
+    },
+	{	"LogName": "AFirstChild Shane Schedule Dialogue Edit Schedule",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"default": "800 AnimalShop 24 17 1/1100 AnimalShop 28 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:default.000\"/1200 AnimalShop 2 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:default.001\"/1400 Saloon 10 20 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:default.002\"/1630 Saloon 25 18 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:default.003\"/1900 Saloon 1 18 0/2100 Saloon 23 18 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:default.004\"/2300 AnimalShop 24 8 1 child_sleep",
+			"spring": "800 JojaMart 10 17 1 child_sleep/1230 JojaMart 2 17 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.000\"/1330 JojaMart 22 16 3/1430 JojaMart 26 12 3/1530 JojaMart 18 12 2 wave_arms/1630 JojaMart 7 24 0/1700 Saloon 25 18 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.001\"/2300 AnimalShop 24 8 1 child_sleep",
+			"Sun": "800 AnimalShop 24 17 1/1100 AnimalShop 28 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Sun.000\"/1450 AnimalShop 17 15 2/1800 Saloon 25 18 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Sun.001\"/2400 AnimalShop 24 8 1 child_sleep",
+			"summer_Sun": "800 AnimalShop 24 17 1/1100 AnimalShop 28 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer_Sun.000\"/1450 AnimalShop 17 15 2/1800 Saloon 25 18 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer_Sun.001\"/2400 AnimalShop 24 8 1 child_sleep",
+			"winter_15": "800 AnimalShop 24 17 1/1100 AnimalShop 28 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_15.000\"/1500 Beach 22 24 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_15.001\"/2300 AnimalShop 24 8 1 child_sleep"
+		},
+		"When": {
+			"FirstBabysitter": "Shane"
+		}
+	},
+	{	"LogName": "FirstChild Shane No School Penny 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO spring",
+			"23": "GOTO spring"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "Shane"
+		}
+	},
+	{	"LogName": "FirstChild Shane No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO spring",
+			"23": "GOTO spring"
+		},
+		"When": {
+			"Hearts:Sam": "{{Range: 0, 5}}",
+			"FirstBabysitter": "Shane"
+		}
+	},
+	{	"LogName": "FirstChild Shane School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO Tue",
+			"23": "GOTO Tue"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "Shane"
 		}
 	},
 	
@@ -522,6 +747,15 @@
       "Entries": {
         "{{Loe2run.ChildToNPC/SecondChildName}}": "Wow! It's my favorite!/223 206 211 577 597 340 480 107 279/Yay, thank you!/203 224 233 213 232 234 221 220 -80 -79 300/...Why?/-8 -4 200 -22 -28/Nooo! I don't want it!/342 397 226 200 205 346 348 303 304 445 800 459/Thanks!/-5 -2 -81 -75 -79/"
 		}
+	},
+    {
+      "LogName": "NPC Gift Tastes Language",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "FromFile": "assets/dialogue/NPCGiftTastes-{{Language}}.json",
+		"When": {
+			"HasFile: assets/dialogue/NPCGiftTastes-{{Language}}.json": "true"
+		}
     },
     {
       "LogName": "SecondChild Dialogue",
@@ -529,24 +763,76 @@
       "Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/dialogue.json"
     },
+	{
+      "LogName": "SecondChild Dialogue Language",
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/dialogue-{{Language}}.json",
+		"When": {
+			"HasFile: assets/dialogue/dialogue-{{Language}}.json": "true"
+		}
+    },	
 	{	"LogName": "Teacher Penny",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Wed": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, do origami, do writing practice, read stories | school}} today!$h"
+			"Wed": "Miss Penny says we're going to {{Random:learn about dinosaurs, learn about planets, learn about stars, learn about flowers, learn about animals, make macaroni pictures, do origami, do writing practice, read stories | school}} today!$h"
 		},
 		"When": {
 			"DayOfWeek": "Wednesday"
 		}
 	},
+	{	"LogName": "Teacher Penny PT",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Wed": "Sinto falta da Penny dizendo que íamos {{Random:aprender sobre dinossauros, aprender sobre planetas, aprender sobre estrelas, aprender sobre flores, aprender sobre animais, fazer desenhos de macarrão, fazer origami, praticar escrever, ler histórias}} hoje!$h"	
+		},
+		"When": {
+			"DayOfWeek": "Wednesday",
+			"Language": "pt"
+		}
+	},		
 	{	"LogName": "SecondChild Rainy",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/rainy",
 		"Entries": {
-			"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:Down came the rain and washed poor Incy out~$h, Rain rain go away~$h, It's raining~ $h#$b#It's pouring~$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h}}"
+			"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:Rain rain go away~$h, Down came the rain and washed poor Incy out~$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, It's raining~~It's pouring~~$h}}"
 		},
 		"When": {
 			"Weather": "Rain, Storm"
+		}
+	},
+	{	"LogName": "SecondChild Rainy PT",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/rainy",
+		"Entries": {
+			"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:Chuva chuva vá embora~$h, Entrou um pouco de água pela porta~$h, Fecha a janela...$h#$b#...Está chovendo!$h, Está chovendo~~Está alagando~~$h}}"
+		},
+		"When": {
+			"Weather": "Rain, Storm",
+			"Language": "pt"
+		}
+	},
+	{	"LogName": "SecondChild How School",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Fri": "%How's school, {{Loe2run.ChildToNPC/SecondChildName}}? #$b#{{Random:It was okay..., I don't want to go to school anymore...$s, Miss Penny gave me a gold star!$h, It was really fun!$h, I played with Jas lots! She's my bestest friend.$h, I played with Vincent lots! He's my bestest friend.$h, I learnt lots and lots and Miss Penny said I was super smart!$h}}"
+		},
+		"When": {
+			"DayOfWeek": "Friday"
+		}
+	},
+	{	"LogName": "SecondChild How School PT",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Fri": "%Na escola, {{Loe2run.ChildToNPC/SecondChildName}}? #$b#{{Random:Estava legal..., Eu não quero mais ir para a escola...$s, A senhora Penny me dava estrelas de ouro!$h, Era realmente divertido!$h, Eu brinquei muito com Jas! Ela é minha melhor amiga.$h, eu brinquei muito com Vincent! Ele é meu melhor amigo.$h, Eu aprendi muito com a senhora Penny, ela disse que eu sou inteligente!$h}}"
+		},
+		"When": {
+			"DayOfWeek": "Friday",
+			"Language": "pt"
 		}
 	},
 	{	"LogName": "SecondChild Dinner",
@@ -559,16 +845,17 @@
 			"DayOfWeek": "Sunday"
 		}
 	},
-	{	"LogName": "SecondChild How School",
+	{	"LogName": "SecondChild Dinner PT",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Fri": "%How's school, {{Loe2run.ChildToNPC/SecondChildName}}? #$b#{{Random:It was okay..., I don't want to go to school anymore...$s, Miss Penny gave me a gold star!$h, It was really fun!$h, I played with Jas lots! She's my bestest friend.$h, I played with Vincent lots! He's my bestest friend.$h, I learnt lots and lots and Miss Penny said I was super smart!$h}}",
+			"Sun": "Eu quero {{Random:omelete, panquecas, bolo de chocolate, sorvete, batata frita, salada de fruta, bolinho de carangueijo, cocktail, sashimi, brownie, feijão, espaguete, sopa de abóbora, hamburguer}} para o jantar hoje á noite!"
 		},
 		"When": {
-			"DayOfWeek": "Friday"
+			"DayOfWeek": "Sunday",
+			"Language": "pt"
 		}
-	},
+	},	
 	
 	
 	//Base Schedules Second Child
@@ -581,7 +868,6 @@
 		"SecondBabysitter": "None"
 		}
     },
-	
 	{
       "LogName": "ASecondChild Schedule Sebastian",
       "Action": "Load",
@@ -619,15 +905,21 @@
 		}
     },
 	{
+      "LogName": "ASecondChild Schedule Shane",
+      "Action": "Load",
+      "Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/schedules/Shane.json",
+	  "When": {
+		"SecondBabysitter": "Shane"
+		}
+    },
+	{
       "LogName": "ZSecondChild School Schedule",
       "Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
 			  "Sat": "900 Town 33 90 3/1200 Town 23 12 2 wave_arms/1700 Town 29 92 0/2000 AnimalShop 2 7 1 child_sleep",
 			  "Tue": "800 ArchaeologyHouse 17 12 0/1400 Town 84 92 1/1620 Town 16 89 2/1750 AnimalShop 2 7 1 child_sleep",
-		},
-	  "When": {
-		"DayOfWeek": "Saturday"
 		}
     },
 	
@@ -680,6 +972,16 @@
 	  "When": {
 				"SecondBabysitter": "None"
 		}
+    },	
+	{
+      "LogName": "SecondChild None Schedule Dialogue Language",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/no_babysitter2-{{Language}}.json",
+	  "When": {
+			"SecondBabysitter": "None",
+			"HasFile: assets/dialogue/no_babysitter2-{{Language}}.json": "true"
+		}
     },
 	{	"LogName": "SecondChild None Schedule Dialogue Edit",
 		"Action": "EditData",
@@ -704,6 +1006,16 @@
       "FromFile": "assets/dialogue/Alex.json",
 	  "When": {
 			"SecondBabysitter": "Alex"
+		}
+    },	
+	{
+      "LogName": "SecondChild Alex Schedule Dialogue Language",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/Alex-{{Language}}.json",
+	  "When": {
+			"SecondBabysitter": "Alex",
+			"HasFile: assets/dialogue/Alex-{{Language}}.json": "true"
 		}
     },
 	{	"LogName": "SecondChild Alex Schedule Dialogue Edit",
@@ -770,7 +1082,17 @@
 	  "When": {
 			"SecondBabysitter": "Sebastian"
 		}
-    },	
+    },		
+	{
+      "LogName": "SecondChild Sebastian Schedule Dialogue Language",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/Sebastian-{{Language}}.json",
+	  "When": {
+			"SecondBabysitter": "Sebastian",
+			"HasFile: assets/dialogue/Sebastian-{{Language}}.json": "true"
+		}
+    },
 	{	"LogName": "SecondChild Sebastian Schedule Dialogue Edit",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
@@ -835,6 +1157,16 @@
       "FromFile": "assets/dialogue/Maru.json",
 	  "When": {
 			"SecondBabysitter": "Maru"
+		}
+    },	
+	{
+      "LogName": "SecondChild Maru Schedule Dialogue Language",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/Maru-{{Language}}.json",
+	  "When": {
+			"SecondBabysitter": "Maru",
+			"HasFile: assets/dialogue/Maru-{{Language}}.json": "true"
 		}
     },
 	{	"LogName": "ASecondChild Maru Schedule Dialogue Edit",
@@ -906,6 +1238,16 @@
 	  "When": {
 			"SecondBabysitter": "Abigail"
 		}
+    },	
+	{
+      "LogName": "SecondChild Abigail Schedule Dialogue Language",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/Abigail-{{Language}}.json",
+	  "When": {
+			"SecondBabysitter": "Abigail",
+			"HasFile: assets/dialogue/Abigail-{{Language}}.json": "true"
+		}
     },
 	{	"LogName": "ASecondChild Abigail Schedule Dialogue Edit",
 		"Action": "EditData",
@@ -965,6 +1307,110 @@
 			"SecondBabysitter": "Abigail"
 		}
 	},	
+	
+	//SecondChild Shane Schedule
+	{
+      "LogName": "SecondChild Shane Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/Shane.json",
+	  "When": {
+			"SecondBabysitter": "Shane"
+		}
+    },
+	{
+      "LogName": "SecondChild Shane Schedule Dialogue Language",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/Shane-{{Language}}.json",
+	  "When": {
+			"SecondBabysitter": "Shane",
+			"HasFile: assets/dialogue/Shane-{{Language}}.json": "true"
+		}
+    },
+	{
+      "LogName": "SecondChild Shane Schedule Dialogue Edit Dialogue",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+	  "Entries": {
+			"Sun.001": "%{{Loe2run.ChildToNPC/SecondChildName}} seems transfixed.",
+			"summer_Sun.001": "%{{Loe2run.ChildToNPC/SecondChildName}} seems transfixed.",
+			"default.003": "%{{Loe2run.ChildToNPC/SecondChildName}} seems transfixed.",
+			"spring.001": "%{{Loe2run.ChildToNPC/SecondChildName}} seems transfixed.",
+	  },
+	  "When": {
+			"SecondBabysitter": "Shane"
+		}
+    },
+	{
+      "LogName": "SecondChild Shane Schedule Dialogue Edit Dialogue PT",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+	  "Entries": {
+			"Sun.001": "%{{Loe2run.ChildToNPC/SecondChildName}} parece paralisada.",
+			"summer_Sun.001": "%{{Loe2run.ChildToNPC/SecondChildName}} parece paralisada.",
+			"default.003": "%{{Loe2run.ChildToNPC/SecondChildName}} parece paralisada.",
+			"spring.001": "%{{Loe2run.ChildToNPC/SecondChildName}} parece paralisada.",
+	  },
+	  "When": {
+			"SecondBabysitter": "Shane",
+			"Language": "pt"
+		}
+    },
+	{	"LogName": "ASecondChild Shane Schedule Dialogue Edit Schedule",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"default": "800 AnimalShop 24 17 1/1100 AnimalShop 28 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:default.000\"/1200 AnimalShop 2 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:default.001\"/1400 Saloon 10 20 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:default.002\"/1630 Saloon 25 18 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:default.003\"/1900 Saloon 1 18 0/2100 Saloon 23 18 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:default.004\"/2300 AnimalShop 24 8 1 child_sleep",
+			"spring": "800 JojaMart 10 17 1 child_sleep/1230 JojaMart 2 17 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.000\"/1330 JojaMart 22 16 3/1430 JojaMart 26 12 3/1530 JojaMart 18 12 2 wave_arms/1630 JojaMart 7 24 0/1700 Saloon 25 18 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.001\"/2300 AnimalShop 24 8 1 child_sleep",
+			"Sun": "800 AnimalShop 24 17 1/1100 AnimalShop 28 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Sun.000\"/1450 AnimalShop 17 15 2/1800 Saloon 25 18 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Sun.001\"/2400 AnimalShop 24 8 1 child_sleep",
+			"summer_Sun": "800 AnimalShop 24 17 1/1100 AnimalShop 28 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer_Sun.000\"/1450 AnimalShop 17 15 2/1800 Saloon 25 18 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer_Sun.001\"/2400 AnimalShop 24 8 1 child_sleep",
+			"winter_15": "800 AnimalShop 24 17 1/1100 AnimalShop 28 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_15.000\"/1500 Beach 22 24 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_15.001\"/2300 AnimalShop 24 8 1 child_sleep"
+		},
+		"When": {
+			"SecondBabysitter": "Shane"
+		}
+	},
+	{	"LogName": "SecondChild Shane No School Penny 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO spring",
+			"23": "GOTO spring"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"SecondBabysitter": "Shane"
+		}
+	},
+	{	"LogName": "SecondChild Shane No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO spring",
+			"23": "GOTO spring"
+		},
+		"When": {
+			"Hearts:Sam": "{{Range: 0, 5}}",
+			"SecondBabysitter": "Shane"
+		}
+	},
+	{	"LogName": "SecondChild Shane School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO Tue",
+			"23": "GOTO Tue"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
+			"Day": "9, 23",
+			"SecondBabysitter": "Shane"
+		}
+	},
+	
 	
 	//SecondChild Images
 	{	"LogName": "SecondChild Sprites",

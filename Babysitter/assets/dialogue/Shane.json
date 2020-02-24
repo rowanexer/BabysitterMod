@@ -1,0 +1,15 @@
+{
+	"spring.000": "Ah, Daddy!^Ah, Mommy!#$b#Shane won't push me.#$b#Give me a ride please?$l",
+	"spring.001": "%Your child seems transfixed.",							
+	"Sun.000": "This is Shane's book?#$b#He must know a lot about chickens!",
+	"Sun.001": "%Your child seems transfixed.",
+	"summer_Sun.000": "This is Shane's book?#$b#He must know a lot about chickens!",
+	"summer_Sun.001": "%Your child seems transfixed.",
+	"default.000": "This is Shane's book?#$b#He must know a lot about chickens!",
+	"default.002": "I want a milkshake please, Shane.",
+	"default.003": "%Your child seems transfixed.",
+	"default.004": "Why is Shane always drinking that yucky juice?$s",
+	"default.001": "It's so big and cuddly!#$b#I love this bear.$h",
+	"winter_15.000": "This is Shane's book?#$b#He must know a lot about chickens!",
+	"winter_15.001": "It's so cool! I wanna live on a boat too!$h"
+}
