@@ -2,11 +2,11 @@
   "Format": "1.11.0",
    "ConfigSchema": {
       "FirstBabysitter": {
-         "AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, None",
+         "AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, Linus, Emily, None",
          "Default": "None"
       },
 	  "SecondBabysitter": {
-         "AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, None",
+         "AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, Linus, Emily, None",
          "Default": "None"
       },
 	},
@@ -34,7 +34,7 @@
 	
 	//First Child
 	{
-      "LogName": "NPC Dispositions",
+      "LogName": "FirstChild Dispositions",
       "Action": "EditData",
       "Target": "Data/NPCDispositions",
       "Entries": {
@@ -45,20 +45,22 @@
       }
     },
     {
-      "LogName": "NPC Gift Tastes",
+      "LogName": "FirstChild Gift Tastes",
       "Action": "EditData",
       "Target": "Data/NPCGiftTastes",
       "Entries": {
-        "{{Loe2run.ChildToNPC/FirstChildName}}": "Wow! It's my favorite!/223 206 211 577 597 107 279/Yay, thank you!/203 224 233 213 232 234 221 220 -80 -79 392 119 123 124/...Why?/-8 -4 200 -22 -28 -19 -24 209 -75 -81/Nooo! I don't want it!/342 397 226 200 205 346 348 303 304 445 800 459 257 205/Thanks!/408 18 22 283 -5 -2 -79/"
+        "{{Loe2run.ChildToNPC/FirstChildName}}": "Wow! It's my favorite!/223 206 211 577 597 107 279 123 233/Yay, thank you!/203 224 213 232 234 221 220 -80 -79 392 119 124 188 192/...Why?/-8 -4 -22 -28 -19 209 -75 -81 200 800/Nooo! I don't want it!/342 397 226 205 346 348 303 304 445 459 257 202 265/Thanks!/408 18 22 283 -5 -2 /"
       }
     },
-	{
-      "LogName": "NPC Gift Tastes Language",
+    {
+      "LogName": "FirstChild Gift Tastes PT",
       "Action": "EditData",
       "Target": "Data/NPCGiftTastes",
-      "FromFile": "assets/dialogue/NPCGiftTastes-{{Language}}.json",
+      "Entries": {
+		"{{Loe2run.ChildToNPC/FirstChildName}}": "Wow! Isso é o meu favorito!/223 206 211 577 597 107 279 123 233/Yay, Obrigado!/203 224 213 232 234 221 220 -80 -79 392 119 124 188 192/...Porque?/-8 -4 -22 -28 -19 209 -75 -81 200 800/Não! Eu não quero!/342 397 226 205 346 348 303 304 445 459 257 202 265/Obrigado!/408 18 22 283 -5 -2/"      
+		},
 		"When": {
-			"HasFile: assets/dialogue/NPCGiftTastes-{{Language}}.json": "true"
+			"Language": "pt"
 		}
     },
     {
@@ -76,7 +78,7 @@
 			"HasFile: assets/dialogue/dialogue-{{Language}}.json": "true"
 		}
     },	
-	{	"LogName": "Teacher Penny",
+	{	"LogName": "FirstChild Teacher Penny",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
@@ -86,7 +88,7 @@
 			"DayOfWeek": "Wednesday"
 		}
 	},
-	{	"LogName": "Teacher Penny PT",
+	{	"LogName": "FirstChild Teacher Penny PT",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
@@ -159,7 +161,27 @@
 			"DayOfWeek": "Sunday",
 			"Language": "pt"
 		}
-	},	
+	},
+	{	"LogName": "FirstChild Not Pregnant",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Thu": "Play with me today, Daddy!^Play with me today, Mommy!$h"		
+		},
+		"When": {
+			"HavingChild:@{{playerName}}": "false"
+		}
+	},
+	{	"LogName": "FirstChild Pregnant",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Thu": "{{Random:I don't know if I want a new brother or sister...$s#$b#Can you tell the stork to take them back?, I can't wait till the new baby comes!$h#$b#They're gonna be my new best friend!$h}}"		
+		},
+		"When": {
+			"HavingChild": "@{{playerName}}"
+		}
+	},		
 	
 	//Base Schedules First Child
     {
@@ -216,6 +238,24 @@
 		"FirstBabysitter": "Shane"
 		}
     },	
+	{
+      "LogName": "AFirstChild Schedule Linus",
+      "Action": "Load",
+      "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/schedules/Linus.json",
+	  "When": {
+		"FirstBabysitter": "Linus"
+		}
+    },
+	{
+      "LogName": "AFirstChild Schedule Emily",
+      "Action": "Load",
+      "Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/schedules/Emily.json",
+	  "When": {
+		"FirstBabysitter": "Emily"
+		}
+    },		
 	
 	//None Schedule
 	{	"LogName": "FirstChild None No School Penny 9 23",
@@ -715,22 +755,160 @@
 		}
 	},
 	
-	//Images
+	//FirstChild Linus Schedule
+	{
+      "LogName": "FirstChild Linus Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Linus.json",
+	  "When": {
+			"FirstBabysitter": "Linus"
+		}
+    },
+	{	"LogName": "FirstChild Linus Schedule Dialogue Edit Schedule",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"rain": "800 Tent 1 3 1/1500 Mountain 14 7 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.000\"/1900 Tent 1 3 1 child_sleep",
+			"winter_15": "830 Mountain 30 9 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_15.000\"/1600 Beach 21 4 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_15.001\"/2330 Tent 1 3 1 child_sleep",
+			"summer": "800 Mountain 46 24 2/1300 Mountain 46 33 2 square_3_3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.000\"/1600 Mountain 30 9 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.001\"/2020 Tent 1 3 1 child_sleep",
+			"fall": "800 Railroad 15 57 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.000\"/1400 Mountain 43 17 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.001\"/1800 Tent 1 3 1 child_sleep",
+			"winter": "800 Mountain 30 9 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter.000\"/1400 BathHouse_Entry 5 4 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter.001\"/1800 Tent 1 3 1 child_sleep",
+			"spring": "800 Mountain 43 17 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.000\"/1400 Mountain 30 9 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.001\"/1900 Tent 2 3 3/2100 Tent 2 2 2/2300 Tent 1 3 1 child_sleep",
+		},
+		"When": {
+			"FirstBabysitter": "Linus"
+		}
+	},
+	{	"LogName": "FirstChild Linus No School Penny 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO season",
+			"23": "GOTO season"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "Linus"
+		}
+	},
+	{	"LogName": "FirstChild Linus No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO season",
+			"23": "GOTO season"
+		},
+		"When": {
+			"Hearts:Sam": "{{Range: 0, 5}}",
+			"FirstBabysitter": "Linus"
+		}
+	},
+	{	"LogName": "FirstChild Linus School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO Tue",
+			"23": "GOTO Tue"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "Linus"
+		}
+	},
+	
+	//FirstChild Emily Schedule
+	{
+      "LogName": "FirstChild Emily Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Emily.json",
+	  "When": {
+			"FirstBabysitter": "Emily"
+		}
+    },
+	{
+      "LogName": "FirstChild Emily Schedule Dialogue Edit Dialogue",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "Entries": {
+			"spring.002": "Hi, Daddy!^Hi, Mommy!$h#$b#I'm not normally allowed back here but Emily said I could!$h#$b#...#$b#Um ... um ... Here's your drink.$l#$b#%{{Loe2run.ChildToNPC/FirstChildName}} hands you an imaginary glass.",
+			"winter_11.001": "Hi, Daddy!^Hi, Mommy!$h#$b#I'm not normally allowed back here but Emily said I could!$h#$b#...#$b#Um ... um ... Here's your drink.$l#$b#%{{Loe2run.ChildToNPC/FirstChildName}} hands you an imaginary glass."
+		}
+    },
+	{	"LogName": "FirstChild Emily Schedule Dialogue Edit Schedule",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"winter_15": "900 HaleyHouse 15 5 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_15.000\"/1200 HaleyHouse 16 24 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_15.001\"/1430 Beach 26 36 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_15.002\"/2430 HaleyHouse 14 25 1 child_sleep",
+			"winter_11": "900 HaleyHouse 15 5 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_11.000\"/1030 Hospital 4 17 0/1330 Hospital 12 14 0/1600 Saloon 2 18 0/1900 Saloon 9 18 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_11.001\"/2200 Saloon 29 7 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_11.002\"/2430 HaleyHouse 14 25 1 child_sleep",
+			"spring": "800 HaleyHouse 15 5 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.000\"/1200 HaleyHouse 16 24 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.001\"/1530 Saloon 2 18 0/1800 Saloon 9 18 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.002\"/2100 Saloon 29 7 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.003\"/2430 HaleyHouse 14 25 1 child_sleep",
+			"Fri": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1530 Saloon 22 19 0 dance/1800 Saloon 22 19 0 dance \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Fri.000\"/2000 SamHouse 9 22 1 child_sleep"
+		},
+		"When": {
+			"FirstBabysitter": "Emily"
+		}
+	},
+	{	"LogName": "FirstChild Emily No School Penny 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO spring",
+			"23": "GOTO spring"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "Emily"
+		}
+	},
+	{	"LogName": "FirstChild Emily No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO spring",
+			"23": "GOTO spring"
+		},
+		"When": {
+			"Hearts:Sam": "{{Range: 0, 5}}",
+			"FirstBabysitter": "Emily"
+		}
+	},
+	{	"LogName": "FirstChild Emily School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"9": "GOTO Tue",
+			"23": "GOTO Tue"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
+			"Day": "9, 23",
+			"FirstBabysitter": "Emily"
+		}
+	},
+	
+	//FirstChild Images
 	{	"LogName": "FirstChild Sprites",
 		"Action": "Load",
 		"Target": "Characters/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"FromFile": "assets/images/toddler1.png"
 	},	
 	{
-      "LogName": "Portraits",
+      "LogName": "FirstChild Portraits",
       "Action": "Load",
       "Target": "Portraits/{{Loe2run.ChildToNPC/FirstChildName}}",
-      "FromFile": "assets/images/portraits1.png",
+      "FromFile": "assets/images/portraits1.png"
     },
+	
 	
 	//Second Child
 	{
-      "LogName": "NPC Dispositions",
+      "LogName": "SecondChild Dispositions",
       "Action": "EditData",
       "Target": "Data/NPCDispositions",
       "Entries": {
@@ -741,20 +919,22 @@
       }
     },
     {
-      "LogName": "NPC Gift Tastes",
+      "LogName": "SecondChild Gift Tastes",
       "Action": "EditData",
       "Target": "Data/NPCGiftTastes",
       "Entries": {
-        "{{Loe2run.ChildToNPC/SecondChildName}}": "Wow! It's my favorite!/223 206 211 577 597 340 480 107 279/Yay, thank you!/203 224 233 213 232 234 221 220 -80 -79 300/...Why?/-8 -4 200 -22 -28/Nooo! I don't want it!/342 397 226 200 205 346 348 303 304 445 800 459/Thanks!/-5 -2 -81 -75 -79/"
-		}
-	},
+        "{{Loe2run.ChildToNPC/SecondChildName}}": "Wow! It's my favorite!/223 206 211 577 597 107 279 123 233/Yay, thank you!/203 224 213 232 234 221 220 -80 -79 392 119 124 188 192/...Why?/-8 -4 -22 -28 -19 209 -75 -81 200 800/Nooo! I don't want it!/342 397 226 205 346 348 303 304 445 459 257 202 265/Thanks!/408 18 22 283 -5 -2/"
+      }
+    },
     {
-      "LogName": "NPC Gift Tastes Language",
+      "LogName": "SecondChild Gift Tastes PT",
       "Action": "EditData",
       "Target": "Data/NPCGiftTastes",
-      "FromFile": "assets/dialogue/NPCGiftTastes-{{Language}}.json",
+      "Entries": {
+		"{{Loe2run.ChildToNPC/SecondChildName}}": "Wow! Isso é o meu favorito!/223 206 211 577 597 107 279 123 233/Yay, Obrigado!/203 224 213 232 234 221 220 -80 -79 392 119 124 188 192/...Porque?/-8 -4 -22 -28 -19 209 -75 -81 200 800/Não! Eu não quero!/342 397 226 205 346 348 303 304 445 459 257 202 265/Obrigado!/408 18 22 283 -5 -2/"      
+		},
 		"When": {
-			"HasFile: assets/dialogue/NPCGiftTastes-{{Language}}.json": "true"
+			"Language": "pt"
 		}
     },
     {
@@ -772,7 +952,7 @@
 			"HasFile: assets/dialogue/dialogue-{{Language}}.json": "true"
 		}
     },	
-	{	"LogName": "Teacher Penny",
+	{	"LogName": "SecondChild Teacher Penny",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
@@ -782,7 +962,7 @@
 			"DayOfWeek": "Wednesday"
 		}
 	},
-	{	"LogName": "Teacher Penny PT",
+	{	"LogName": "SecondChild Teacher Penny PT",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
@@ -856,6 +1036,26 @@
 			"Language": "pt"
 		}
 	},	
+	{	"LogName": "SecondChild Not Pregnant",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Thu": "Play with me today, Daddy!^Play with me today, Mommy!$h"		
+		},
+		"When": {
+			"HavingChild:@{{playerName}}": "false"
+		}
+	},
+	{	"LogName": "SecondChild Pregnant",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Thu": "{{Random:I don't know if I want a new brother or sister...$s#$b#Can you tell the stork to take them back?, I can't wait till the new baby comes!$h#$b#They're gonna be my new best friend!$h}}"		
+		},
+		"When": {
+			"HavingChild": "@{{playerName}}"
+		}
+	},
 	
 	
 	//Base Schedules Second Child
@@ -911,6 +1111,24 @@
       "FromFile": "assets/schedules/Shane.json",
 	  "When": {
 		"SecondBabysitter": "Shane"
+		}
+    },
+	{
+      "LogName": "ASecondChild Schedule Linus",
+      "Action": "Load",
+      "Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/schedules/Linus.json",
+	  "When": {
+		"SecondBabysitter": "Linus"
+		}
+    },
+	{
+      "LogName": "ASecondChild Schedule Emily",
+      "Action": "Load",
+      "Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/schedules/Emily.json",
+	  "When": {
+		"SecondBabysitter": "Emily"
 		}
     },
 	{
@@ -1411,6 +1629,142 @@
 		}
 	},
 	
+	//SecondChild Linus Schedule
+	{
+      "LogName": "SecondChild Linus Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/Linus.json",
+	  "When": {
+			"SecondBabysitter": "Linus"
+		}
+    },
+	{	"LogName": "ASecondChild Linus Schedule Dialogue Edit Schedule",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"rain": "800 Tent 1 3 1/1500 Mountain 14 7 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.000\"/1900 Tent 1 3 1 child_sleep",
+			"winter_15": "830 Mountain 30 9 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_15.000\"/1600 Beach 21 4 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_15.001\"/2330 Tent 1 3 1 child_sleep",
+			"summer": "800 Mountain 46 24 2/1300 Mountain 46 33 2 square_3_3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.000\"/1600 Mountain 30 9 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.001\"/2020 Tent 1 3 1 child_sleep",
+			"fall": "800 Railroad 15 57 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.000\"/1400 Mountain 43 17 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.001\"/1800 Tent 1 3 1 child_sleep",
+			"winter": "800 Mountain 30 9 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter.000\"/1400 BathHouse_Entry 5 4 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter.001\"/1800 Tent 1 3 1 child_sleep",
+			"spring": "800 Mountain 43 17 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.000\"/1400 Mountain 30 9 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.001\"/1900 Tent 2 3 3/2100 Tent 2 2 2/2300 Tent 1 3 1 child_sleep",
+		},
+		"When": {
+			"SecondBabysitter": "Linus"
+		}
+	},
+	{	"LogName": "SecondChild Linus No School Penny 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO spring",
+			"23": "GOTO spring"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"SecondBabysitter": "Linus"
+		}
+	},
+	{	"LogName": "SecondChild Linus No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO spring",
+			"23": "GOTO spring"
+		},
+		"When": {
+			"Hearts:Sam": "{{Range: 0, 5}}",
+			"SecondBabysitter": "Linus"
+		}
+	},
+	{	"LogName": "SecondChild Linus School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO Tue",
+			"23": "GOTO Tue"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
+			"Day": "9, 23",
+			"SecondBabysitter": "Linus"
+		}
+	},
+	
+	//SecondChild Emily Schedule
+	{
+      "LogName": "SecondChild Emily Schedule Dialogue",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/Emily.json",
+	  "When": {
+			"SecondBabysitter": "Emily"
+		}
+    },
+	{
+      "LogName": "SecondChild Emily Schedule Dialogue Edit Dialogue",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "Entries": {
+			"spring.002": "Hi, Daddy!^Hi, Mommy!$h#$b#I'm not normally allowed back here but Emily said I could!$h#$b#...#$b#Um ... um ... Here's your drink.$l#$b#%{{Loe2run.ChildToNPC/SecondChildName}} hands you an imaginary glass.",
+			"winter_11.001": "Hi, Daddy!^Hi, Mommy!$h#$b#I'm not normally allowed back here but Emily said I could!$h#$b#...#$b#Um ... um ... Here's your drink.$l#$b#%{{Loe2run.ChildToNPC/SecondChildName}} hands you an imaginary glass."
+		}
+    },
+	{	"LogName": "SecondChild Emily Schedule Dialogue Edit Schedule",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"winter_15": "900 HaleyHouse 15 5 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_15.000\"/1200 HaleyHouse 16 24 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_15.001\"/1430 Beach 26 36 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_15.002\"/2430 HaleyHouse 14 25 1 child_sleep",
+			"winter_11": "900 HaleyHouse 15 5 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_11.000\"/1030 Hospital 4 17 0/1330 Hospital 12 14 0/1600 Saloon 2 18 0/1900 Saloon 9 18 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_11.001\"/2200 Saloon 29 7 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_11.002\"/2430 HaleyHouse 14 25 1 child_sleep",
+			"spring": "800 HaleyHouse 15 5 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.000\"/1200 HaleyHouse 16 24 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.001\"/1530 Saloon 2 18 0/1800 Saloon 9 18 2 wave_arms \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.002\"/2100 Saloon 29 7 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.003\"/2430 HaleyHouse 14 25 1 child_sleep",
+			"Fri": "800 ArchaeologyHouse 17 12 0/1400 Town 84 92 1/1530 Saloon 22 19 0 dance/1800 Saloon 22 19 0 dance \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Fri.000\"/2000 AnimalShop 2 7 1 child_sleep"
+		},
+		"When": {
+			"SecondBabysitter": "Emily"
+		}
+	},
+	{	"LogName": "SecondChild Emily No School Penny 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO spring",
+			"23": "GOTO spring"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 0, 5}}",
+			"Day": "9, 23",
+			"SecondBabysitter": "Emily"
+		}
+	},
+	{	"LogName": "SecondChild Emily No School Sam 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO spring",
+			"23": "GOTO spring"
+		},
+		"When": {
+			"Hearts:Sam": "{{Range: 0, 5}}",
+			"SecondBabysitter": "Emily"
+		}
+	},
+	{	"LogName": "SecondChild Emily School 9 23",
+		"Action": "EditData",
+		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"9": "GOTO Tue",
+			"23": "GOTO Tue"
+		},
+		"When": {
+			"Hearts:Penny": "{{Range: 6, 14}}",
+			"Hearts:Sam": "{{Range: 6, 14}}",
+			"Day": "9, 23",
+			"SecondBabysitter": "Emily"
+		}
+	},
 	
 	//SecondChild Images
 	{	"LogName": "SecondChild Sprites",
@@ -1419,10 +1773,10 @@
 		"FromFile": "assets/images/toddler2.png"
 	},	
 	{
-      "LogName": "Portraits",
+      "LogName": "SecondChild Portraits",
       "Action": "Load",
       "Target": "Portraits/{{Loe2run.ChildToNPC/SecondChildName}}",
-      "FromFile": "assets/images/portraits2.png",
+      "FromFile": "assets/images/portraits2.png"
     },
 	
 	//Animations for all children
