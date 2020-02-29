@@ -41,7 +41,7 @@
         "{{Loe2run.ChildToNPC/FirstChildName}}": "FirstChild/neutral/neutral/neutral/{{Loe2run.ChildToNPC/FirstChildGender}}/non-datable/null/Town/{{Loe2run.ChildToNPC/FirstChildBirthday}}/null/{{Loe2run.ChildToNPC/FirstChildBed}}/{{Loe2run.ChildToNPC/FirstChildName}}"
       },
       "When": {
-	"Loe2run.ChildToNPC/NumberTotalChildren": "1, 2, 3, 4"	
+		"Loe2run.ChildToNPC/NumberTotalChildren": "1, 2, 3, 4"	
       }
     },
     {
@@ -181,7 +181,28 @@
 		"When": {
 			"HavingChild": "@{{playerName}}"
 		}
-	},		
+	},	
+	{	"LogName": "FirstChild Not Pregnant PT",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Thu": "Brinque comigo hoje, Papai!^Brinque comigo hoje, Mamãe!$h"
+		},
+		"When": {
+			"HavingChild:@{{playerName}}": "false",
+			"Language": "pt"
+		}
+	},
+	{	"LogName": "FirstChild Pregnant PT",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Thu": "{{Random:Não sei se quero uma irmã ou um irmão...$s#$b#Você pode pedir à cegonha para trazê-lo?, Eu não consigo esperar para que ele venha!$h#$b#O bebê vai ser meu melhor amigo!$h}}"		},
+		"When": {
+			"HavingChild": "@{{playerName}}",
+			"Language": "pt"
+		}
+	},
 	
 	//Base Schedules First Child
     {
@@ -302,12 +323,13 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/no_babysitter1.json",
 	  "When": {
-			"FirstBabysitter": "None"
+			"FirstBabysitter": "None",
+			"HasFile: assets/dialogue/no_babysitter1-{{Language}}.json": "false"
 		}
     },
 	{
       "LogName": "FirstChild None Schedule Dialogue Language",
-      "Action": "EditData",
+      "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/no_babysitter1-{{Language}}.json",
 	  "When": {
@@ -337,12 +359,13 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/Alex.json",
 	  "When": {
-			"FirstBabysitter": "Alex"
+			"FirstBabysitter": "Alex",
+			"HasFile: assets/dialogue/Alex-{{Language}}.json": "false"
 		}
     },
 	{
       "LogName": "FirstChild Alex Schedule Dialogue Language",
-      "Action": "EditData",
+      "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/Alex-{{Language}}.json",
 	  "When": {
@@ -409,12 +432,13 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/Sebastian.json",
 	  "When": {
-			"FirstBabysitter": "Sebastian"
+			"FirstBabysitter": "Sebastian",
+			"HasFile: assets/dialogue/Sebastian-{{Language}}.json": "false"
 		}
     },
 	{
       "LogName": "FirstChild Sebastian Schedule Dialogue Language",
-      "Action": "EditData",
+      "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/Sebastian-{{Language}}.json",
 	  "When": {
@@ -482,12 +506,13 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/Maru.json",
 	  "When": {
-			"FirstBabysitter": "Maru"
+			"FirstBabysitter": "Maru",
+			"HasFile: assets/dialogue/Maru-{{Language}}.json": "false"
 		}
     },
 	{
       "LogName": "FirstChild Maru Schedule Dialogue Language",
-      "Action": "EditData",
+      "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/Maru-{{Language}}.json",
 	  "When": {
@@ -559,12 +584,13 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/Abigail.json",
 	  "When": {
-			"FirstBabysitter": "Abigail"
+			"FirstBabysitter": "Abigail",
+			"HasFile: assets/dialogue/Abigail-{{Language}}.json": "false"
 		}
     },
 	{
-      "LogName": "FirstChild Abigail Schedule Dialogue Language",
-      "Action": "EditData",
+      "LogName": "FirstChild Abigail Schedule Dialogue Language",      
+	  "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/Abigail-{{Language}}.json",
 	  "When": {
@@ -659,12 +685,13 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/Shane.json",
 	  "When": {
-			"FirstBabysitter": "Shane"
+			"FirstBabysitter": "Shane",
+			"HasFile: assets/dialogue/Shane-{{Language}}.json": "false"
 		}
     },
 	{
       "LogName": "FirstChild Shane Schedule Dialogue Language",
-      "Action": "EditData",
+      "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/Shane-{{Language}}.json",
 	  "When": {
@@ -762,7 +789,18 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/Linus.json",
 	  "When": {
-			"FirstBabysitter": "Linus"
+			"FirstBabysitter": "Linus",
+			"HasFile: assets/dialogue/Linus-{{Language}}.json": "false"
+		}
+    },
+	{
+      "LogName": "FirstChild Linus Schedule Dialogue Language",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Linus-{{Language}}.json",
+	  "When": {
+			"FirstBabysitter": "Linus",
+			"HasFile: assets/dialogue/Linus-{{Language}}.json": "true"
 		}
     },
 	{	"LogName": "FirstChild Linus Schedule Dialogue Edit Schedule",
@@ -827,7 +865,18 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/Emily.json",
 	  "When": {
-			"FirstBabysitter": "Emily"
+			"FirstBabysitter": "Emily",
+			"HasFile: assets/dialogue/Emily-{{Language}}.json": "false"
+		}
+    },
+	{
+      "LogName": "FirstChild Emily Schedule Dialogue Language",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "FromFile": "assets/dialogue/Emily-{{Language}}.json",
+	  "When": {
+			"FirstBabysitter": "Emily",
+			"HasFile: assets/dialogue/Emily-{{Language}}.json": "true"
 		}
     },
 	{
@@ -837,6 +886,18 @@
       "Entries": {
 			"spring.002": "Hi, Daddy!^Hi, Mommy!$h#$b#I'm not normally allowed back here but Emily said I could!$h#$b#...#$b#Um ... um ... Here's your drink.$l#$b#%{{Loe2run.ChildToNPC/FirstChildName}} hands you an imaginary glass.",
 			"winter_11.001": "Hi, Daddy!^Hi, Mommy!$h#$b#I'm not normally allowed back here but Emily said I could!$h#$b#...#$b#Um ... um ... Here's your drink.$l#$b#%{{Loe2run.ChildToNPC/FirstChildName}} hands you an imaginary glass."
+		}
+    },
+	{
+      "LogName": "FirstChild Emily Schedule Dialogue Edit Dialogue PT",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+      "Entries": {
+			"spring.002": "Oi, papai!^Oi, mamãe!$h#$b#Normalmente eu não posso voltar aqui, mas a Emily disse que eu posso.$h#$b#...#$b#Um ... um ... Aqui está a sua bebida.$l#$b#%{{Loe2run.ChildToNPC/FirstChildName}} te dá  um copo de vidro imaginário.",
+			"winter_11.001": "Oi, papai!^Oi, mamãe!$h#$b#Normalmente eu não posso voltar aqui, mas a Emily disse que eu posso.$h#$b#...#$b#Um ... um ... Aqui está a sua bebida.$l#$b#%{{Loe2run.ChildToNPC/FirstChildName}} te dá  um copo de vidro imaginário."
+		},
+		"When": {
+				"Language": "pt"
 		}
     },
 	{	"LogName": "FirstChild Emily Schedule Dialogue Edit Schedule",
@@ -902,7 +963,7 @@
       "LogName": "FirstChild Portraits",
       "Action": "Load",
       "Target": "Portraits/{{Loe2run.ChildToNPC/FirstChildName}}",
-      "FromFile": "assets/images/portraits1.png"
+      "FromFile": "assets/images/portraits1_scale@4x.png"
     },
 	
 	
@@ -1056,6 +1117,27 @@
 			"HavingChild": "@{{playerName}}"
 		}
 	},
+	{	"LogName": "SecondChild Not Pregnant PT",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Thu": "Brinque comigo hoje, Papai!^Brinque comigo hoje, Mamãe!$h"
+		},
+		"When": {
+			"HavingChild:@{{playerName}}": "false",
+			"Language": "pt"
+		}
+	},
+	{	"LogName": "SecondChild Pregnant PT",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Thu": "{{Random:Não sei se quero uma irmã ou um irmão...$s#$b#Você pode pedir à cegonha para trazê-lo?, Eu não consigo esperar para que ele venha!$h#$b#O bebê vai ser meu melhor amigo!$h}}"		},
+		"When": {
+			"HavingChild": "@{{playerName}}",
+			"Language": "pt"
+		}
+	},
 	
 	
 	//Base Schedules Second Child
@@ -1141,7 +1223,7 @@
 		}
     },
 	
-	//None Schedule
+	//SecondChild None Schedule
 	{	"LogName": "SecondChild None No School Penny 9 23",
 		"Action": "EditData",
 		"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
@@ -1188,12 +1270,13 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/no_babysitter2.json",
 	  "When": {
-				"SecondBabysitter": "None"
+				"SecondBabysitter": "None",
+				"HasFile: assets/dialogue/no_babysitter2-{{Language}}.json": "false"
 		}
     },	
 	{
       "LogName": "SecondChild None Schedule Dialogue Language",
-      "Action": "EditData",
+      "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/no_babysitter2-{{Language}}.json",
 	  "When": {
@@ -1216,19 +1299,20 @@
 		}
 	},
 	
-	//Alex schedule
+	//SecondChild Alex schedule
 	{
       "LogName": "SecondChild Alex Schedule Dialogue",
       "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/Alex.json",
 	  "When": {
-			"SecondBabysitter": "Alex"
+			"SecondBabysitter": "Alex",
+			"HasFile: assets/dialogue/Alex-{{Language}}.json": "false"
 		}
     },	
 	{
       "LogName": "SecondChild Alex Schedule Dialogue Language",
-      "Action": "EditData",
+      "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/Alex-{{Language}}.json",
 	  "When": {
@@ -1291,19 +1375,20 @@
 		}
 	},
 	
-	//Sebastian Schedule
+	//SecondChild Sebastian Schedule
 	{
       "LogName": "SecondChild Sebastian Schedule Dialogue",
       "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/Sebastian.json",
 	  "When": {
-			"SecondBabysitter": "Sebastian"
+			"SecondBabysitter": "Sebastian",
+			"HasFile: assets/dialogue/Sebastian-{{Language}}.json": "false"
 		}
     },		
 	{
       "LogName": "SecondChild Sebastian Schedule Dialogue Language",
-      "Action": "EditData",
+      "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/Sebastian-{{Language}}.json",
 	  "When": {
@@ -1374,12 +1459,13 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/Maru.json",
 	  "When": {
-			"SecondBabysitter": "Maru"
+			"SecondBabysitter": "Maru",
+			"HasFile: assets/dialogue/Maru-{{Language}}.json": "false"
 		}
     },	
 	{
       "LogName": "SecondChild Maru Schedule Dialogue Language",
-      "Action": "EditData",
+      "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/Maru-{{Language}}.json",
 	  "When": {
@@ -1454,12 +1540,13 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/Abigail.json",
 	  "When": {
-			"SecondBabysitter": "Abigail"
+			"SecondBabysitter": "Abigail",
+			"HasFile: assets/dialogue/Abigail-{{Language}}.json": "false"
 		}
     },	
 	{
       "LogName": "SecondChild Abigail Schedule Dialogue Language",
-      "Action": "EditData",
+      "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/Abigail-{{Language}}.json",
 	  "When": {
@@ -1533,12 +1620,13 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/Shane.json",
 	  "When": {
-			"SecondBabysitter": "Shane"
+			"SecondBabysitter": "Shane",
+			"HasFile: assets/dialogue/Shane-{{Language}}.json": "false"
 		}
     },
 	{
       "LogName": "SecondChild Shane Schedule Dialogue Language",
-      "Action": "EditData",
+      "Action": "Load",
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/Shane-{{Language}}.json",
 	  "When": {
@@ -1557,7 +1645,8 @@
 			"spring.001": "%{{Loe2run.ChildToNPC/SecondChildName}} seems transfixed.",
 	  },
 	  "When": {
-			"SecondBabysitter": "Shane"
+			"SecondBabysitter": "Shane",
+			"HasFile: assets/dialogue/Shane-{{Language}}.json": "false"
 		}
     },
 	{
@@ -1636,7 +1725,18 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/Linus.json",
 	  "When": {
-			"SecondBabysitter": "Linus"
+			"SecondBabysitter": "Linus",
+			"HasFile: assets/dialogue/Linus-{{Language}}.json": "false"
+		}
+    },
+	{
+      "LogName": "SecondChild Linus Schedule Dialogue Language",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/Linus-{{Language}}.json",
+	  "When": {
+			"SecondBabysitter": "Linus",
+			"HasFile: assets/dialogue/Linus-{{Language}}.json": "true"
 		}
     },
 	{	"LogName": "ASecondChild Linus Schedule Dialogue Edit Schedule",
@@ -1701,7 +1801,8 @@
       "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/Emily.json",
 	  "When": {
-			"SecondBabysitter": "Emily"
+			"SecondBabysitter": "Emily",
+			"HasFile: assets/dialogue/Emily-{{Language}}.json": "false"
 		}
     },
 	{
@@ -1711,6 +1812,33 @@
       "Entries": {
 			"spring.002": "Hi, Daddy!^Hi, Mommy!$h#$b#I'm not normally allowed back here but Emily said I could!$h#$b#...#$b#Um ... um ... Here's your drink.$l#$b#%{{Loe2run.ChildToNPC/SecondChildName}} hands you an imaginary glass.",
 			"winter_11.001": "Hi, Daddy!^Hi, Mommy!$h#$b#I'm not normally allowed back here but Emily said I could!$h#$b#...#$b#Um ... um ... Here's your drink.$l#$b#%{{Loe2run.ChildToNPC/SecondChildName}} hands you an imaginary glass."
+		},
+		"When": {
+			"SecondBabysitter": "Emily",
+			"HasFile: assets/dialogue/Emily-{{Language}}.json": "false"
+		}
+    },
+	{
+      "LogName": "SecondChild Emily Schedule Dialogue Language",
+      "Action": "Load",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "FromFile": "assets/dialogue/Emily-{{Language}}.json",
+	  "When": {
+			"SecondBabysitter": "Emily",
+			"HasFile: assets/dialogue/Emily-{{Language}}.json": "true"
+		}
+    },
+	{
+      "LogName": "SecondChild Emily Schedule Dialogue Edit Dialogue PT",
+      "Action": "EditData",
+      "Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+      "Entries": {
+			"spring.002": "Oi, papai!^Oi, mamãe!$h#$b#Normalmente eu não posso voltar aqui, mas a Emily disse que eu posso.$h#$b#...#$b#Um ... um ... Aqui está a sua bebida.$l#$b#%{{Loe2run.ChildToNPC/SecondChildName}} te dá  um copo de vidro imaginário.",
+			"winter_11.001": "Oi, papai!^Oi, mamãe!$h#$b#Normalmente eu não posso voltar aqui, mas a Emily disse que eu posso.$h#$b#...#$b#Um ... um ... Aqui está a sua bebida.$l#$b#%{{Loe2run.ChildToNPC/SecondChildName}} te dá  um copo de vidro imaginário."
+		},
+		"When": {
+				"Language": "pt",
+				"SecondBabysitter": "Emily"
 		}
     },
 	{	"LogName": "SecondChild Emily Schedule Dialogue Edit Schedule",
@@ -1776,7 +1904,7 @@
       "LogName": "SecondChild Portraits",
       "Action": "Load",
       "Target": "Portraits/{{Loe2run.ChildToNPC/SecondChildName}}",
-      "FromFile": "assets/images/portraits2.png"
+      "FromFile": "assets/images/portraits2_scale@4x.png"
     },
 	
 	//Animations for all children
