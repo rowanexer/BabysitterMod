@@ -1,0 +1,15 @@
+{
+	"9": "GOTO Tue",
+	"23": "GOTO Tue",
+	"rain": "GOTO spring",
+	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 17 90 3/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
+	"Wed": "GOTO Tue",
+	"Fri": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1530 Saloon 15 17 0 dance/2000 SamHouse 9 22 1 child_sleep",
+	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 2/2000 SamHouse 9 22 1 child_sleep",
+	"winter_15": "900 HaleyHouse 15 5 2/1200 HaleyHouse 16 24 0/1430 Beach 26 36 2/2430 HaleyHouse 14 25 1 child_sleep",
+	"winter_11": "900 HaleyHouse 15 5 2/1030 Hospital 4 17 0/1330 Hospital 12 14 0/1600 Saloon 2 18 0/1900 Saloon 9 18 2 wave_arms/2200 Saloon 29 7 3/2430 HaleyHouse 14 25 1 child_sleep",
+	"spring": "800 HaleyHouse 15 5 2/1200 HaleyHouse 16 24 0/1530 Saloon 2 18 0/1800 Saloon 9 18 2 wave_arms/2100 Saloon 29 7 3/2430 HaleyHouse 14 25 1 child_sleep",
+	"summer": "GOTO spring",
+	"fall": "GOTO spring",
+	"winter": "GOTO spring"
+}

@@ -1,0 +1,14 @@
+{
+	"9": "GOTO Tue",
+	"23": "GOTO Tue",
+	"rain": "GOTO spring",
+	"winter_15": "800 AnimalShop 24 17 1/1100 AnimalShop 28 6 0/1500 Beach 22 24 2/2300 AnimalShop 24 8 1 child_sleep",
+	"spring": "800 JojaMart 10 17 1 child_sleep/1230 JojaMart 2 17 2/1330 JojaMart 22 16 3/1430 JojaMart 26 12 3/1530 JojaMart 18 12 2 wave_arms/1630 JojaMart 7 24 0/1700 Saloon 25 18 0/2300 AnimalShop 24 8 1 child_sleep",
+	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 17 90 3/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
+	"Wed": "GOTO Tue",
+	"Fri": "GOTO Tue",
+	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 2/2000 SamHouse 9 22 1 child_sleep",
+	"Sun": "800 AnimalShop 24 17 1/1100 AnimalShop 28 6 0/1450 AnimalShop 17 15 2/1800 Saloon 25 18 0/2400 AnimalShop 24 8 1 child_sleep",
+	"summer_Sun": "800 AnimalShop 24 17 1/1100 AnimalShop 28 6 0/1450 AnimalShop 17 15 2/1800 Saloon 25 18 0/2400 AnimalShop 24 8 1 child_sleep",
+	"default": "800 AnimalShop 24 17 1/1100 AnimalShop 28 6 0/1200 AnimalShop 2 5 0/1400 Saloon 10 20 0/1630 Saloon 25 18 0/1900 Saloon 1 18 0/2100 Saloon 23 18 1/2300 AnimalShop 24 8 1 child_sleep"
+}

@@ -1,0 +1,22 @@
+{
+	"Entries": {
+		"spring_Thu10_2": "Shh, Eu tenho um segredo para te contar.#$e#...#$b#Eu te amo.$4",
+		"summer_24_2": "Vincent me disse que tem um monstro no esgoto...#$b#...É verdade?$s",
+		"fall_2_2": "Eu tive um pesadelo com o monstro do esgoto...$s",
+		"fall_7_2": "Estive pensando sobre o monstro do esgoto de novo...#$b#$q 5348702/5348703 monster_followup#você lutaria com o monstro de esgoto se ele saísse não é, Papai?^você lutaria com o monstro de esgoto se ele saísse não é, Mamãe?#$r 5348702 50 monster_yes#Claro! #$r 5348703 0 monster_no#Não, é muito assustador...",
+		"monster_yes": "Yeah, papai é o mais forte!^Yeah, mamãe é a mais forte!$h",
+		"monster_no": "...$s",
+		"monster_followup": "$p 5348702#Mas eu sei que você vai me proteger.$h|...Não se preocupe, papai, eu te protegerei do monstro.^Não se preocupe, mamãe, eu te protegerei do monstro.",
+		"spring_1_2": "Peguei algumas flores para você...$4 [591 597]",
+		"summer_1_2": "Peguei algumas flores para você...$4 [402 376]",
+		"fall_1_2": "Peguei algumas flores para você...$4 [595 421]",
+		"winter_1_2": "Peguei algumas flores para você...$4 [418]",
+		"Mon": "Papai, papai!^Mamãe, mamãe!$h#$b#Me carregue que nem você fazia!$h",
+		"Tue": "Eu serei um fazendeiro que nem você!$h",
+		"Wed": "A senhorita penny disse que vamos aprender sobre dinossauros hoje!$h",
+		"Thu": "Brinque comigo hoje, Papai!^Brinque comigo hoje, Mamãe!$h",
+		"Fri": "%Como foi a escola? #$b#Foi legal...",
+		"Sat": "Eu quero ir com você hoje!$h #$b#Eu sou grande de mais para aventuras, Eu juro!#$n",
+		"Sun": "Eu quero sushi para o jantar hoje á noite!$h"
+	}
+}
