@@ -4,7 +4,7 @@
 	"11": "800 SebastianRoom 7 6 0/1710 ScienceHouse 29 11 0/1800 SebastianRoom 7 6 0/2130 SebastianRoom 4 4 3 child_sleep",
 	"15": "GOTO 11",
 	"rain": "830 Beach 11 39 2/1700 SebastianRoom 4 4 3 child_sleep",
-	"rain2": "830 Beach 11 39 2/1700 SebastianRoom 9 9 3 child_sleep"
+	"rain2": "830 Beach 11 39 2/1700 SebastianRoom 9 9 3 child_sleep",
 	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 17 90 3/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
 	"Wed": "GOTO Tue",
 	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 1/1830 Town 10 94 1 sit_down/1930 SebastianRoom 4 4 3 child_sleep",
