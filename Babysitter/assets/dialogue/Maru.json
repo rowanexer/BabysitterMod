@@ -1,10 +1,8 @@
 {
 	"summer.000": "Wow...#$b#Daddy, I saw Mars! It was red!$h^Mommy, I saw Mars! It was red!$h",
 	"rain.000": "Beep boop bzzt...#$b#I can speak robot!$h",
-	"rain.001": "Um ... you open it up there, and pull the ... red wire...?#$b#Let me try next!$h",
+	"rain.001": "Um ... you open it up there, and pull the ... red wire...?$b#Let me try next!$h",
 	"9.000": "!!!#$b#Hello...Please sit down...The doctor will see you...#$b#I'm a nurse!$h",
-	"Tue.000": "!!!#$b#Hello...Please sit down...The doctor will see you...$l#$b#I'm a nurse!$h",
-	"Tue.001": "Beep boop bzzt...#$b#I can speak robot!$h",
 	"Thu.000": "!!!#$b#Hello...Please sit down...The doctor will see you...$l#$b#I'm a nurse!$h",
 	"Thu.001": "Beep boop bzzt...#$b#I can speak robot!$h",
 	"winter.001": "Beep boop bzzt...#$b#I can speak robot!$h",
@@ -18,12 +16,4 @@
 	"Mon.001": "Beep boop bzzt...#$b#I can speak robot!$h",
 	"Mon.000": "Maru knows lots of interesting stuff.#$b#Will I be as smart as her if I study?",
 	"winter.000": "Maru knows loads of cool tricks for building towers!$h",
-	"Wed.000": "Maru knows loads of cool tricks for building towers!$h",
-	"Wed.001": "Um ... you open it up there, and pull the ... red wire...?#$b#Let me try next!$h",
-	"Fri.000": "Maru knows loads of cool tricks for building towers!$h",
-	"Fri.001": "Um ... you open it up there, and pull the ... red wire...?#$b#Let me try next!$h",
-	"Wed.002": "Maru knows lots of interesting stuff.#$b#Will I be as smart as her if I study?",
-	"Fri.002": "Maru knows lots of interesting stuff.#$b#Will I be as smart as her if I study?",
-	"Wed.003": "Wow...#$b#Daddy, I saw Mars! It was red!$h^Mommy, I saw Mars! It was red!$h",
-	"Fri.003": "Wow...#$b#Daddy, I saw Mars! It was red!$h^Mommy, I saw Mars! It was red!$h"
 }
