@@ -63,14 +63,25 @@
 			"Language": "pt"
 		}
     },
+	{
+      "LogName": "FirstChild Gift Tastes ZH",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "{{Loe2run.ChildToNPC/FirstChildName}}": "哇！ 这是我最喜欢的礼物！/223 206 211 577 597 107 279 123 233/谢谢礼物！/203 224 213 232 234 221 220 -80 -79 392 119 124 188 192/什么?/-8 -4 -22 -28 -19 209 -75 -81 200 800/不，我不想要！/342 397 226 205 346 348 303 304 445 459 257 202 265/谢谢你/408 18 22 283 -5 -2 /"
+      },
+		"When": {
+			"Language": "zh"
+		}
+    },
     {
-      "LogName": "FirstChild Dialogue",
+      "LogName": "AFirstChild Dialogue",
       "Action": "Load",
       "Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/dialogue.json"
     },
 	{
-      "LogName": "FirstChild Dialogue Language",
+      "LogName": "AFirstChild Dialogue Language",
       "Action": "EditData",
       "Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
       "FromFile": "assets/dialogue/dialogue-{{Language}}.json",
@@ -92,13 +103,24 @@
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 		"Entries": {
-			"Wed": "Sinto falta da Penny dizendo que íamos {{Random:aprender sobre dinossauros, aprender sobre planetas, aprender sobre estrelas, aprender sobre flores, aprender sobre animais, fazer desenhos de macarrão, fazer origami, praticar escrever, ler histórias}} hoje!$h"	
+			"Wed": "Sinto falta da Penny dizendo que íamos {{Random:aprender sobre dinossauros, aprender sobre planetas, aprender sobre estrelas, aprender sobre flores, aprender sobre animais, fazer desenhos de macarrão, fazer origami, praticar escrever, ler histórias | school}} hoje!$h"	
 		},
 		"When": {
 			"DayOfWeek": "Wednesday",
 			"Language": "pt"
 		}
-	},		
+	},
+	{	"LogName": "FirstChild Teacher Penny ZH",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Wed": "潘妮小姐说，今天我们将{{Random:学习恐龙相关的知识, 学习小行星, 了解恒星, 了解花卉, 了解可爱的动物们, 制作通心粉照片, 做折纸, 写练习, 阅读精彩的故事 | school}} $h"
+		},
+		"When": {
+			"DayOfWeek": "Wednesday",
+			"Language": "zh"
+		}
+	},	
 	{	"LogName": "FirstChild Rainy",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/rainy",
@@ -118,6 +140,17 @@
 		"When": {
 			"Weather": "Rain, Storm",
 			"Language": "pt"
+		}
+	},
+	{	"LogName": "FirstChild Rainy ZH",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/rainy",
+		"Entries": {
+			"{{Loe2run.ChildToNPC/FirstChildName}}": "{{Random:唱歌''小雨小雨快快走~$h, 唱歌''雨滴落下，可怜的蜘蛛被冲走了。~$h, 斯特医生去了格洛斯特...$h#$b#...一场雨$h, 下雨啦，哗啦啦~$h}}"
+		},
+		"When": {
+			"Weather": "Rain, Storm",
+			"Language": "zh"
 		}
 	},
 	{	"LogName": "FirstChild How School",
@@ -141,6 +174,17 @@
 			"Language": "pt"
 		}
 	},
+	{	"LogName": "FirstChild How School ZH",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Fri": "%{{Loe2run.ChildToNPC/FirstChildName}}，学校怎么样？#$b#{{Random:没关系..., 我不想再上学了...$s, 潘妮小姐给了我一颗金色奖励星星！$h, 真的很好玩！$h, 我和贾斯一起玩，她是我最好的朋友$h, 我和文森特一起玩，他是我最好的朋友$h, 我学到了很多东西，潘妮小姐说我很聪明！$h}}"
+		},
+		"When": {
+			"DayOfWeek": "Friday",
+			"Language": "zh"
+		}
+	},
 	{	"LogName": "FirstChild Dinner",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
@@ -160,6 +204,17 @@
 		"When": {
 			"DayOfWeek": "Sunday",
 			"Language": "pt"
+		}
+	},
+	{	"LogName": "FirstChild Dinner ZH",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Sun": "我想要{{Random:煎蛋卷, 煎饼, 巧克力蛋糕, 冰淇淋, 炒菜, 水果沙拉, 蟹饼, 虾鸡尾酒, 生鱼片, 土豆煎饼, 豆类火锅, 意大利面, 南瓜汤, 救生汉堡}}当作今晚的晚餐！",
+		},
+		"When": {
+			"DayOfWeek": "Sunday",
+			"Language": "zh"
 		}
 	},
 	{	"LogName": "FirstChild Not Pregnant",
@@ -201,6 +256,28 @@
 		"When": {
 			"HavingChild": "@{{playerName}}",
 			"Language": "pt"
+		}
+	},
+	{	"LogName": "FirstChild Not Pregnant ZH",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Thu": "爸爸，今天和我一起玩！^妈妈，今天和我一起玩！$h"		
+		},
+		"When": {
+			"HavingChild:@{{playerName}}": "false",
+			"Language": "zh"
+		}
+	},
+	{	"LogName": "FirstChild Pregnant ZH",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+		"Entries": {
+			"Thu": "{{Random:我不知道我是否需要一个新的兄弟姐妹...$s#$b#您能告诉鹳把它们带回来吗, 我很期待新的宝宝！$h#$b#他们将成为我的好朋友！$h}}"		
+		},
+		"When": {
+			"HavingChild": "@{{playerName}}",
+			"Language": "zh"
 		}
 	},
 	
@@ -998,14 +1075,25 @@
 			"Language": "pt"
 		}
     },
+	{
+      "LogName": "SecondChild Gift Tastes ZH",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "{{Loe2run.ChildToNPC/SecondChildName}}": "哇！ 这是我最喜欢的礼物！/223 206 211 577 597 107 279 123 233/谢谢礼物！/203 224 213 232 234 221 220 -80 -79 392 119 124 188 192/什么?/-8 -4 -22 -28 -19 209 -75 -81 200 800/不，我不想要！/342 397 226 205 346 348 303 304 445 459 257 202 265/谢谢你/408 18 22 283 -5 -2 /"
+      },
+		"When": {
+			"Language": "zh"
+		}
+    },
     {
-      "LogName": "SecondChild Dialogue",
+      "LogName": "ASecondChild Dialogue",
       "Action": "Load",
       "Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/dialogue.json"
     },
 	{
-      "LogName": "SecondChild Dialogue Language",
+      "LogName": "ASecondChild Dialogue Language",
       "Action": "EditData",
       "Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
       "FromFile": "assets/dialogue/dialogue-{{Language}}.json",
@@ -1027,13 +1115,24 @@
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 		"Entries": {
-			"Wed": "Sinto falta da Penny dizendo que íamos {{Random:aprender sobre dinossauros, aprender sobre planetas, aprender sobre estrelas, aprender sobre flores, aprender sobre animais, fazer desenhos de macarrão, fazer origami, praticar escrever, ler histórias}} hoje!$h"	
+			"Wed": "Sinto falta da Penny dizendo que íamos {{Random:aprender sobre dinossauros, aprender sobre planetas, aprender sobre estrelas, aprender sobre flores, aprender sobre animais, fazer desenhos de macarrão, fazer origami, praticar escrever, ler histórias | school}} hoje!$h"	
 		},
 		"When": {
 			"DayOfWeek": "Wednesday",
 			"Language": "pt"
 		}
-	},		
+	},
+	{	"LogName": "SecondChild Teacher Penny ZH",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Wed": "潘妮小姐说，今天我们将{{Random:学习恐龙相关的知识, 学习小行星, 了解恒星, 了解花卉, 了解可爱的动物们, 制作通心粉照片, 做折纸, 写练习, 阅读精彩的故事 | school}} $h"
+		},
+		"When": {
+			"DayOfWeek": "Wednesday",
+			"Language": "zh"
+		}
+	},	
 	{	"LogName": "SecondChild Rainy",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/rainy",
@@ -1053,6 +1152,17 @@
 		"When": {
 			"Weather": "Rain, Storm",
 			"Language": "pt"
+		}
+	},
+	{	"LogName": "SecondChild Rainy ZH",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/rainy",
+		"Entries": {
+			"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:唱歌''小雨小雨快快走~$h, 唱歌''雨滴落下，可怜的蜘蛛被冲走了。~$h, 斯特医生去了格洛斯特...$h#$b#...一场雨$h, 下雨啦，哗啦啦~$h}}"
+		},
+		"When": {
+			"Weather": "Rain, Storm",
+			"Language": "zh"
 		}
 	},
 	{	"LogName": "SecondChild How School",
@@ -1076,6 +1186,17 @@
 			"Language": "pt"
 		}
 	},
+	{	"LogName": "SecondChild How School ZH",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Fri": "%{{Loe2run.ChildToNPC/FirstChildName}}，学校怎么样？#$b#{{Random:没关系..., 我不想再上学了...$s, 潘妮小姐给了我一颗金色奖励星星！$h, 真的很好玩！$h, 我和贾斯一起玩，她是我最好的朋友$h, 我和文森特一起玩，他是我最好的朋友$h, 我学到了很多东西，潘妮小姐说我很聪明！$h}}"
+		},
+		"When": {
+			"DayOfWeek": "Friday",
+			"Language": "zh"
+		}
+	},
 	{	"LogName": "SecondChild Dinner",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
@@ -1097,6 +1218,17 @@
 			"Language": "pt"
 		}
 	},	
+	{	"LogName": "SecondChild Dinner ZH",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Sun": "我想要{{Random:煎蛋卷, 煎饼, 巧克力蛋糕, 冰淇淋, 炒菜, 水果沙拉, 蟹饼, 虾鸡尾酒, 生鱼片, 土豆煎饼, 豆类火锅, 意大利面, 南瓜汤, 救生汉堡}}当作今晚的晚餐！",
+		},
+		"When": {
+			"DayOfWeek": "Sunday",
+			"Language": "zh"
+		}
+	},
 	{	"LogName": "SecondChild Not Pregnant",
 		"Action": "EditData",
 		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
@@ -1138,7 +1270,28 @@
 			"Language": "pt"
 		}
 	},
-	
+	{	"LogName": "SecondChild Not Pregnant ZH",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Thu": "爸爸，今天和我一起玩！^妈妈，今天和我一起玩！$h"		
+		},
+		"When": {
+			"HavingChild:@{{playerName}}": "false",
+			"Language": "zh"
+		}
+	},
+	{	"LogName": "SecondChild Pregnant ZH",
+		"Action": "EditData",
+		"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+		"Entries": {
+			"Thu": "{{Random:我不知道我是否需要一个新的兄弟姐妹...$s#$b#您能告诉鹳把它们带回来吗, 我很期待新的宝宝！$h#$b#他们将成为我的好朋友！$h}}"		
+		},
+		"When": {
+			"HavingChild": "@{{playerName}}",
+			"Language": "zh"
+		}
+	},
 	
 	//Base Schedules Second Child
     {

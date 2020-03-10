@@ -1,17 +1,15 @@
 {
-	"Entries": {
 		"spring.000": "Ah, papai!^Ah, mamãe!#$b#Shane não quer me empurrar.#$b#Me dá uma carona, por favor?$l",  
 		"spring.001": "%Sua criança parece paralisada.", 
 		"Sun.000": "Este é o livro do Shane?#$b#Ele deve saber muito sobre galinhas!",
 		"Sun.001": "%Sua criança parece paralisada.",
 		"summer_Sun.000": "Este é o livro do Shane?#$b#Ele deve saber muito sobre galinhas!",
 		"summer_Sun.001": "%Sua criança parece paralisada.",
-		"default.000": "Este é o livro do Shane?#$b#Ele deve saber muito sobre galinhas!",
+		"default.000": "Este é o livro do Shane?#$b#Ele deve saber muito sobre galinhas",
 		"default.002": "Eu quero um milkshake por favor, Shane.",
 		"default.003": "%Sua criança parece paralisada.",
 		"default.004": "Por que o Shane está sempre bebendo aquele suco nojento?$s",
 		"default.001": "É tão grande e fofo!#$b#Eu amo esse urso.$h",
 		"winter_15.000": "Este é o livro do Shane?#$b#Ele deve saber muito das galinhas!",
 		"winter_15.001": "Isso é tão legal! Eu quero viver em um barco também!$h"
-	}
 }
