@@ -1,0 +1,19 @@
+{
+	"9": "GOTO winter",
+	"23": "GOTO winter",
+	"rain": "830 SamHouse 19 13 0/1100 SamHouse 19 18 0/1500 SamHouse 8 6 3 sam_gameboy/1700 SamHouse 19 13 0/1830 SamHouse 22 16 1/2000 SamHouse 22 13 1 child_sleep",
+	"rain2": "830 SamHouse 19 13 0/1100 SamHouse 6 13 0/1400 Saloon 38 18 0/1940 SamHouse 22 13 1 child_sleep",
+	"winter_17": "830 SamHouse 19 13 0/1040 SamHouse 19 18 0/1700 Beach 11 34 3/2400 SamHouse 22 13 1 child_sleep",
+	"summer": "830 SamHouse 19 13 0/1040 SamHouse 19 18 0/1340 Beach 46 24 2/1900 SamHouse 22 16 1/2100 SamHouse 22 13 1 child_sleep",
+	"fall": "830 SamHouse 19 13 0/1040 SamHouse 19 18 0/1320 Forest 66 50 2/1900 SamHouse 22 16 1/2100 SamHouse 22 13 1 child_sleep",
+	"winter": "830 SamHouse 19 13 0/1040 SamHouse 19 18 0/1320 Saloon 20 19 3/1900 SamHouse 22 16 1/2100 SamHouse 22 13 1 child_sleep",
+	"fall_11": "830 SamHouse 19 13 0/1130 Hospital 14 15 3 sam_gameboy/1330 Hospital 4 6 1/1600 Town 10 94 2/2100 SamHouse 22 13 1 child_sleep",
+	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 17 90 3/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
+	"Wed": "GOTO Tue",
+	"Fri": "GOTO Tue",
+	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 2/2000 SamHouse 9 22 1 child_sleep",
+	"Mon": "830 SamHouse 19 13 0/1100 JojaMart 16 5 2 sam_work/1600 SamHouse 19 13 0/2130 SamHouse 22 13 1 child_sleep",
+	"JojaMart_Replacement": "ArchaeologyHouse 37 5 2",
+	"Fri": "830 SamHouse 19 13 0/1100 Town 13 91 2/1500 Saloon 36 21 3 sam_pool/2120 SamHouse 22 13 1 child_sleep",
+	"spring": "830 SamHouse 19 13 0/1040 SamHouse 19 18 0/1340 Town 71 99 2/1830 SamHouse 22 16 1/2100 SamHouse 22 13 1 child_sleep"
+}
