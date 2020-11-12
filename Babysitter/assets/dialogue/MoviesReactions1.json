@@ -1,7 +1,11 @@
 {
+   "Changes": [
+      {
+         "Action": "EditData",
+         "Target": "Data/MoviesReactions",
 	"Entries": {
-    "Loe2runChildToNPCFirstChildName": {
-    "NPCName": "Default",
+    "FirstChild": {
+    "NPCName": "FirstChild",
     "Reactions": [
       
       {
@@ -228,4 +232,6 @@
     ]
   },
  }
+}
+]
 }

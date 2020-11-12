@@ -12,7 +12,7 @@
 	"Sun": "800 SeedShop 10 5 0/1030 SeedShop 26 7 3/1300 Forest 13 40 1/2000 SeedShop 3 6 1 child_sleep",
 	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 17 90 3/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
 	"Wed": "GOTO Tue",
-	"Fri": "GOTO Tue",
+	"Fri": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1500 Saloon 35 18 0/2000 SamHouse 9 22 1 child_sleep",
 	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 1/2000 SamHouse 9 22 1 child_sleep",
 	"fall": "800 SeedShop 33 6 1/1030 SeedShop 5 22 3/1300 BusStop 21 5 2 wave_arms/1700 SeedShop 2 6 0/1930 SeedShop 3 6 1 child_sleep",
 	"winter": "800 SeedShop 33 6 1/1030 ScienceHouse 6 20 0/1430 SeedShop 2 6 0/1930 SeedShop 3 6 1 child_sleep",
