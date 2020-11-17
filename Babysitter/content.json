@@ -2,11 +2,11 @@
 	"Format": "1.18.0",
 	"ConfigSchema": {
 		"FirstBabysitter": {
-			"AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, Linus, Emily, Sam, None",
+			"AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, Linus, Emily, Sam, Leah, None",
 			"Default": "None"
 		},
 		"SecondBabysitter": {
-			"AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, Linus, Emily, Sam, None",
+			"AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, Linus, Emily, Sam, Leah, None",
 			"Default": "None"
 		}
 	},
@@ -74,6 +74,8 @@
 		   "Action": "Include",
 		   "FromFile": "assets/dialogue/MoviesReactions1.json"
 		},
+		
+		//FirstChild Alter Dialogue
 		{
 			"LogName": "FirstChild Teacher Penny",
 			"Action": "EditData",
@@ -184,7 +186,7 @@
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
-				"Sun": "I want {{Random:omelets, pancakes, chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup, survival burgers}} for dinner tonight!",
+				"Sun": "I want {{Random:omelets, pancakes, chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup, burgers}} for dinner tonight!",
 			},
 			"When": {
 				"DayOfWeek": "Sunday"
@@ -287,17 +289,6 @@
 				"Language": "zh"
 			}
 		},
-		{
-			"LogName": "FirstChild Luau Festival",
-			"Action": "EditData",
-			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
-			"Entries": {
-				"summer_11_2": "%What's that you've got there, {{Loe2run.ChildToNPC/FirstChildName}}?#$b#Ummm...it's {{Random:a mushroom, a dandelion, a blackberry, some slime, a clam, a pretty rock, some milk, an egg, an acorn, some holly, a shell}}.#$b#Can you put it in the soup for me?$h?"
-			},
-			"When": {
-				"DayEvent": "luau"
-			}
-		},	
 		{
 			"LogName": "FirstChild Winter Festival",
 			"Action": "EditData",
@@ -454,6 +445,21 @@
 			}
 		},
 		{
+			"LogName": "FirstChild Location Dialogue",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"ArchaeologyHouse_18_12": "{{Random:Daddy, I'm studying!^Mommy, I'm studying!$a@@Are you coming to school too?$h@@Um...Can you help me with this bit?@@Daddy, you're not meant to be here!^Mommy, you're not meant to be here!$a|inputSeparator=@@}}",
+				"Town_17_90": "{{Random:School was fun today!$h@@Aw, I've got so much homework to do.$s@@Daddy, can you help me with my homework tonight?^Mommy, can you help me with my homework tonight?^@@I wanna go play already!@@%{{Loe2run.ChildToNPC/FirstChildName}} is listening intently to Penny.|inputSeparator=@@}}",
+				"Town_28_92": "{{Random:I had so much fun playing today!$h@@I played so much with Jas!$h@@I played so much with Vincent!$h@@I'm so tired...*yawn*@@%{{Loe2run.ChildToNPC/FirstChildName}} is listening intently to Penny.|inputSeparator=@@}}"
+			},
+			"When": {
+				"DayOfWeek": "Tuesday,Wednesday,Friday"
+			}
+		},
+		
+		//FirstChild Report Card
+		{
 			"LogName": "FirstChild Report Card Spring",
 			"Action": "EditData",
 			"Target": "Data/Mail",
@@ -578,6 +584,15 @@
 			"FromFile": "assets/schedules/Sam.json",
 			"When": {
 				"FirstBabysitter": "Sam"
+			}
+		},
+		{
+			"LogName": "AFirstChild Schedule Leah",
+			"Action": "Load",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"FromFile": "assets/schedules/Leah.json",
+			"When": {
+				"FirstBabysitter": "Leah"
 			}
 		},
 
@@ -1384,6 +1399,99 @@
 				"FirstBabysitter": "Sam"
 			}
 		},
+		//FirstChild Leah Schedule
+		{
+			"LogName": "FirstChild Leah Schedule Dialogue",
+			"Action": "Load",
+			"Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"FromFile": "assets/dialogue/Leah.json",
+			"When": {
+				"FirstBabysitter": "Leah",
+				"HasFile: assets/dialogue/Leah-{{Language}}.json": "false"
+			}
+		},
+		{
+			"LogName": "FirstChild Leah Schedule Dialogue Language",
+			"Action": "Load",
+			"Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"FromFile": "assets/dialogue/Leah-{{Language}}.json",
+			"When": {
+				"FirstBabysitter": "Leah",
+				"HasFile: assets/dialogue/Leah-{{Language}}.json": "true"
+			}
+		},
+		{
+			"LogName": "FirstChild Leah Schedule Dialogue Edit Dialogue",
+			"Action": "EditData",
+			"Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+					"spring.001": "Leah's been showing me how to forage! #$b# See, I found a {{random: spring onion, leek, horse radish, mushroom}}!$h#$b# We're gonna make dinner with it. $h"
+				},
+			"When": {
+				"FirstBabysitter": "Leah",
+				"HasFile: assets/dialogue/Emily-{{Language}}.json": "false"
+			}
+		},
+		{
+			"LogName": "FirstChild Leah Schedule Dialogue Edit Schedule",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"rain": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.000\"/1200 LeahHouse 3 7 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.001\"/1400 LeahHouse 8 5 0/1600 Saloon 3 21 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.002\"/2340 LeahHouse 11 6 1 child_sleep",
+				"winter_15": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_15.000\"/1200 LeahHouse 3 7 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_15.001\"/1400 LeahHouse 8 5 0/1600 Beach 42 35 0/2340 LeahHouse 11 6 1 child_sleep",
+				"spring_16": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring_16.000\"/1030 Hospital 4 17 0/1330 Hospital 13 14 3/1600 Saloon 3 21 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring_16.001\"/2340 LeahHouse 11 6 1 child_sleep",
+				"fall": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.000\"/1200 Town 86 62 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.001\"/1900 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
+				"Mon": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Mon.000\"/1100 SeedShop 12 27 3 square_1_5_3/1700 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
+				"summer": "MAIL beachBridgeFixed/GOTO summer_noBridge/800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.000\"/1200 Beach 82 17 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.001\"/1900 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
+				"summer_noBridge": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer_noBridge.000\"/1200 Beach 39 25 2 jump \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer_noBridge.001\"/1900 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
+				"spring": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.000\"/1200 Forest 69 50 2/1500 Forest 35 25 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.001\"/1830 Forest 21 30 1/1930 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep"
+			},
+			"When": {
+				"FirstBabysitter": "Leah"
+			}
+		},
+		{
+			"LogName": "FirstChild Leah No School Penny 9 23",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"9": "GOTO {{season}}",
+				"23": "GOTO 9",
+			},
+			"When": {
+				"Hearts:Penny": "{{Range: 0, 5}}",
+				"Day": "9, 23",
+				"FirstBabysitter": "Leah"
+			}
+		},
+		{
+			"LogName": "FirstChild Leah No School Leah 9 23",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"9": "GOTO {{season}}",
+				"23": "GOTO 9",
+			},
+			"When": {
+				"Hearts:Leah": "{{Range: 0, 5}}",
+				"FirstBabysitter": "Leah"
+			}
+		},
+		{
+			"LogName": "FirstChild Leah School 9 23",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"9": "GOTO Tue",
+				"23": "GOTO Tue"
+			},
+			"When": {
+				"Hearts:Penny": "{{Range: 6, 14}}",
+				"Hearts:Leah": "{{Range: 6, 14}}",
+				"Day": "9, 23",
+				"FirstBabysitter": "Leah"
+			}
+		},
 
 		//FirstChild Images
 		{
@@ -1474,6 +1582,8 @@
 				"DayOfWeek": "Wednesday"
 			}
 		},
+		
+		//SecondChild Alter Dialogue
 		{
 			"LogName": "SecondChild Teacher Penny PT",
 			"Action": "EditData",
@@ -1503,7 +1613,7 @@
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/rainy",
 			"Entries": {
-				"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:Rain rain go away~$h, Down came the rain and washed poor Incy out~$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, It's raining~~It's pouring~~$h}}"
+				"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:Down came the rain and washed poor Incy out~$h, Doctor Foster went to Gloucester...$h#$b#...In a shower of rain!$h, It's raining~~It's pouring~~$h, Rain rain go away~$h}}"
 			},
 			"When": {
 				"Weather": "Rain, Storm"
@@ -1514,7 +1624,7 @@
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/rainy",
 			"Entries": {
-				"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:Chuva chuva vá embora~$h, Entrou um pouco de água pela porta~$h, Fecha a janela...$h#$b#...Está chovendo!$h, Está chovendo~~Está alagando~~$h}}"
+				"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:Entrou um pouco de água pela porta~$h, Fecha a janela...$h#$b#...Está chovendo!$h, Está chovendo~~Está alagando~~$h, Chuva chuva vá embora~$h}}"
 			},
 			"When": {
 				"Weather": "Rain, Storm",
@@ -1526,7 +1636,7 @@
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/rainy",
 			"Entries": {
-				"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:唱歌''小雨小雨快快走~$h, 唱歌''雨滴落下，可怜的蜘蛛被冲走了。~$h, 斯特医生去了格洛斯特...$h#$b#...一场雨$h, 下雨啦，哗啦啦~$h}}"
+				"{{Loe2run.ChildToNPC/SecondChildName}}": "{{Random:唱歌''雨滴落下，可怜的蜘蛛被冲走了。~$h, 斯特医生去了格洛斯特...$h#$b#...一场雨$h, 下雨啦，哗啦啦~$h, 唱歌''小雨小雨快快走~$h}}"
 			},
 			"When": {
 				"Weather": "Rain, Storm",
@@ -1538,7 +1648,7 @@
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"Fri": "%How's school, {{Loe2run.ChildToNPC/SecondChildName}}? #$b#{{Random:It was okay..., I don't want to go to school anymore...$s, Miss Penny gave me a gold star!$h, It was really fun!$h, I played with Jas lots! She's my bestest friend.$h, I played with Vincent lots! He's my bestest friend.$h, I learnt lots and lots and Miss Penny said I was super smart!$h}}"
+				"Fri": "%How's school, {{Loe2run.ChildToNPC/SecondChildName}}? #$b#{{Random:I don't want to go to school anymore...$s, Miss Penny gave me a gold star!$h, It was really fun!$h, I played with Jas lots! She's my bestest friend.$h, I played with Vincent lots! He's my bestest friend.$h, I learnt lots and lots and Miss Penny said I was super smart!$h, It was okay...}}"
 			},
 			"When": {
 				"DayOfWeek": "Friday"
@@ -1549,7 +1659,7 @@
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"Fri": "%Na escola, {{Loe2run.ChildToNPC/SecondChildName}}? #$b#{{Random:Estava legal..., Eu não quero mais ir para a escola...$s, A senhora Penny me dava estrelas de ouro!$h, Era realmente divertido!$h, Eu brinquei muito com Jas! Ela é minha melhor amiga.$h, eu brinquei muito com Vincent! Ele é meu melhor amigo.$h, Eu aprendi muito com a senhora Penny, ela disse que eu sou inteligente!$h}}"
+				"Fri": "%Na escola, {{Loe2run.ChildToNPC/SecondChildName}}? #$b#{{Random:Eu não quero mais ir para a escola...$s, A senhora Penny me dava estrelas de ouro!$h, Era realmente divertido!$h, Eu brinquei muito com Jas! Ela é minha melhor amiga.$h, eu brinquei muito com Vincent! Ele é meu melhor amigo.$h, Eu aprendi muito com a senhora Penny, ela disse que eu sou inteligente!$h, Estava legal...}}"
 			},
 			"When": {
 				"DayOfWeek": "Friday",
@@ -1561,7 +1671,7 @@
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"Fri": "%{{Loe2run.ChildToNPC/FirstChildName}}，学校怎么样？#$b#{{Random:没关系..., 我不想再上学了...$s, 潘妮小姐给了我一颗金色奖励星星！$h, 真的很好玩！$h, 我和贾斯一起玩，她是我最好的朋友$h, 我和文森特一起玩，他是我最好的朋友$h, 我学到了很多东西，潘妮小姐说我很聪明！$h}}"
+				"Fri": "%{{Loe2run.ChildToNPC/FirstChildName}}，学校怎么样？#$b#{{Random:我不想再上学了...$s, 潘妮小姐给了我一颗金色奖励星星！$h, 真的很好玩！$h, 我和贾斯一起玩，她是我最好的朋友$h, 我和文森特一起玩，他是我最好的朋友$h, 我学到了很多东西，潘妮小姐说我很聪明！$h, 没关系...}}"
 			},
 			"When": {
 				"DayOfWeek": "Friday",
@@ -1573,7 +1683,7 @@
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"Sun": "I want {{Random:omelets, pancakes, chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup, survival burgers}} for dinner tonight!",
+				"Sun": "I want {{Random:burgers, omelets, pancakes, chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup}} for dinner tonight!",
 			},
 			"When": {
 				"DayOfWeek": "Sunday"
@@ -1674,17 +1784,6 @@
 			"When": {
 				"HavingChild": "@{{playerName}}",
 				"Language": "zh"
-			}
-		},
-		{
-			"LogName": "SecondChild Luau Festival",
-			"Action": "EditData",
-			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
-			"Entries": {
-				"summer_11_2": "%What's that you've got there, {{Loe2run.ChildToNPC/SecondChildName}}?#$b#Ummm...it's {{Random:a mushroom, a dandelion, a blackberry, some slime, a clam, a pretty rock, some milk, an egg, an acorn, some holly, a shell}}.#$b#Can you put it in the soup for me?$h?"
-			},
-			"When": {
-				"DayEvent": "luau"
 			}
 		},
 		{
@@ -1843,6 +1942,21 @@
 			}
 		},
 		{
+			"LogName": "SecondChild Location Dialogue",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"ArchaeologyHouse_17_12": "{{Random:Daddy, I'm studying!^Mommy, I'm studying!$a@@Are you coming to school too?$h@@Um...Can you help me with this bit?@@Daddy, you're not meant to be here!^Mommy, you're not meant to be here!$a|inputSeparator=@@}}",
+				"Town_16_89": "{{Random:School was fun today!$h@@Aw, I've got so much homework to do.$s@@Daddy, can you help me with my homework tonight?^Mommy, can you help me with my homework tonight?^@@I wanna go play already!@@%{{Loe2run.ChildToNPC/SecondChildName}} is listening intently to Penny.|inputSeparator=@@}}",
+				"Town_29_92": "{{Random:I had so much fun playing today!$h@@I played so much with Jas!$h@@I played so much with Vincent!$h@@I'm so tired...*yawn*@@%{{Loe2run.ChildToNPC/SecondChildName}} is listening intently to Penny.|inputSeparator=@@}}"
+			},
+			"When": {
+				"DayOfWeek": "Tuesday,Wednesday,Friday"
+			}
+		},
+		
+		//SecondChild Report Card
+		{
 			"LogName": "SecondChild Report Card Spring",
 			"Action": "EditData",
 			"Target": "Data/Mail",
@@ -1967,6 +2081,15 @@
 			"FromFile": "assets/schedules/Sam.json",
 			"When": {
 				"SecondBabysitter": "Sam"
+			}
+		},
+		{
+			"LogName": "ASecondChild Schedule Leah",
+			"Action": "Load",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"FromFile": "assets/schedules/Leah.json",
+			"When": {
+				"SecondBabysitter": "Leah"
 			}
 		},
 		{
@@ -2774,6 +2897,99 @@
 				"Hearts:Sam": "{{Range: 6, 14}}",
 				"Day": "9, 23",
 				"SecondBabysitter": "Sam"
+			}
+		},
+		//SecondChild Leah Schedule
+		{
+			"LogName": "SecondChild Leah Schedule Dialogue",
+			"Action": "Load",
+			"Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"FromFile": "assets/dialogue/Leah.json",
+			"When": {
+				"SecondBabysitter": "Leah",
+				"HasFile: assets/dialogue/Leah-{{Language}}.json": "false"
+			}
+		},
+		{
+			"LogName": "SecondChild Leah Schedule Dialogue Language",
+			"Action": "Load",
+			"Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"FromFile": "assets/dialogue/Leah-{{Language}}.json",
+			"When": {
+				"SecondBabysitter": "Leah",
+				"HasFile: assets/dialogue/Leah-{{Language}}.json": "true"
+			}
+		},
+		{
+			"LogName": "SecondChild Leah Schedule Dialogue Edit Dialogue",
+			"Action": "EditData",
+			"Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+					"spring.001": "Leah's been showing me how to forage! #$b# See, I found a {{random: spring onion, leek, horse radish, mushroom}}!$h#$b# We're gonna make dinner with it. $h"
+				},
+			"When": {
+				"SecondBabysitter": "Leah",
+				"HasFile: assets/dialogue/Emily-{{Language}}.json": "false"
+			}
+		},
+		{
+			"LogName": "SecondChild Leah Schedule Dialogue Edit Schedule",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"rain": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.000\"/1200 LeahHouse 3 7 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.001\"/1400 LeahHouse 8 5 0/1600 Saloon 3 21 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.002\"/2340 LeahHouse 11 6 1 child_sleep",
+				"winter_15": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_15.000\"/1200 LeahHouse 3 7 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_15.001\"/1400 LeahHouse 8 5 0/1600 Beach 42 35 0/2340 LeahHouse 11 6 1 child_sleep",
+				"spring_16": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring_16.000\"/1030 Hospital 4 17 0/1330 Hospital 13 14 3/1600 Saloon 3 21 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring_16.001\"/2340 LeahHouse 11 6 1 child_sleep",
+				"fall": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.000\"/1200 Town 86 62 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.001\"/1900 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
+				"Mon": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Mon.000\"/1100 SeedShop 12 27 3 square_1_5_3/1700 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
+				"summer": "MAIL beachBridgeFixed/GOTO summer_noBridge/800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.000\"/1200 Beach 82 17 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.001\"/1900 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
+				"summer_noBridge": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer_noBridge.000\"/1200 Beach 39 25 2 jump \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer_noBridge.001\"/1900 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
+				"spring": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.000\"/1200 Forest 69 50 2/1500 Forest 35 25 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.001\"/1830 Forest 21 30 1/1930 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep"
+			},
+			"When": {
+				"SecondBabysitter": "Leah"
+			}
+		},
+		{
+			"LogName": "SecondChild Leah No School Penny 9 23",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"9": "GOTO {{season}}",
+				"23": "GOTO 9",
+			},
+			"When": {
+				"Hearts:Penny": "{{Range: 0, 5}}",
+				"Day": "9, 23",
+				"SecondBabysitter": "Leah"
+			}
+		},
+		{
+			"LogName": "SecondChild Leah No School Leah 9 23",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"9": "GOTO {{season}}",
+				"23": "GOTO 9",
+			},
+			"When": {
+				"Hearts:Leah": "{{Range: 0, 5}}",
+				"SecondBabysitter": "Leah"
+			}
+		},
+		{
+			"LogName": "SecondChild Leah School 9 23",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"9": "GOTO Tue",
+				"23": "GOTO Tue"
+			},
+			"When": {
+				"Hearts:Penny": "{{Range: 6, 14}}",
+				"Hearts:Leah": "{{Range: 6, 14}}",
+				"Day": "9, 23",
+				"SecondBabysitter": "Leah"
 			}
 		},
 

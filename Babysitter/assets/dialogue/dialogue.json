@@ -8,7 +8,7 @@
 	"monster_followup": "$p 5348702#But I know you'll protect me from it.$h|...Don't worry, Daddy. I'll protect you from the monster instead.^Don't worry, Mommy. I'll protect you from the monster instead.",
 	"spring_13_2": "I'm gonna find all the eggs today!$h",
 	"spring_24_2": "Can you help me practise for the flower dance, Daddy?^Can you help me practise for the flower dance, Mommy?$h",
-	"summer_11_2": "%What's that you've got there?#$b#Ummm...it's a mushroom.#$b#Can you put it in the soup for me?$h",
+	"summer_11_2": "%What's that you've got there?#$b#Ummm...I found it.#$b#Can you put it in the soup for me?$4 [404 422 430 22 410 153 62 180 309 394 283]",
 	"fall_1_2": "The magic jellyfish were so pretty!$h#$b#Where are they going? Fairyland?",
 	"fall_16_2": "Buy me something cool at the fair, Daddy!^Buy me something cool at the fair, Mommy!$h",
 	"fall_27_2": "I want to get some candy at the festival...but the skeletons are scary.$s#$b#Can you bring me some back?",
@@ -26,5 +26,9 @@
 	"Fri": "%How's school? #$b#It was okay...",
 	"Sat": "I wanna come with you today!$h #$b#I'm big enough for adventures, I swear!#$n",
 	"Sun": "I want sushi for dinner tonight!$h",
-	"MovieInvitation": "A movie!!??#$b#Yay, thank you, Daddy!^Yay, thank you, Mommy!$h#$e#Let's go let's go!$h"
+	"MovieInvitation": "A movie!!??#$b#Yay, thank you, Daddy!^Yay, thank you, Mommy!$h#$e#Let's go let's go!$h",
+	"ArchaeologyHouse_17_12": "Daddy, I'm studying!^Mommy, I'm studying!$a",
+	"ArchaeologyHouse_18_12": "Daddy, I'm studying!^Mommy, I'm studying!$a",
+	"Town_17_90": "School was fun today!$h",
+	"Town_16_89": "School was fun today!$h"
 }

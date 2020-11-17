@@ -2,7 +2,7 @@
 	"Name": "Babysitter",
 	"Author": "rowanexer",
 	"Description": "A babysitting mod that gives your child schedules and dialogue.",
-	"Version": "1.5.0",
+	"Version": "1.6.0",
 	"UniqueID": "rowanexer.Babysitter",
 	"UpdateKeys": [5348],
 	"ContentPackFor": {
