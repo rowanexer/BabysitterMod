@@ -7,7 +7,7 @@
 	"winter": "GOTO rain",
 	"fall": "800 LeahHouse 6 5 0/1200 Town 86 62 3/1900 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
 	"Mon": "800 LeahHouse 6 5 0/1100 SeedShop 12 27 3 square_1_5_3/1700 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
-	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 17 90 3/1740 SamHouse 4 8 0/2000 SamHouse 9 22 1 child_sleep",
+	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 15 89 2/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
 	"Wed": "GOTO Tue",
 	"Fri": "GOTO Tue",
 	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 2/2000 SamHouse 9 22 1 child_sleep",

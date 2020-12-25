@@ -1,0 +1,19 @@
+{	
+	"9": "900 Trailer 1 8 0/1100 Town 78 93 2 penny_sit_down/1600 Trailer 12 6 0 penny_dishes/1840 Trailer 5 9 1 child_sleep",
+	"23": "GOTO 9",
+	"rain": "900 Trailer 5 5 0/1100 Trailer 9 7 0/1300 Trailer 12 6 0 penny_dishes/1500 Trailer 14 4 2 penny_sit_down/1800 Trailer 4 4 2 penny_read/2100 Trailer 5 9 1 child_sleep",
+	"rain2": "810 Town 104 89 2/1200 ArchaeologyHouse 20 5 0/1600 Trailer 14 4 2 penny_sit_down/1900 Trailer 12 6 0 penny_dishes/2100 Trailer 5 9 1 child_sleep",
+	"summer": "810 Town 96 18 3/1300 Town 63 15 2 penny_sit_down/1800 Trailer 12 6 0 penny_dishes/2100 Trailer 5 9 1 child_sleep",
+	"winter_15": "900 Trailer 5 5 0/1100 Trailer 9 7 0/1300 Trailer 12 6 0 penny_dishes/1500 Trailer 14 4 2 penny_sit_down/1600 Beach 35 36 2/2350 Trailer 5 9 1 child_sleep",
+	"winter": "900 Trailer 1 8 0/1030 CommunityCenter 23 17 2 penny_read/1500 CommunityCenter 46 13 0/1800 Trailer 12 6 0 penny_dishes/2100 Trailer 5 9 1 child_sleep",
+	"CommunityCenter_Replacement": "ArchaeologyHouse 16 10 2",
+	"winter_4": "900 Trailer 1 8 0/1130 Hospital 4 17 2 penny_sit_down/1330 Hospital 4 6 1/1600 Town 75 52 2 penny_sit_down/1900 Trailer 12 6 0 penny_dishes/2100 Trailer 5 9 1 child_sleep",
+	"9_6": "GOTO spring",
+	"23_6": "GOTO spring",
+	"Summer_Sun": "800 Town 96 18 3/1200 ScienceHouse 8 5 2 penny_sit_down/1800 Trailer 12 6 0 penny_dishes/2100 Trailer 5 9 1 child_sleep",
+	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 15 89 2/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
+	"Wed": "GOTO Tue",
+	"Fri": "GOTO Tue",
+	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 2/2000 SamHouse 9 22 1 child_sleep",
+	"spring": "800 Town 35 89 2 penny_read/1230 Trailer 12 6 0 penny_dishes/1600 Town 44 77 2 penny_sit_down/1840 Trailer 5 9 1 child_sleep"
+}

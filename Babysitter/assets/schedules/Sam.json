@@ -7,7 +7,7 @@
 	"fall": "850 SamHouse 19 15 3 dance/1320 Forest 65 50 2/1900 SamHouse 19 13 0/2100 SamHouse 23 14 1 child_sleep",
 	"winter": "850 SamHouse 19 15 3 dance/1320 Saloon 19 20 0/1900 SamHouse 19 13 0/2100 SamHouse 23 14 1 child_sleep",
 	"fall_11": "830 SamHouse 16 18 0/1130 Hospital 13 15 1/1330 Hospital 12 14 0/1600 Town 10 94 2/2100 SamHouse 23 14 1 child_sleep",
-	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 17 90 3/1740 SamHouse 4 8 0/2000 SamHouse 9 22 1 child_sleep",
+	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 15 89 2/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
 	"Wed": "GOTO Tue",
 	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 2/2000 SamHouse 9 22 1 child_sleep",
 	"Mon": "830 SamHouse 19 18 0/1100 JojaMart 20 5 0/1600 SamHouse 19 18 0/2130 SamHouse 23 14 1 child_sleep",

@@ -3,7 +3,7 @@
   "23": "GOTO winter",
   "rain": "800 CommunityCenter 27 16 3/1300 CommunityCenter 8 5 0/1410 CommunityCenter 14 19 0/1700 CommunityCenter 24 17 0/2000 CommunityCenter 37 21 1 child_sleep",
   "fall_14": "800 AnimalShop 6 5 1/1050 SamHouse 2 16 0/1330 Town 47 89 0/1700 Town 34 97 0/2000 CommunityCenter 37 21 1 child_sleep",
-  "Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 17 90 3/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
+  "Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 15 89 2/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
   "Wed": "GOTO Tue",
   "Fri": "GOTO Tue",
   "Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 2/2000 SamHouse 9 22 1 child_sleep",

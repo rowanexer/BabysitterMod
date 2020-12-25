@@ -4,13 +4,12 @@
          "Action": "EditData",
          "Target": "Data/MoviesReactions",
 	"Entries": {
-    "SecondChild": {
-    "NPCName": "SecondChild",
+    "{{Loe2run.ChildToNPC/SecondChildName}}": {
+    "NPCName": "{{Loe2run.ChildToNPC/SecondChildName}}",
     "Reactions": [
-      
       {
         "Tag": "spring_movie_0",
-        "Response": "love",
+        "Response": "like",
         "Whitelist": [],
         "SpecialResponses": {
           "BeforeMovie": {
@@ -20,7 +19,7 @@
           },
           "DuringMovie": {
             "ResponsePoint": "sprout_leave",
-            "Script": "pause 500/message \"Your child is chewing their fingernails and blinking rapidly.\"",
+            "Script": "/shake {{Loe2run.ChildToNPC/SecondChildName}} 2000/pause 500/message \"{{Loe2run.ChildToNPC/SecondChildName}} is blinking back tears.\"",
             "Text": "Why does he have to go...?$s"
           },
           "AfterMovie": {
@@ -35,46 +34,14 @@
         "Tag": "classic",
         "Response": "dislike",
         "Whitelist": [],
-        "SpecialResponses": {
-          "BeforeMovie": {
-            "ResponsePoint": null,
-            "Script": "",
-            "Text": "It looks old.."
-          },
-          "DuringMovie": {
-            "ResponsePoint": null,
-            "Script": "",
-            "Text": "/message \"Your child has fallen asleep.\"",
-          },
-          "AfterMovie": {
-            "ResponsePoint": null,
-            "Script": "",
-            "Text": "Huh? Um...what happened?#$b#I fell asleep. It was really boring."
-          }
-        },
+        "SpecialResponses": null,
         "ID": "reaction_1"
       },
 	  {
-        "Tag": "family",
-        "Response": "love",
+        "Tag": "documentary",
+        "Response": "dislike",
         "Whitelist": [],
-        "SpecialResponses": {
-          "BeforeMovie": {
-            "ResponsePoint": null,
-            "Script": "",
-            "Text": "I'm so excited!#$e#Thank you!$h."
-          },
-          "DuringMovie": {
-            "ResponsePoint": null,
-            "Script": "/message \"Your child is staring with rapt interest.\"",
-            "Text": ""
-          },
-          "AfterMovie": {
-            "ResponsePoint": null,
-            "Script": "",
-            "Text": "It was so cool!$h#$e#Can we watch it tomorrow too?"
-          }
-        },
+        "SpecialResponses": null,
         "ID": "reaction_2"
       },
       {
@@ -85,36 +52,36 @@
           "BeforeMovie": {
             "ResponsePoint": null,
             "Script": "",
-            "Text": "It looks scary...$s#$e#Do we have to watch it?$s"
+            "Text": "It looks scary...$s#$b#Do we have to watch it?$s"
           },
-          "DuringMovie": {
-            "ResponsePoint": null,
-            "Script": "/message \"Your child is covering their eyes.\"",
-            "Text": "",
-          },
+          "DuringMovie": null,
           "AfterMovie": {
             "ResponsePoint": null,
-            "Script": "",
-            "Text": "Waaaah--$s#$b#I don't like it!$s"
+            "Script": "/shake {{Loe2run.ChildToNPC/SecondChildName}} 250/pause 500/shake {{Loe2run.ChildToNPC/SecondChildName}} 250/pause 500/emote {{Loe2run.ChildToNPC/SecondChildName}} 28/message \"{{Loe2run.ChildToNPC/SecondChildName}} is covering their eyes.\"",
+            "Text": ""
           }
         },
         "ID": "reaction_3"
       },
-      {
-        "Tag": "love",
+	  {
+        "Tag": "dislike",
         "Response": "like",
         "Whitelist": [],
         "SpecialResponses": {
           "BeforeMovie": {
             "ResponsePoint": null,
             "Script": "",
-            "Text": "Let's go in already!$h"
+            "Text": "Do we have to watch it...?$s"
           },
-          "DuringMovie": null,
+          "DuringMovie": {
+            "ResponsePoint": null,
+            "Script": "/message \"{{Loe2run.ChildToNPC/SecondChildName}} is slumped in the seat.\"",
+            "Text": ""
+          },
           "AfterMovie": {
             "ResponsePoint": null,
             "Script": "",
-            "Text": "That was really cool!$h"
+            "Text": "I wanna go play already! I'm bored.$a"
           }
         },
         "ID": "reaction_4"
@@ -127,110 +94,23 @@
           "BeforeMovie": {
             "ResponsePoint": null,
             "Script": "",
-            "Text": "This one looks cool."
-          },
-          "DuringMovie": null,
-          "AfterMovie": {
-            "ResponsePoint": null,
-            "Script": "",
-            "Text": "I liked it!"
-          }
-        },
-        "ID": "reaction_5"
-      },
-      {
-        "Tag": "dislike",
-        "Response": "like",
-        "Whitelist": [],
-        "SpecialResponses": {
-          "BeforeMovie": {
-            "ResponsePoint": null,
-            "Script": "",
-            "Text": "Do we have to watch it...?$s"
+            "Text": "I'm so excited!#$b#Thank you!$h."
           },
           "DuringMovie": {
             "ResponsePoint": null,
-            "Script": "",
-            "Text": "..."
-          },
-          "AfterMovie": {
-            "ResponsePoint": null,
-            "Script": "",
-            "Text": "I wanna go play already! I'm bored.$a"
-          }
-        },
-        "ID": "reaction_6"
-      },
-      {
-        "Tag": "seen_love",
-        "Response": "like",
-        "Whitelist": [],
-        "SpecialResponses": {
-          "BeforeMovie": {
-            "ResponsePoint": null,
-            "Script": "",
-            "Text": "Yay! This is my favorite movie.$h#$e#Thank you!"
-          },
-          "DuringMovie": null,
-          "AfterMovie": null
-        },
-        "ID": "reaction_7"
-      },
-      {
-        "Tag": "seen_like",
-        "Response": "like",
-        "Whitelist": [],
-        "SpecialResponses": {
-          "BeforeMovie": {
-            "ResponsePoint": null,
-            "Script": "",
-            "Text": "I like watching movies with you.$h"
-          },
-          "DuringMovie": null,
-          "AfterMovie": null
-        },
-        "ID": "reaction_8"
-      },
-      {
-        "Tag": "seen_dislike",
-        "Response": "like",
-        "Whitelist": [],
-        "SpecialResponses": {
-          "BeforeMovie": {
-            "ResponsePoint": null,
-            "Script": "",
-            "Text": "No! I don't wanna see it again! You can't make me!$a"
-          },
-          "DuringMovie": null,
-          "AfterMovie": null
-        },
-        "ID": "reaction_9"
-        },		
-      {
-        "Tag": "*",
-        "Response": "like",
-        "Whitelist": [],
-        "SpecialResponses": {
-          "BeforeMovie": {
-            "ResponsePoint": null,
-            "Script": "",
-            "Text": "Um, I think it looks cool."
-          },
-          "DuringMovie": {
-            "ResponsePoint": null,
-            "Script": "/message \"Your child is smiling.\"",
+            "Script": "/emote {{Loe2run.ChildToNPC/SecondChildName}} 20/playSound reward/pause 500/message \"{{Loe2run.ChildToNPC/SecondChildName}} is staring with rapt interest.\"",
             "Text": ""
           },
           "AfterMovie": {
             "ResponsePoint": null,
             "Script": "",
-            "Text": "I liked it!"
+            "Text": "That was so cool!$h#$b#Can we watch it tomorrow too?"
           }
         },
-        "ID": "reaction_10"
-      },
+        "ID": "reaction_5"
+      }
     ]
-  },
+  }
  }
 }
 ]

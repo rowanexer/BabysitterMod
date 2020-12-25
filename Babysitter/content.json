@@ -1,13 +1,21 @@
 {
-	"Format": "1.18.0",
+	"Format": "1.19.0",
 	"ConfigSchema": {
 		"FirstBabysitter": {
-			"AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, Linus, Emily, Sam, Leah, None",
+			"AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, Linus, Emily, Sam, Leah, Elliott, None",
 			"Default": "None"
 		},
 		"SecondBabysitter": {
-			"AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, Linus, Emily, Sam, Leah, None",
+			"AllowValues": "Sebastian, Alex, Abigail, Maru, Shane, Linus, Emily, Sam, Leah, Elliott, None",
 			"Default": "None"
+		},
+		"FirstPersonality": {
+			"AllowValues": "Shy, Outgoing",
+			"Default": "Outgoing"
+		},
+		"SecondPersonality": {
+			"AllowValues": "Shy, Outgoing",
+			"Default": "Shy"
 		}
 	},
 	"Changes": [
@@ -55,13 +63,25 @@
 			}
 		},
 		{
-			"LogName": "AFirstChild Dialogue",
+			"LogName": "AFirstChild Dialogue Shy",
 			"Action": "Load",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
-			"FromFile": "assets/dialogue/dialogue.json"
+			"FromFile": "assets/dialogue/dialogue-shy.json",
+			"When": {
+				"FirstPersonality": "Shy"
+			}
 		},
 		{
-			"LogName": "AFirstChild Dialogue Language",
+			"LogName": "AFirstChild Dialogue Outgoing",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"FromFile": "assets/dialogue/dialogue-outgoing.json",
+			"When": {
+				"FirstPersonality": "Outgoing"
+			}
+		},
+		{
+			"LogName": "AFirstChild Dialogue ZLanguage",
 			"Action": "Load",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"FromFile": "assets/dialogue/dialogue-{{Language}}.json",
@@ -73,6 +93,32 @@
 		{
 		   "Action": "Include",
 		   "FromFile": "assets/dialogue/MoviesReactions1.json"
+		},
+		//FirstChild Movie Gift Tastes
+		{
+			"Action": "EditData",
+			"Target": "Data/ConcessionTastes",
+			"Entries": { 
+				"{{Loe2run.ChildToNPC/FirstChildName}}": {
+				"Name": "{{Loe2run.ChildToNPC/FirstChildName}}",
+				"LovedTags": [
+				 "Cotton Candy",
+				  "Stardrop Sorbet",    ],
+				"LikedTags": [
+				  "Apple Slices",
+				  "Chocolate Popcorn",
+				  "Personal Pizza",
+				  "Sweet"
+				],
+				"DislikedTags": [
+				  "Black Licorice",
+				  "Jasmine Tea",
+				  "Truffle Popcorn",
+				  "Hummus Snack Pack"
+				]
+			  } 
+			 }
+			
 		},
 		
 		//FirstChild Alter Dialogue
@@ -182,18 +228,31 @@
 			}
 		},
 		{
-			"LogName": "FirstChild Dinner",
+			"LogName": "FirstChild Dinner Shy",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
-				"Sun": "I want {{Random:omelets, pancakes, chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup, burgers}} for dinner tonight!",
+				"Sun": "Can we have {{Random:omelets, pancakes, chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup, burgers}} for dinner tonight?$4",
 			},
 			"When": {
-				"DayOfWeek": "Sunday"
+				"DayOfWeek": "Sunday",
+				"FirstPersonality": "Shy"
 			}
 		},
 		{
-			"LogName": "FirstChild Dinner PT",
+			"LogName": "FirstChild Dinner Outgoing",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"Sun": "I want {{Random:chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup, burgers, omelets, pancakes}} for dinner tonight!$h",
+			},
+			"When": {
+				"DayOfWeek": "Sunday",
+				"FirstPersonality": "Outgoing"
+			}
+		},
+		{
+			"LogName": "FirstChild Dinner Z PT",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
@@ -217,7 +276,32 @@
 			}
 		},
 		{
-			"LogName": "FirstChild Not Pregnant",
+			"LogName": "FirstChild Not Pregnant Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"Mon": "Play with me today, Daddy!^Play with me today, Mommy!$h"
+			},
+			"When": {
+				"HavingChild |contains=@{{playerName}}": "false",
+				"HavingChild |contains={{spouse}}": "false",
+				"FirstPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "FirstChild Pregnant Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"Mon": "{{Random:I don't know if I want a new brother or sister...$s#$b#Can you tell the stork to take them back?, I can't wait till the new baby comes!$4#$b#I'm going to love them so much.$h}}"
+			},
+			"When": {
+				"HavingChild": "@{{playerName}}",
+				"FirstPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "FirstChild Not Pregnant Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
@@ -226,21 +310,23 @@
 			"When": {
 				"HavingChild |contains=@{{playerName}}": "false",
 				"HavingChild |contains={{spouse}}": "false",
+				"FirstPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "FirstChild Pregnant",
+			"LogName": "FirstChild Pregnant Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
-				"Thu": "{{Random:I don't know if I want a new brother or sister...$s#$b#Can you tell the stork to take them back?, I can't wait till the new baby comes!$h#$b#They're gonna be my new best friend!$h}}"
+				"Thu": "{{Random:I don't want a new brother or sister!$a#$b#Tell the stork to take them back!$a, I can't wait till the new baby comes!$h#$b#They're gonna be my new best friend!$h}}"
 			},
 			"When": {
-				"HavingChild": "@{{playerName}}"
+				"HavingChild": "@{{playerName}}",
+				"FirstPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "FirstChild Not Pregnant PT",
+			"LogName": "FirstChild Not Pregnant Z PT",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
@@ -253,7 +339,7 @@
 			}
 		},
 		{
-			"LogName": "FirstChild Pregnant PT",
+			"LogName": "FirstChild Pregnant Z PT",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
@@ -289,168 +375,353 @@
 				"Language": "zh"
 			}
 		},
+		
+		//FirstChild Parent dialogue
 		{
-			"LogName": "FirstChild Winter Festival",
-			"Action": "EditData",
-			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
-			"Entries": {
-				"summer_11_2": "%Who's your gift for, {{Loe2run.ChildToNPC/FirstChildName}}?#$b#I'm not telling, heehee.$h"
-			},
-			"When": {
-				"DayEvent": "feast of the winter star"
-			}
-		},		
-		{
-			"LogName": "FirstChild Parent Abigail",
+			"LogName": "FirstChild Parent Abigail Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
 				"3_2": "Mama found the plastic spider I hid yesterday. She screamed really loud!$h#$b# Then she got mad at me...",
-				"18_2": "Mama's teaching me to play 'Journey of the Prairie King'. It's really hard!"
+				"18_2": "Mama's teaching me to play 'Journey of the Prairie King'. It's really hard!",
+				"13_2": "Grandma brought me to her secret garden today. She’s growing lots of interesting plants in there!$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Abigail"
+				"Loe2run.ChildToNPC/FirstChildParent": "Abigail",
+				"FirstPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "FirstChild Parent Alex",
+			"LogName": "FirstChild Parent Abigail Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"3_2": "Mama found my plastic spider Benji under my bed. She screamed really loud!#$b#Then she got mad at me...$s",
+				"18_2": "Mama's teaching me to play 'Journey of the Prairie King’, but I like watching instead of playing...",
+				"13_2": "Grandma brought me to her secret garden today. I like how quiet it is."
+			},
+			"When": {
+				"Loe2run.ChildToNPC/FirstChildParent": "Abigail",
+				"FirstPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "FirstChild Parent Alex Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
 				"3_2": "Papa let me hold one of his weights.#$b#It was really heavy! Papa is SUPER strong!$h",
-				"18_2": "Great-Grandpa was kind of grumpy today.$s#$b#I think his knees were hurting again...$s"
+				"18_2": "Great-Grandpa was kind of grumpy today.$s#$b#I think his knees were hurting again, so I gave him one of my cookies to make him feel better!$h",
+				"13_2": "We went to visit Great-Grandma. She made me cookies!$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Alex"
+				"Loe2run.ChildToNPC/FirstChildParent": "Alex",
+				"FirstPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "FirstChild Parent Elliott",
+			"LogName": "FirstChild Parent Alex Shy",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
-				"3_2": "I tried to write fancy like Papa, but I spilled ink all over my paper!#$b#Papa found out and got mad. Then he made me take a bath...$s",
-				"18_2": "Papa said he would read with me tonight.$h#$b#Can you come read with us too, Daddy?^Can you come read with us too, Mommy?"
+				"3_2": "I watched Papa do his weight-lifting exercises today.#$b#He looks so strong! Papa's my favourite superhero!$4",
+				"18_2": "Great-Grandpa was kind of grumpy today.$s#$b#I think his knees were hurting again, so I made him a 'feel better' card!",
+				"13_2": "We went to visit Great-Grandma. Her cookies always smell so good…$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Elliott"
+				"Loe2run.ChildToNPC/FirstChildParent": "Alex",
+				"FirstPersonality": "Shy"
 			}
 		},
 		{
-			"LogName": "FirstChild Parent Emily",
+			"LogName": "FirstChild Parent Elliott Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
-				"3_2": "Mama's been teaching me how to sew!$h#$b#I keep pricking my fingers, though.",
-				"18_2": "Mama showed me how to take care of the parrot.$h#$b#I'm sad that he'll never fly again, but I'm happy he's part of our family now."
+				"3_2": "I tried to write fancy like Papa, but I got ink all over my hands!$a#$b#Papa found out and got mad. Then he made me take a bath...$s",
+				"18_2": "Papa said he would read with me tonight.$h#$b#Can you come read with us too, Daddy?^Can you come read with us too, Mommy?",
+				"13_2": "Papa said he would teach me to fish someday, but I think fish are gross!$a#$b#Do you like fishing,Daddy^Do you like fishing, Mommy?"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Emily"
+				"Loe2run.ChildToNPC/FirstChildParent": "Elliott",
+				"FirstPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "FirstChild Parent Haley",
+			"LogName": "FirstChild Parent Elliott Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"3_2": "I tried to write fancy like Papa, but I spilled ink all over my paper!$s#$b#Papa found out and got mad. Then he made me take a bath...$s",
+				"18_2": "Papa said he would read with me tonight.$h#$b#Can you come read with us too, Daddy?^Can you come read with us too, Mommy?",
+				"13_2": "Papa said he would teach me to fish someday It sounds like fun!$h#$b#Do you like fishing,Daddy^Do you like fishing, Mommy?"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/FirstChildParent": "Elliott",
+				"FirstPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "FirstChild Parent Emily Outgoing",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"3_2": "Mama's been teaching me how to sew!$h#$b#I keep pricking my fingers, though.$neutral",
+				"18_2": "Mama showed me how to take care of the parrot.$h#$b#He likes sunflower seeds!$h",
+				"13_2": "Aunt Haley showed me her camera the other day. She taught me how to “zoom in” and “zoom out” to take a picture!#$b#Isn’t that cool?!$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/FirstChildParent": "Emily",
+				"FirstPersonality": "Outgoing"
+			}
+		},
+		{
+			"LogName": "FirstChild Parent Emily Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"3_2": "Mama's been teaching me how to sew.$h#$b#I can sew a pocket!",
+				"18_2": "Mama showed me how to take care of the parrot.$h#$b#I'm sad that he'll never fly again, but I'm happy he's part of our family now.",
+				"13_2": "Aunt Haley showed me her camera the other day.#$b#She uses a special room called a ‘Dark Room’ to make her pictures.#$b#But I didn't want to go in. It's dark and scary...$s"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/FirstChildParent": "Emily",
+				"FirstPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "FirstChild Parent Haley Outgoing",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"3_2": "I tried on Mama's makeup today.#$b#She got really mad!$4",
+				"18_2": "Mama did my hair today, but I like it better messy!$a",
+				"13_2": "Mama is so pretty!$h#$b#When I grow up I want to be just like her!$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/FirstChildParent": "Haley",
+				"FirstPersonality": "Outgoing"
+			}
+		},
+		{
+			"LogName": "FirstChild Parent Haley Shy",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
 				"3_2": "I tried on Mama's makeup today.#$b#She got mad at me...$s",
-				"18_2": "Mama did my hair today. Does it look nice?$h"
+				"18_2": "Mama did my hair today. Does it look nice?$h",
+				"13_2": "Mama is so pretty!$h#$b#Do you think I'll be pretty like her when I grow up?$neutral"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Haley"
+				"Loe2run.ChildToNPC/FirstChildParent": "Haley",
+				"FirstPersonality": "Shy"
 			}
 		},
 		{
-			"LogName": "FirstChild Parent Harvey",
+			"LogName": "FirstChild Parent Harvey Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
-				"18_2": "Papa's mustache tickles when he gives me kisses!$h",
-				"3_2": "I want to play with Papa's airplanes, but he won't let me!$a#$b#He says they break easy...$s"
+				"18_2": "Papa's mustache tickles when he gives me kisses!$h#$b#It feels prickly like pine needles!",
+				"3_2": "I want to play with Papa's airplanes, but he won't let me!#$b#Why does he get to play with toys and I don’t?$a",
+				"13_2": "I stubbed my toe before. It really hurt!$s#$b#But Papa gave me a hug, and I felt better.$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Harvey"
+				"Loe2run.ChildToNPC/FirstChildParent": "Harvey",
+				"FirstPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "FirstChild Parent Leah",
+			"LogName": "FirstChild Parent Harvey Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"18_2": "Papa's mustache tickles when he gives me kisses!$h#$b#It feels fuzzy like a caterpillar!$4",
+				"3_2": "I want to play with Papa's airplanes, but he won't let me!$a#$b#He says they break easy...$s",
+				"13_2": "I stubbed my toe before and I cried…$s#$b#But then Papa kissed my boo-boo, and I felt better.$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/FirstChildParent": "Harvey",
+				"FirstPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "FirstChild Parent Leah Outgoing",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"3_2": "Mama's teaching me to paint. It's fun getting all messy!$h",
+				"18_2": "Uncle Elliott said he'd teach me to play piano but I want to go fishing instead!$h#$b#Do you play any instruments, Daddy?^Do you play any instruments, Mommy?",
+				"13_2": "Mama's taking me out foraging today! I'm gonna find the biggest mushroom ever!$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/FirstChildParent": "Leah",
+				"FirstPersonality": "Outgoing"
+			}
+		},
+		{
+			"LogName": "FirstChild Parent Leah Shy",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
 				"3_2": "Mama's teaching me to paint! It's messy, but I like it.",
-				"18_2": "Uncle Elliott said he'd teach me to play piano!$h#$b#Do you play any instruments, Daddy?^Do you play any instruments, Mommy?"
+				"18_2": "Uncle Elliott said he'd teach me to play piano! I can't wait!$h#$b#Do you play any instruments, Daddy?^Do you play any instruments, Mommy?",
+				"13_2": "Mama's taking me out foraging today! I hope we can make something yummy from it!$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Leah"
+				"Loe2run.ChildToNPC/FirstChildParent": "Leah",
+				"FirstPersonality": "Shy"
 			}
 		},
 		{
-			"LogName": "FirstChild Parent Maru",
+			"LogName": "FirstChild Parent Maru Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
 				"3_2": "Mama showed me how to change a battery.#$b#She says batteries help make my toys move! Isn't that cool?!$h",
-				"18_2": "Grandpa let me hold a 'test tube' in the lab today, but I dropped it by accident.$s#$b#Grandpa said it was ok, but I felt bad...$s"
+				"18_2": "Grandpa let me hold a 'test tube' in the lab today, but I dropped it by accident.$s#$b#Grandpa said it was ok, but I felt bad...$s",
+				"13_2": "I stubbed my toe before. It really hurt!$s#$b#But Mama gave me a hug, and I felt better.$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Maru"
+				"Loe2run.ChildToNPC/FirstChildParent": "Maru",
+				"FirstPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "FirstChild Parent Penny",
+			"LogName": "FirstChild Parent Maru Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"3_2": "Mama showed me how to change a battery.#$b#She says batteries help make my toys move! I wonder how...is it magic?",
+				"18_2": "Grandpa let me hold a 'test tube' in the lab today, but I dropped it by accident.$s#$b#Grandpa said it was ok, but I felt bad...$s",
+				"13_2": "I stubbed my toe before and I cried…$s#$b#But then Mama kissed my boo-boo, and I felt better.$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/FirstChildParent": "Maru",
+				"FirstPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "FirstChild Parent Penny Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
 				"3_2": "Mama made 'Mushroom Surprise' for lunch yesterday.#$b#It didn't taste very good...$s",
-				"18_2": "I hope Mama doesn't make casserole for dinner...$s"
+				"18_2": "I helped Mama with the gardening out back!$h#$b#I'm gonna grow a huge tree so I can go climbing!$h",
+				"13_2": "Mama's so good at doing the voices when reading to me!$h#$b#When she did the monster it was so scary!$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Penny"
+				"Loe2run.ChildToNPC/FirstChildParent": "Penny",
+				"FirstPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "FirstChild Parent Sam",
+			"LogName": "FirstChild Parent Penny Shy",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
-				"3_2": "Papa showed me a cool trick on his skateboard today!$h#$b#He said it was hard to learn, but he makes it look so easy!",
-				"18_2": "Papa cooked us pizza yesterday for lunch!#$b#I don't think he cooked it long enough, though...it was still cold in the middle.$s"
+				"3_2": "Mama made 'Mushroom Surprise' for lunch yesterday...#$b#It was really yucky!$s",
+				"18_2": "I helped Mama with the gardening out back!$h#$b#I'm gonna grow lots of pretty flowers.$4",
+				"13_2": "I love Mama's voices when she reads to me!$h#$b#I'm gonna ask her to read two books tonight!$4"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Sam"
+				"Loe2run.ChildToNPC/FirstChildParent": "Penny",
+				"FirstPersonality": "Shy"
 			}
 		},
 		{
-			"LogName": "FirstChild Parent Sebastian",
+			"LogName": "FirstChild Parent Sam Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
-				"3_2": "Papa let me sit on his motorcycle. It's super loud!$h",
-				"18_2": "Grandpa let me hold a 'test tube' in the lab today, but I dropped it by accident.$s#$b#Grandpa said it was ok, but I felt bad...$s"
+				"3_2": "Papa showed me a cool trick on his skateboard today!$h#$b#I had a go too! I fell but it was really fun!$h",
+				"18_2": "Daddy, how do use the microwave?^Mommy, how do use the microwave?#$b#Papa cooked us pizza yesterday for lunch, but it was still cold in the middle.$s",
+				"13_2": "Papa is really good at the guitar!#$b#One day I'll play just like him!$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Sebastian"
+				"Loe2run.ChildToNPC/FirstChildParent": "Sam",
+				"FirstPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "FirstChild Parent Shane",
+			"LogName": "FirstChild Parent Sam Shy",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
-				"3_2": "Daddy's teaching me how to handle chickens!$h#$b#He says to pet them like this...",
-				"18_2": "Daddy won't let me have his juice in the fridge.$a#$b#He says it's only for grown-ups..."
+				"3_2": "Papa showed me a cool trick on his skateboard today!$h#$b#He let me have a go but it was too scary. I thought I was gonna fall.$s",
+				"18_2": "Can you cook instead of Papa next time?#$b#He cooked us pizza yesterday for lunch but it was still cold in the middle.$s",
+				"13_2": "Papa is really good at the guitar.#$b#I wish I could be as good as him someday."
 			},
 			"When": {
-				"Loe2run.ChildToNPC/FirstChildParent": "Shane"
+				"Loe2run.ChildToNPC/FirstChildParent": "Sam",
+				"FirstPersonality": "Shy"
 			}
 		},
+		{
+			"LogName": "FirstChild Parent Sebastian Outgoing",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"3_2": "Papa let me sit on his motorbike.#$b#It's so cool! I get it goes super fast!$h",
+				"18_2": "Grandpa let me hold a 'test tube' in the lab today, but I dropped it by accident.$s#$b#Grandpa said it was ok, but I felt bad...$s",
+				"13_2": "Papa let me sit by him while he worked.#$b#It's really boring! He should be a motorbike racer instead!$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/FirstChildParent": "Sebastian",
+				"FirstPersonality": "Outgoing"
+			}
+		},
+		{
+			"LogName": "FirstChild Parent Sebastian Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"3_2": "Papa let me sit on his motorcycle.#$b#It's super loud, like a monster roaring!",
+				"18_2": "Grandpa let me hold a 'test tube' in the lab today, but I dropped it by accident.$s#$b#Grandpa said it was ok, but I felt bad...$s",
+				"13_2": "Papa let me sit by him while he worked.#$b#It looks really hard. I told him to take a break so he took me to play outside.$4"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/FirstChildParent": "Sebastian",
+				"FirstPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "FirstChild Parent Shane Outgoing",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"3_2": "Papa's teaching me how to handle chickens!$h#$b#He says to pet them like this...",
+				"18_2": "Papa won't let me have his juice in the fridge.$a#$b#He says it's only for grown-ups but I want some!$a",
+				"13_2": "I visited Aunt Marnie!#$b#Her goats are so funny, they tried to eat my clothes!$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/FirstChildParent": "Shane",
+				"FirstPersonality": "Outgoing"
+			}
+		},
+		{
+			"LogName": "FirstChild Parent Shane Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"3_2": "Papa's teaching me how to handle chickens!$h#$b#He says to pet them like this...",
+				"18_2": "Papa won't let me have his juice in the fridge.$a#$b#He says it's only for grown-ups but it makes him sad. He shouldn't drink it.$s",
+				"13_2": "I visited Aunt Marnie!$h#$b#Her cows are really big but really nice.  One of them licked my face!$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/FirstChildParent": "Shane",
+				"FirstPersonality": "Shy"
+			}
+		},
+		
+		
 		{
 			"LogName": "FirstChild Location Dialogue",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
 				"ArchaeologyHouse_18_12": "{{Random:Daddy, I'm studying!^Mommy, I'm studying!$a@@Are you coming to school too?$h@@Um...Can you help me with this bit?@@Daddy, you're not meant to be here!^Mommy, you're not meant to be here!$a|inputSeparator=@@}}",
-				"Town_17_90": "{{Random:School was fun today!$h@@Aw, I've got so much homework to do.$s@@Daddy, can you help me with my homework tonight?^Mommy, can you help me with my homework tonight?^@@I wanna go play already!@@%{{Loe2run.ChildToNPC/FirstChildName}} is listening intently to Penny.|inputSeparator=@@}}",
+				"Town_15_89": "{{Random:School was fun today!$h@@Aw, I've got so much homework to do.$s@@Daddy, can you help me with my homework tonight?^Mommy, can you help me with my homework tonight?^@@I wanna go play already!@@%{{Loe2run.ChildToNPC/FirstChildName}} is listening intently to Penny.|inputSeparator=@@}}",
 				"Town_28_92": "{{Random:I had so much fun playing today!$h@@I played so much with Jas!$h@@I played so much with Vincent!$h@@I'm so tired...*yawn*@@%{{Loe2run.ChildToNPC/FirstChildName}} is listening intently to Penny.|inputSeparator=@@}}"
 			},
 			"When": {
@@ -595,6 +866,15 @@
 				"FirstBabysitter": "Leah"
 			}
 		},
+		{
+			"LogName": "AFirstChild Schedule Elliott",
+			"Action": "Load",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"FromFile": "assets/schedules/Elliott.json",
+			"When": {
+				"FirstBabysitter": "Elliott"
+			}
+		},
 
 		//None Schedule
 		{
@@ -620,7 +900,6 @@
 			},
 			"When": {
 				"Hearts:Sam": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"FirstBabysitter": "None"
 			}
 		},
@@ -778,7 +1057,7 @@
 			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
 				"11": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:11.000\"/1710 ScienceHouse 29 11 0/1800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:11.001\"/2130 SebastianRoom 4 4 3 child_sleep",
-				"spring": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0\"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 4 4 3 sit_down/2140 SebastianRoom 4 4 3 child_sleep",
+				"spring": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 4 4 3 sit_down/2140 SebastianRoom 4 4 3 child_sleep",
 				"Thu": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Thu.000\"/1400 Railroad 30 46 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Thu.001\"/1800 Railroad 64 46 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Thu.002\"/1930 Railroad 5 46 1 child_sleep/2130 SebastianRoom 4 4 3 child_sleep",
 				"fall": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.000\"/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.001\"/2130 SebastianRoom 4 4 3 child_sleep",
 				"winter_16": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_16.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_16.001\"/1650 Beach 12 39 2/2340 SebastianRoom 4 4 3 child_sleep",
@@ -875,7 +1154,7 @@
 			"Action": "EditData",
 			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
-				"9": "830 Hospital 2 15 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:9.000\"/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 27 11 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 child_sleep",
+				"9": "830 Hospital 2 15 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:9.000\"/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 27 11 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 child_sleep",
 				"23": "GOTO 9"
 			},
 			"When": {
@@ -888,7 +1167,7 @@
 			"Action": "EditData",
 			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
-				"9": "830 Hospital 2 15 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:9.000\"/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 27 11 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 child_sleep",
+				"9": "830 Hospital 2 15 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:9.000\"/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 27 11 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 child_sleep",
 				"23": "GOTO 9"
 			},
 			"When": {
@@ -962,7 +1241,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"FirstBabysitter": "Abigail"
 			}
 		},
@@ -990,7 +1268,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"FirstBabysitter": "Abigail"
 			}
 		},
@@ -1048,10 +1325,11 @@
 				"Sun.001": "%{{Loe2run.ChildToNPC/FirstChildName}} seems transfixed.",
 				"summer_Sun.001": "%{{Loe2run.ChildToNPC/FirstChildName}} seems transfixed.",
 				"default.003": "%{{Loe2run.ChildToNPC/FirstChildName}} seems transfixed.",
-				"spring.001": "%{{Loe2run.ChildToNPC/FirstChildName}} seems transfixed.",
+				"spring.001": "%{{Loe2run.ChildToNPC/FirstChildName}} seems transfixed."
 			},
 			"When": {
-				"FirstBabysitter": "Shane"
+				"FirstBabysitter": "Shane",
+				"HasFile: assets/dialogue/Shane-{{Language}}.json": "false"
 			}
 		},
 		{
@@ -1062,7 +1340,7 @@
 				"Sun.001": "%{{Loe2run.ChildToNPC/FirstChildName}} parece paralisada.",
 				"summer_Sun.001": "%{{Loe2run.ChildToNPC/FirstChildName}} parece paralisada.",
 				"default.003": "%{{Loe2run.ChildToNPC/FirstChildName}} parece paralisada.",
-				"spring.001": "%{{Loe2run.ChildToNPC/FirstChildName}} parece paralisada.",
+				"spring.001": "%{{Loe2run.ChildToNPC/FirstChildName}} parece paralisada."
 			},
 			"When": {
 				"FirstBabysitter": "Shane",
@@ -1094,7 +1372,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"FirstBabysitter": "Shane"
 			}
 		},
@@ -1122,7 +1399,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"FirstBabysitter": "Shane"
 			}
 		},
@@ -1174,7 +1450,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"FirstBabysitter": "Linus"
 			}
 		},
@@ -1202,7 +1477,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"FirstBabysitter": "Linus"
 			}
 		},
@@ -1212,7 +1486,7 @@
 			"LogName": "FirstChild Emily Schedule Dialogue",
 			"Action": "Load",
 			"Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-			"FromFile": "assets/dialogue/Emily.json",
+			"FromFile": "assets/dialogue/Linus.json",
 			"When": {
 				"FirstBabysitter": "Emily",
 				"HasFile: assets/dialogue/Emily-{{Language}}.json": "false"
@@ -1235,6 +1509,10 @@
 			"Entries": {
 				"spring.002": "Hi, Daddy!^Hi, Mommy!$h#$b#I'm not normally allowed back here but Emily said I could!$h#$b#...#$b#Um ... um ... Here's your drink.$l#$b#%{{Loe2run.ChildToNPC/FirstChildName}} hands you an imaginary glass.",
 				"winter_11.001": "Hi, Daddy!^Hi, Mommy!$h#$b#I'm not normally allowed back here but Emily said I could!$h#$b#...#$b#Um ... um ... Here's your drink.$l#$b#%{{Loe2run.ChildToNPC/FirstChildName}} hands you an imaginary glass."
+			},
+			"When": {
+				"FirstBabysitter": "Emily",
+				"HasFile: assets/dialogue/Emily-{{Language}}.json": "false"
 			}
 		},
 		{
@@ -1246,7 +1524,8 @@
 				"winter_11.001": "Oi, papai!^Oi, mamãe!$h#$b#Normalmente eu não posso voltar aqui, mas a Emily disse que eu posso.$h#$b#...#$b#Um ... um ... Aqui está a sua bebida.$l#$b#%{{Loe2run.ChildToNPC/FirstChildName}} te dá  um copo de vidro imaginário."
 			},
 			"When": {
-				"Language": "pt"
+				"Language": "pt",
+				"FirstBabysitter": "Emily"
 			}
 		},
 		{
@@ -1273,7 +1552,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"FirstBabysitter": "Emily"
 			}
 		},
@@ -1301,7 +1579,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"FirstBabysitter": "Emily"
 			}
 		},
@@ -1331,7 +1608,7 @@
 			"Action": "EditData",
 			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
-				"9": "830 SamHouse 16 18 0/1100 Town 78 95 2/1600 Town 23 97 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:9.000\"/1900 SamHouse 16 18 0\"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:9.001\"/2130 SamHouse 9 22 1 child_sleep",
+				"9": "830 SamHouse 16 18 0/1100 Town 78 95 2/1600 Town 23 97 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:9.000\"/1900 SamHouse 16 18 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:9.001\"/2130 SamHouse 9 22 1 child_sleep",
 				"rain": "830 SamHouse 16 18 0/1100 SamHouse 19 18 0/1500 SamHouse 7 6 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.000\"/1700 SamHouse 16 18 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.001\"/1830 SamHouse 19 13 0/2000 SamHouse 23 14 1 child_sleep",
 				"rain2": "830 SamHouse 16 18 0/1100 SamHouse 2 21 0/1400 Saloon 39 19 2 jump \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain2.000\"/1940 SamHouse 23 14 1 child_sleep",
 				"summer": "850 SamHouse 19 15 3 dance/1340 Beach 48 25 2 jump \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.000\"/1900 SamHouse 19 13 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.001\"/2100 SamHouse 23 14 1 child_sleep",
@@ -1355,7 +1632,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"FirstBabysitter": "Sam"
 			}
 		},
@@ -1395,7 +1671,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"FirstBabysitter": "Sam"
 			}
 		},
@@ -1429,25 +1704,7 @@
 				},
 			"When": {
 				"FirstBabysitter": "Leah",
-				"HasFile: assets/dialogue/Emily-{{Language}}.json": "false"
-			}
-		},
-		{
-			"LogName": "FirstChild Leah Schedule Dialogue Edit Schedule",
-			"Action": "EditData",
-			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
-			"Entries": {
-				"rain": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.000\"/1200 LeahHouse 3 7 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.001\"/1400 LeahHouse 8 5 0/1600 Saloon 3 21 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.002\"/2340 LeahHouse 11 6 1 child_sleep",
-				"winter_15": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_15.000\"/1200 LeahHouse 3 7 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_15.001\"/1400 LeahHouse 8 5 0/1600 Beach 42 35 0/2340 LeahHouse 11 6 1 child_sleep",
-				"spring_16": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring_16.000\"/1030 Hospital 4 17 0/1330 Hospital 13 14 3/1600 Saloon 3 21 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring_16.001\"/2340 LeahHouse 11 6 1 child_sleep",
-				"fall": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.000\"/1200 Town 86 62 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.001\"/1900 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
-				"Mon": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Mon.000\"/1100 SeedShop 12 27 3 square_1_5_3/1700 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
-				"summer": "MAIL beachBridgeFixed/GOTO summer_noBridge/800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.000\"/1200 Beach 82 17 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.001\"/1900 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
-				"summer_noBridge": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer_noBridge.000\"/1200 Beach 39 25 2 jump \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer_noBridge.001\"/1900 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep",
-				"spring": "800 LeahHouse 6 5 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.000\"/1200 Forest 69 50 2/1500 Forest 35 25 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.001\"/1830 Forest 21 30 1/1930 LeahHouse 9 5 0/2200 LeahHouse 14 11 3/2400 LeahHouse 11 6 1 child_sleep"
-			},
-			"When": {
-				"FirstBabysitter": "Leah"
+				"HasFile: assets/dialogue/Leah-{{Language}}.json": "false"
 			}
 		},
 		{
@@ -1460,12 +1717,11 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"FirstBabysitter": "Leah"
 			}
 		},
 		{
-			"LogName": "FirstChild Leah No School Leah 9 23",
+			"LogName": "FirstChild Leah No School Sam 9 23",
 			"Action": "EditData",
 			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
 			"Entries": {
@@ -1473,7 +1729,7 @@
 				"23": "GOTO 9",
 			},
 			"When": {
-				"Hearts:Leah": "{{Range: 0, 5}}",
+				"Hearts:Sam": "{{Range: 0, 5}}",
 				"FirstBabysitter": "Leah"
 			}
 		},
@@ -1487,11 +1743,115 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
-				"Hearts:Leah": "{{Range: 6, 14}}",
-				"Day": "9, 23",
+				"Hearts:Sam": "{{Range: 6, 14}}",
 				"FirstBabysitter": "Leah"
 			}
 		},
+		
+		//FirstChild Elliott Schedule
+		{
+			"LogName": "FirstChild Elliott Schedule Dialogue",
+			"Action": "Load",
+			"Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"FromFile": "assets/dialogue/Elliott.json",
+			"When": {
+				"FirstBabysitter": "Elliott",
+				"HasFile: assets/dialogue/Elliott-{{Language}}.json": "false"
+			}
+		},
+		{
+			"LogName": "FirstChild Elliott Schedule Dialogue Language",
+			"Action": "Load",
+			"Target": "Strings/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"FromFile": "assets/dialogue/Elliott-{{Language}}.json",
+			"When": {
+				"FirstBabysitter": "Elliott",
+				"HasFile: assets/dialogue/Elliott-{{Language}}.json": "true"
+			}
+		},				
+		{
+			"LogName": "FirstChild Elliott Schedule Dialogue Edit Schedule",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"rain": "800 ElliottHouse 11 4 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.000\"/1100 ElliottHouse 6 4 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.001\"/1330 ElliottHouse 13 7 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:rain.002\"/1800 ElliottHouse 5 8 1/2000 ElliottHouse 6 4 0/2400 ElliottHouse 14 5 1 child_sleep",
+				"winter_17": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 15 89 2/1750 Beach 39 32 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:winter_17.003\"/2500 ElliottHouse 14 5 1 child_sleep",
+				"fall": "800 ElliottHouse 11 4 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.000\"/1100 ElliottHouse 6 4 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.001\"/1130 ArchaeologyHouse 15 9 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.002\"/1730 ElliottHouse 5 8 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.003\"/2100 ElliottHouse 13 7 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:fall.004\"/2400 ElliottHouse 14 5 1 child_sleep",
+				"Thu": "800 ElliottHouse 11 4 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Thu.000\"/1100 ElliottHouse 6 4 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Thu.001\"/1130 SeedShop 2 21 3 square_1_5_3/1730 ElliottHouse 5 8 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Thu.002\"/2100 ElliottHouse 13 7 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Thu.003\"/2400 ElliottHouse 14 5 1 child_sleep",
+				"summer": "800 ElliottHouse 11 4 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.000\"/1100 ElliottHouse 6 4 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.001\"/1130 Forest 94 39 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.002\"/1800 ElliottHouse 5 8 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.003\"/2200 ElliottHouse 13 7 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:summer.004\"/2400 ElliottHouse 14 5 1 child_sleep",
+				"spring": "800 ElliottHouse 11 4 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.000\"/1100 ElliottHouse 6 4 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.001\"/1200 Beach 50 21 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.006\"/1330 ElliottHouse 13 7 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.002\"/1500 town 53 103 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.003\"/1800 ElliottHouse 5 8 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.004\"/2000 ElliottHouse 6 4 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:spring.005\"/2400 ElliottHouse 14 5 1 child_sleep"
+			},
+			"When": {
+				"FirstBabysitter": "Elliott"
+			}
+		},
+		{
+			"LogName": "FirstChild Elliott Sunday Leah No Hearts 6",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"Sun": "800 ElliottHouse 11 4 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Sun.000\"/1100 Beach 26 36 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/FirstChildName}}:Sun.003\"/1700 Saloon 5 20 3/2340 ElliottHouse 14 5 1 child_sleep"
+			},
+			"When": {
+				"Hearts:Leah": "{{Range: 0, 5}}",
+				"DayOfWeek": "Sunday",
+				"FirstBabysitter": "Elliott"
+			}
+		},
+		{
+			"LogName": "FirstChild Elliott Sunday Leah Hearts 6",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"Sun": "GOTO spring",
+			},
+			"When": {
+				"Hearts:Leah": "{{Range: 6, 14}}",
+				"DayOfWeek": "Sunday",
+				"FirstBabysitter": "Elliott"
+			}
+		},
+		{
+			"LogName": "FirstChild Elliott No School Penny 9 23",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"9": "GOTO {{season}}",
+				"23": "GOTO 9",
+			},
+			"When": {
+				"Hearts:Penny": "{{Range: 0, 5}}",
+				"FirstBabysitter": "Elliott"
+			}
+		},
+		{
+			"LogName": "FirstChild Elliott No School Sam 9 23",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"9": "GOTO {{season}}",
+				"23": "GOTO 9",
+			},
+			"When": {
+				"Hearts:Sam": "{{Range: 0, 5}}",
+				"FirstBabysitter": "Elliott"
+			}
+		},
+		{
+			"LogName": "FirstChild Elliott School 9 23",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/FirstChildName}}",
+			"Entries": {
+				"9": "GOTO Tue",
+				"23": "GOTO Tue"
+			},
+			"When": {
+				"Hearts:Penny": "{{Range: 6, 14}}",
+				"Hearts:Sam": "{{Range: 6, 14}}",
+				"FirstBabysitter": "Elliott"
+			}
+		},
+		
 
 		//FirstChild Images
 		{
@@ -1551,13 +1911,25 @@
 			}
 		},
 		{
-			"LogName": "ASecondChild Dialogue",
+			"LogName": "ASecondChild Dialogue Outgoing",
 			"Action": "Load",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
-			"FromFile": "assets/dialogue/dialogue.json"
+			"FromFile": "assets/dialogue/dialogue-outgoing.json",
+			"When": {
+				"SecondPersonality": "Outgoing"
+			}
 		},
 		{
-			"LogName": "ASecondChild Dialogue Language",
+			"LogName": "ASecondChild Dialogue Shy",
+			"Action": "Load",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"FromFile": "assets/dialogue/dialogue-shy.json",
+			"When": {
+				"SecondPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "ASecondChild Dialogue ZLanguage",
 			"Action": "Load",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"FromFile": "assets/dialogue/dialogue-{{Language}}.json",
@@ -1571,6 +1943,33 @@
 		   "Action": "Include",
 		   "FromFile": "assets/dialogue/MoviesReactions2.json"
 		},
+		//SecondChild Movie Gift Tastes
+		{
+			"Action": "EditData",
+			"Target": "Data/ConcessionTastes",
+			"Entries": { 
+			"{{Loe2run.ChildToNPC/SecondChildName}}": {
+			"Name": "{{Loe2run.ChildToNPC/SecondChildName}}",
+			"LovedTags": [
+			 "Cotton Candy",
+			  "Stardrop Sorbet"    ],
+			"LikedTags": [
+			  "Apple Slices",
+			  "Chocolate Popcorn",
+			  "Personal Pizza",
+			  "Sweet"
+			],
+			"DislikedTags": [
+			  "Black Licorice",
+			  "Jasmine Tea",
+			  "Truffle Popcorn",
+			  "Hummus Snack Pack"
+			]
+		  } 
+		 }
+		},
+		
+		//SecondChild Alter Dialogue
 		{
 			"LogName": "SecondChild Teacher Penny",
 			"Action": "EditData",
@@ -1581,9 +1980,7 @@
 			"When": {
 				"DayOfWeek": "Wednesday"
 			}
-		},
-		
-		//SecondChild Alter Dialogue
+		},		
 		{
 			"LogName": "SecondChild Teacher Penny PT",
 			"Action": "EditData",
@@ -1679,18 +2076,31 @@
 			}
 		},
 		{
-			"LogName": "SecondChild Dinner",
+			"LogName": "SecondChild Dinner Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
 				"Sun": "I want {{Random:burgers, omelets, pancakes, chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup}} for dinner tonight!",
 			},
 			"When": {
-				"DayOfWeek": "Sunday"
+				"DayOfWeek": "Sunday",
+				"SecondPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "SecondChild Dinner PT",
+			"LogName": "SecondChild Dinner Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"Sun": "Can we have {{Random:burgers, omelets, pancakes, chocolate cake, ice cream, stir fry, fruit salad, crab cakes, shrimp cocktail, sashimi, hashbrowns, bean hot pot, spaghetti, pumpkin soup}} for dinner tonight?$4",
+			},
+			"When": {
+				"DayOfWeek": "Sunday",
+				"SecondPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "SecondChild Dinner Z PT",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
@@ -1714,7 +2124,32 @@
 			}
 		},
 		{
-			"LogName": "SecondChild Not Pregnant",
+			"LogName": "SecondChild Not Pregnant Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"Mon": "Play with me today, Daddy!^Play with me today, Mommy!$h"
+			},
+			"When": {
+				"HavingChild |contains=@{{playerName}}": "false",
+				"HavingChild |contains={{spouse}}": "false",
+				"SecondPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "SecondChild Pregnant Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"Mon": "{{Random:I don't know if I want a new brother or sister...$s#$b#Can you tell the stork to take them back?, I can't wait till the new baby comes!$4#$b#I'm going to love them so much.$h}}"
+			},
+			"When": {
+				"HavingChild": "@{{playerName}}",
+				"SecondPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "SecondChild Not Pregnant Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
@@ -1723,21 +2158,23 @@
 			"When": {
 				"HavingChild |contains=@{{playerName}}": "false",
 				"HavingChild |contains={{spouse}}": "false",
+				"SecondPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "SecondChild Pregnant",
+			"LogName": "SecondChild Pregnant Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"Thu": "{{Random:I don't know if I want a new brother or sister...$s#$b#Can you tell the stork to take them back?, I can't wait till the new baby comes!$h#$b#They're gonna be my new best friend!$h}}"
+				"Thu": "{{Random:I don't want a new brother or sister!$a#$b#Tell the stork to take them back!$a, I can't wait till the new baby comes!$h#$b#They're gonna be my new best friend!$h}}"
 			},
 			"When": {
-				"HavingChild": "@{{playerName}}"
+				"HavingChild": "@{{playerName}}",
+				"SecondPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "SecondChild Not Pregnant PT",
+			"LogName": "SecondChild Not Pregnant Z PT",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
@@ -1750,7 +2187,7 @@
 			}
 		},
 		{
-			"LogName": "SecondChild Pregnant PT",
+			"LogName": "SecondChild Pregnant Z PT",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
@@ -1786,169 +2223,353 @@
 				"Language": "zh"
 			}
 		},
+		
+		//SecondChild Parent Dialogue
 		{
-			"LogName": "SecondChild Winter Festival",
-			"Action": "EditData",
-			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
-			"Entries": {
-				"summer_11_2": "%Who's your gift for, {{Loe2run.ChildToNPC/SecondChildName}}?#$b#I'm not telling, heehee.$h"
-			},
-			"When": {
-				"DayEvent": "feast of the winter star"
-			}
-		},
-		{
-			"LogName": "SecondChild Parent Abigail",
+			"LogName": "SecondChild Parent Abigail Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
 				"23_2": "Mama found the plastic spider I hid yesterday. She screamed really loud!$h#$b# Then she got mad at me...",
-				"7_2": "Mama's teaching me to play 'Journey of the Prairie King'. It's really hard!"
+				"7_2": "Mama's teaching me to play 'Journey of the Prairie King'. It's really hard!",
+				"20_2": "Grandma brought me to her secret garden today. She’s growing lots of interesting plants in there!$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/SecondChildParent": "Abigail"
+				"Loe2run.ChildToNPC/SecondChildParent": "Abigail",
+				"SecondPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "SecondChild Parent Alex",
+			"LogName": "SecondChild Parent Abigail Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"23_2": "Mama found my plastic spider Benji under my bed. She screamed really loud!#$b#Then she got mad at me...$s",
+				"7_2": "Mama's teaching me to play 'Journey of the Prairie King’, but I like watching instead of playing...",
+				"20_2": "Grandma brought me to her secret garden today. I like how quiet it is."
+			},
+			"When": {
+				"Loe2run.ChildToNPC/SecondChildParent": "Abigail",
+				"SecondPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "SecondChild Parent Alex Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
 				"23_2": "Papa let me hold one of his weights.#$b#It was really heavy! Papa is SUPER strong!$h",
-				"7_2": "Great-Grandpa was kind of grumpy today.$s#$b#I think his knees were hurting again...$s"
+				"7_2": "Great-Grandpa was kind of grumpy today.$s#$b#I think his knees were hurting again, so I gave him one of my cookies to make him feel better!$h",
+				"20_2": "We went to visit Great-Grandma. She made me cookies!$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/SecondChildParent": "Alex"
+				"Loe2run.ChildToNPC/SecondChildParent": "Alex",
+				"SecondPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "SecondChild Parent Elliott",
+			"LogName": "SecondChild Parent Alex Shy",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"23_2": "I tried to write fancy like Papa, but I spilled ink all over my paper!#$b#Papa found out and got mad. Then he made me take a bath...$s",
-				"7_2": "Papa said he would read with me tonight.$h#$b#Can you come read with us too, Daddy?^Can you come read with us too, Mommy?"
+				"23_2": "I watched Papa do his weight-lifting exercises today.#$b#He looks so strong! Papa's my favourite superhero!$4",
+				"7_2": "Great-Grandpa was kind of grumpy today.$s#$b#I think his knees were hurting again, so I made him a 'feel better' card!",
+				"20_2": "We went to visit Great-Grandma. Her cookies always smell so good…$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/SecondChildParent": "Elliott"
+				"Loe2run.ChildToNPC/SecondChildParent": "Alex",
+				"SecondPersonality": "Shy"
 			}
 		},
 		{
-			"LogName": "SecondChild Parent Emily",
+			"LogName": "SecondChild Parent Elliott Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"23_2": "Mama's been teaching me how to sew!$h#$b#I keep pricking my fingers, though.",
-				"7_2": "Mama showed me how to take care of the parrot.$h#$b#I'm sad that he'll never fly again, but I'm happy he's part of our family now."
+				"23_2": "I tried to write fancy like Papa, but I got ink all over my hands!$a#$b#Papa found out and got mad. Then he made me take a bath...$s",
+				"7_2": "Papa said he would read with me tonight.$h#$b#Can you come read with us too, Daddy?^Can you come read with us too, Mommy?",
+				"20_2": "Papa said he would teach me to fish someday, but I think fish are gross!$a#$b#Do you like fishing,Daddy^Do you like fishing, Mommy?"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/SecondChildParent": "Emily"
+				"Loe2run.ChildToNPC/SecondChildParent": "Elliott",
+				"SecondPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "SecondChild Parent Haley",
+			"LogName": "SecondChild Parent Elliott Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"23_2": "I tried to write fancy like Papa, but I spilled ink all over my paper!$s#$b#Papa found out and got mad. Then he made me take a bath...$s",
+				"7_2": "Papa said he would read with me tonight.$h#$b#Can you come read with us too, Daddy?^Can you come read with us too, Mommy?",
+				"20_2": "Papa said he would teach me to fish someday It sounds like fun!$h#$b#Do you like fishing,Daddy^Do you like fishing, Mommy?"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/SecondChildParent": "Elliott",
+				"SecondPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "SecondChild Parent Emily Outgoing",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"23_2": "Mama's been teaching me how to sew!$h#$b#I keep pricking my fingers, though.$neutral",
+				"7_2": "Mama showed me how to take care of the parrot.$h#$b#He likes sunflower seeds!$h",
+				"20_2": "Aunt Haley showed me her camera the other day. She taught me how to “zoom in” and “zoom out” to take a picture!#$b#Isn’t that cool?!$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/SecondChildParent": "Emily",
+				"SecondPersonality": "Outgoing"
+			}
+		},
+		{
+			"LogName": "SecondChild Parent Emily Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"23_2": "Mama's been teaching me how to sew.$h#$b#I can sew a pocket!",
+				"7_2": "Mama showed me how to take care of the parrot.$h#$b#I'm sad that he'll never fly again, but I'm happy he's part of our family now.",
+				"20_2": "Aunt Haley showed me her camera the other day.#$b#She uses a special room called a ‘Dark Room’ to make her pictures.#$b#But I didn't want to go in. It's dark and scary...$s"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/SecondChildParent": "Emily",
+				"SecondPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "SecondChild Parent Haley Outgoing",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"23_2": "I tried on Mama's makeup today.#$b#She got really mad!$4",
+				"7_2": "Mama did my hair today, but I like it better messy!$a",
+				"20_2": "Mama is so pretty!$h#$b#When I grow up I want to be just like her!$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/SecondChildParent": "Haley",
+				"SecondPersonality": "Outgoing"
+			}
+		},
+		{
+			"LogName": "SecondChild Parent Haley Shy",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
 				"23_2": "I tried on Mama's makeup today.#$b#She got mad at me...$s",
-				"7_2": "Mama did my hair today. Does it look nice?$h"
+				"7_2": "Mama did my hair today. Does it look nice?$h",
+				"20_2": "Mama is so pretty!$h#$b#Do you think I'll be pretty like her when I grow up?$neutral"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/SecondChildParent": "Haley"
+				"Loe2run.ChildToNPC/SecondChildParent": "Haley",
+				"SecondPersonality": "Shy"
 			}
 		},
 		{
-			"LogName": "SecondChild Parent Harvey",
+			"LogName": "SecondChild Parent Harvey Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"7_2": "Papa's mustache tickles when he gives me kisses!$h",
-				"23_2": "I want to play with Papa's airplanes, but he won't let me!$a#$b#He says they break easy...$s"
+				"7_2": "Papa's mustache tickles when he gives me kisses!$h#$b#It feels prickly like pine needles!",
+				"23_2": "I want to play with Papa's airplanes, but he won't let me!#$b#Why does he get to play with toys and I don’t?$a",
+				"20_2": "I stubbed my toe before. It really hurt!$s#$b#But Papa gave me a hug, and I felt better.$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/SecondChildParent": "Harvey"
+				"Loe2run.ChildToNPC/SecondChildParent": "Harvey",
+				"SecondPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "SecondChild Parent Leah",
+			"LogName": "SecondChild Parent Harvey Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"7_2": "Papa's mustache tickles when he gives me kisses!$h#$b#It feels fuzzy like a caterpillar!$4",
+				"23_2": "I want to play with Papa's airplanes, but he won't let me!$a#$b#He says they break easy...$s",
+				"20_2": "I stubbed my toe before and I cried…$s#$b#But then Papa kissed my boo-boo, and I felt better.$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/SecondChildParent": "Harvey",
+				"SecondPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "SecondChild Parent Leah Outgoing",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"23_2": "Mama's teaching me to paint. It's fun getting all messy!$h",
+				"7_2": "Uncle Elliott said he'd teach me to play piano but I want to go fishing instead!$h#$b#Do you play any instruments, Daddy?^Do you play any instruments, Mommy?",
+				"20_2": "Mama's taking me out foraging today! I'm gonna find the biggest mushroom ever!$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/SecondChildParent": "Leah",
+				"SecondPersonality": "Outgoing"
+			}
+		},
+		{
+			"LogName": "SecondChild Parent Leah Shy",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
 				"23_2": "Mama's teaching me to paint! It's messy, but I like it.",
-				"7_2": "Uncle Elliott said he'd teach me to play piano!$h#$b#Do you play any instruments, Daddy?^Do you play any instruments, Mommy?"
+				"7_2": "Uncle Elliott said he'd teach me to play piano! I can't wait!$h#$b#Do you play any instruments, Daddy?^Do you play any instruments, Mommy?",
+				"20_2": "Mama's taking me out foraging today! I hope we can make something yummy from it!$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/SecondChildParent": "Leah"
+				"Loe2run.ChildToNPC/SecondChildParent": "Leah",
+				"SecondPersonality": "Shy"
 			}
 		},
 		{
-			"LogName": "SecondChild Parent Maru",
+			"LogName": "SecondChild Parent Maru Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
 				"23_2": "Mama showed me how to change a battery.#$b#She says batteries help make my toys move! Isn't that cool?!$h",
-				"7_2": "Grandpa let me hold a 'test tube' in the lab today, but I dropped it by accident.$s#$b#Grandpa said it was ok, but I felt bad...$s"
+				"7_2": "Grandpa let me hold a 'test tube' in the lab today, but I dropped it by accident.$s#$b#Grandpa said it was ok, but I felt bad...$s",
+				"20_2": "I stubbed my toe before. It really hurt!$s#$b#But Mama gave me a hug, and I felt better.$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/SecondChildParent": "Maru"
+				"Loe2run.ChildToNPC/SecondChildParent": "Maru",
+				"SecondPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "SecondChild Parent Penny",
+			"LogName": "SecondChild Parent Maru Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"23_2": "Mama showed me how to change a battery.#$b#She says batteries help make my toys move! I wonder how...is it magic?",
+				"7_2": "Grandpa let me hold a 'test tube' in the lab today, but I dropped it by accident.$s#$b#Grandpa said it was ok, but I felt bad...$s",
+				"20_2": "I stubbed my toe before and I cried…$s#$b#But then Mama kissed my boo-boo, and I felt better.$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/SecondChildParent": "Maru",
+				"SecondPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "SecondChild Parent Penny Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
 				"23_2": "Mama made 'Mushroom Surprise' for lunch yesterday.#$b#It didn't taste very good...$s",
-				"7_2": "I hope Mama doesn't make casserole for dinner...$s"
+				"7_2": "I helped Mama with the gardening out back!$h#$b#I'm gonna grow a huge tree so I can go climbing!$h",
+				"20_2": "Mama's so good at doing the voices when reading to me!$h#$b#When she did the monster it was so scary!$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/SecondChildParent": "Penny"
+				"Loe2run.ChildToNPC/SecondChildParent": "Penny",
+				"SecondPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "SecondChild Parent Sam",
+			"LogName": "SecondChild Parent Penny Shy",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"23_2": "Papa showed me a cool trick on his skateboard today!$h#$b#He said it was hard to learn, but he makes it look so easy!",
-				"7_2": "Papa cooked us pizza yesterday for lunch!#$b#I don't think he cooked it long enough, though...it was still cold in the middle.$s"
+				"23_2": "Mama made 'Mushroom Surprise' for lunch yesterday...#$b#It was really yucky!$s",
+				"7_2": "I helped Mama with the gardening out back!$h#$b#I'm gonna grow lots of pretty flowers.$4",
+				"20_2": "I love Mama's voices when she reads to me!$h#$b#I'm gonna ask her to read two books tonight!$4"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/SecondChildParent": "Sam"
+				"Loe2run.ChildToNPC/SecondChildParent": "Penny",
+				"SecondPersonality": "Shy"
 			}
 		},
 		{
-			"LogName": "SecondChild Parent Sebastian",
+			"LogName": "SecondChild Parent Sam Outgoing",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"23_2": "Papa let me sit on his motorcycle. It's super loud!$h",
-				"7_2": "Grandpa let me hold a 'test tube' in the lab today, but I dropped it by accident.$s#$b#Grandpa said it was ok, but I felt bad...$s"
+				"23_2": "Papa showed me a cool trick on his skateboard today!$h#$b#I had a go too! I fell but it was really fun!$h",
+				"7_2": "Daddy, how do use the microwave?^Mommy, how do use the microwave?#$b#Papa cooked us pizza yesterday for lunch, but it was still cold in the middle.$s",
+				"20_2": "Papa is really good at the guitar!#$b#One day I'll play just like him!$h"
 			},
 			"When": {
-				"Loe2run.ChildToNPC/SecondChildParent": "Sebastian"
+				"Loe2run.ChildToNPC/SecondChildParent": "Sam",
+				"SecondPersonality": "Outgoing"
 			}
 		},
 		{
-			"LogName": "SecondChild Parent Shane",
+			"LogName": "SecondChild Parent Sam Shy",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"23_2": "Daddy's teaching me how to handle chickens!$h#$b#He says to pet them like this...",
-				"7_2": "Daddy won't let me have his juice in the fridge.$a#$b#He says it's only for grown-ups..."
+				"23_2": "Papa showed me a cool trick on his skateboard today!$h#$b#He let me have a go but it was too scary. I thought I was gonna fall.$s",
+				"7_2": "Can you cook instead of Papa next time?#$b#He cooked us pizza yesterday for lunch but it was still cold in the middle.$s",
+				"20_2": "Papa is really good at the guitar.#$b#I wish I could be as good as him someday."
 			},
 			"When": {
-				"Loe2run.ChildToNPC/SecondChildParent": "Shane"
+				"Loe2run.ChildToNPC/SecondChildParent": "Sam",
+				"SecondPersonality": "Shy"
 			}
 		},
+		{
+			"LogName": "SecondChild Parent Sebastian Outgoing",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"23_2": "Papa let me sit on his motorbike.#$b#It's so cool! I get it goes super fast!$h",
+				"7_2": "Grandpa let me hold a 'test tube' in the lab today, but I dropped it by accident.$s#$b#Grandpa said it was ok, but I felt bad...$s",
+				"20_2": "Papa let me sit by him while he worked.#$b#It's really boring! He should be a motorbike racer instead!$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/SecondChildParent": "Sebastian",
+				"SecondPersonality": "Outgoing"
+			}
+		},
+		{
+			"LogName": "SecondChild Parent Sebastian Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"23_2": "Papa let me sit on his motorcycle.#$b#It's super loud, like a monster roaring!",
+				"7_2": "Grandpa let me hold a 'test tube' in the lab today, but I dropped it by accident.$s#$b#Grandpa said it was ok, but I felt bad...$s",
+				"20_2": "Papa let me sit by him while he worked.#$b#It looks really hard. I told him to take a break so he took me to play outside.$4"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/SecondChildParent": "Sebastian",
+				"SecondPersonality": "Shy"
+			}
+		},
+		{
+			"LogName": "SecondChild Parent Shane Outgoing",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"23_2": "Papa's teaching me how to handle chickens!$h#$b#He says to pet them like this...",
+				"7_2": "Papa won't let me have his juice in the fridge.$a#$b#He says it's only for grown-ups but I want some!$a",
+				"20_2": "I visited Aunt Marnie!#$b#Her goats are so funny, they tried to eat my clothes!$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/SecondChildParent": "Shane",
+				"SecondPersonality": "Outgoing"
+			}
+		},
+		{
+			"LogName": "SecondChild Parent Shane Shy",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"23_2": "Papa's teaching me how to handle chickens!$h#$b#He says to pet them like this...",
+				"7_2": "Papa won't let me have his juice in the fridge.$a#$b#He says it's only for grown-ups but it makes him sad. He shouldn't drink it.$s",
+				"20_2": "I visited Aunt Marnie!$h#$b#Her cows are really big but really nice.  One of them licked my face!$h"
+			},
+			"When": {
+				"Loe2run.ChildToNPC/SecondChildParent": "Shane",
+				"SecondPersonality": "Shy"
+			}
+		},		
+		
 		{
 			"LogName": "SecondChild Location Dialogue",
 			"Action": "EditData",
 			"Target": "Characters/Dialogue/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"ArchaeologyHouse_17_12": "{{Random:Daddy, I'm studying!^Mommy, I'm studying!$a@@Are you coming to school too?$h@@Um...Can you help me with this bit?@@Daddy, you're not meant to be here!^Mommy, you're not meant to be here!$a|inputSeparator=@@}}",
-				"Town_16_89": "{{Random:School was fun today!$h@@Aw, I've got so much homework to do.$s@@Daddy, can you help me with my homework tonight?^Mommy, can you help me with my homework tonight?^@@I wanna go play already!@@%{{Loe2run.ChildToNPC/SecondChildName}} is listening intently to Penny.|inputSeparator=@@}}",
-				"Town_29_92": "{{Random:I had so much fun playing today!$h@@I played so much with Jas!$h@@I played so much with Vincent!$h@@I'm so tired...*yawn*@@%{{Loe2run.ChildToNPC/SecondChildName}} is listening intently to Penny.|inputSeparator=@@}}"
+				"ArchaeologyHouse_17_12": "{{Random:Daddy, you're not meant to be here!^Mommy, you're not meant to be here!$a@@Daddy, I'm studying!^Mommy, I'm studying!$a@@Are you coming to school too?$h@@Um...Can you help me with this bit?|inputSeparator=@@}}",
+				"Town_16_89": "{{Random:Aw, I've got so much homework to do.$s@@Daddy, can you help me with my homework tonight?^Mommy, can you help me with my homework tonight?^@@I wanna go play already!@@%{{Loe2run.ChildToNPC/SecondChildName}} is listening intently to Penny.@@School was fun today!$h|inputSeparator=@@}}",
+				"Town_29_92": "{{Random:I'm so tired...*yawn*@@I had so much fun playing today!$h@@I played so much with Jas!$h@@I played so much with Vincent!$h@@%{{Loe2run.ChildToNPC/SecondChildName}} is listening intently to Penny.|inputSeparator=@@}}"
 			},
 			"When": {
 				"DayOfWeek": "Tuesday,Wednesday,Friday"
@@ -2093,6 +2714,15 @@
 			}
 		},
 		{
+			"LogName": "ASecondChild Schedule Elliott",
+			"Action": "Load",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"FromFile": "assets/schedules/Elliott.json",
+			"When": {
+				"SecondBabysitter": "Elliott"
+			}
+		},
+		{
 			"LogName": "ZSecondChild School Schedule",
 			"Action": "EditData",
 			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
@@ -2113,7 +2743,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "None"
 			}
 		},
@@ -2127,7 +2756,6 @@
 			},
 			"When": {
 				"Hearts:Sam": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "None"
 			}
 		},
@@ -2142,7 +2770,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "None"
 			}
 		},
@@ -2228,7 +2855,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Alex"
 			}
 		},
@@ -2242,7 +2868,6 @@
 			},
 			"When": {
 				"Hearts:Sam": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Alex"
 			}
 		},
@@ -2257,7 +2882,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Alex"
 			}
 		},
@@ -2289,7 +2913,7 @@
 			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
 				"11": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:11.000\"/1710 ScienceHouse 29 11 0/1800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:11.001\"/2130 SebastianRoom 4 4 3 child_sleep",
-				"spring": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0\"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 4 4 3 sit_down/2140 SebastianRoom 4 4 3 child_sleep",
+				"spring": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.000\"/1500 ScienceHouse 29 11 0/1530 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.001\"/1830 Mountain 58 36 1/2130 SebastianRoom 4 4 3 sit_down/2140 SebastianRoom 4 4 3 child_sleep",
 				"Fri": "800 ArchaeologyHouse 17 12 0/1400 Town 84 92 1/1500 Saloon 41 19 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Fri.000\"/2000 AnimalShop 2 7 1 child_sleep",
 				"Thu": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Thu.000\"/1400 Railroad 30 46 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Thu.001\"/1800 Railroad 64 46 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Thu.002\"/1930 Railroad 5 46 1 child_sleep/2130 SebastianRoom 4 4 3 child_sleep",
 				"fall": "800 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.000\"/1200 Mountain 57 32 1/1400 Mountain 63 14 2/1500 Mountain 42 14 1/1600 ScienceHouse 29 11 0/1730 SebastianRoom 7 6 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.001\"/2130 SebastianRoom 4 4 3 child_sleep",
@@ -2309,7 +2933,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Sebastian"
 			}
 		},
@@ -2323,7 +2946,6 @@
 			},
 			"When": {
 				"Hearts:Sam": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Sebastian"
 			}
 		},
@@ -2338,7 +2960,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Sebastian"
 			}
 		},
@@ -2394,7 +3015,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Maru"
 			}
 		},
@@ -2408,7 +3028,6 @@
 			},
 			"When": {
 				"Hearts:Sam": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Maru"
 			}
 		},
@@ -2423,7 +3042,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Maru"
 			}
 		},
@@ -2479,7 +3097,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Abigail"
 			}
 		},
@@ -2493,7 +3110,6 @@
 			},
 			"When": {
 				"Hearts:Sam": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Abigail"
 			}
 		},
@@ -2508,7 +3124,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Abigail"
 			}
 		},
@@ -2542,7 +3157,7 @@
 				"Sun.001": "%{{Loe2run.ChildToNPC/SecondChildName}} seems transfixed.",
 				"summer_Sun.001": "%{{Loe2run.ChildToNPC/SecondChildName}} seems transfixed.",
 				"default.003": "%{{Loe2run.ChildToNPC/SecondChildName}} seems transfixed.",
-				"spring.001": "%{{Loe2run.ChildToNPC/SecondChildName}} seems transfixed.",
+				"spring.001": "%{{Loe2run.ChildToNPC/SecondChildName}} seems transfixed."
 			},
 			"When": {
 				"SecondBabysitter": "Shane",
@@ -2557,7 +3172,7 @@
 				"Sun.001": "%{{Loe2run.ChildToNPC/SecondChildName}} parece paralisada.",
 				"summer_Sun.001": "%{{Loe2run.ChildToNPC/SecondChildName}} parece paralisada.",
 				"default.003": "%{{Loe2run.ChildToNPC/SecondChildName}} parece paralisada.",
-				"spring.001": "%{{Loe2run.ChildToNPC/SecondChildName}} parece paralisada.",
+				"spring.001": "%{{Loe2run.ChildToNPC/SecondChildName}} parece paralisada."
 			},
 			"When": {
 				"SecondBabysitter": "Shane",
@@ -2589,7 +3204,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Shane"
 			}
 		},
@@ -2617,7 +3231,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Shane"
 			}
 		},
@@ -2669,7 +3282,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Linus"
 			}
 		},
@@ -2697,7 +3309,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Linus"
 			}
 		},
@@ -2773,7 +3384,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Emily"
 			}
 		},
@@ -2801,7 +3411,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Emily"
 			}
 		},
@@ -2831,7 +3440,7 @@
 			"Action": "EditData",
 			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
 			"Entries": {
-				"9": "830 SamHouse 16 18 0/1100 Town 78 95 2/1600 Town 23 97 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:9.000\"/1900 SamHouse 16 18 0\"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:9.001\"/2130 SamHouse 9 22 1 child_sleep",
+				"9": "830 SamHouse 16 18 0/1100 Town 78 95 2/1600 Town 23 97 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:9.000\"/1900 SamHouse 16 18 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:9.001\"/2130 SamHouse 9 22 1 child_sleep",
 				"rain": "830 SamHouse 16 18 0/1100 SamHouse 19 18 0/1500 SamHouse 7 6 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.000\"/1700 SamHouse 16 18 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.001\"/1830 SamHouse 19 13 0/2000 SamHouse 23 14 1 child_sleep",
 				"rain2": "830 SamHouse 16 18 0/1100 SamHouse 2 21 0/1400 Saloon 39 19 2 jump \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain2.000\"/1940 SamHouse 23 14 1 child_sleep",
 				"summer": "850 SamHouse 19 15 3 dance/1340 Beach 48 25 2 jump \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.000\"/1900 SamHouse 19 13 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.001\"/2100 SamHouse 23 14 1 child_sleep",
@@ -2867,7 +3476,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Sam"
 			}
 		},
@@ -2895,7 +3503,6 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Sam": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Sam"
 			}
 		},
@@ -2929,7 +3536,7 @@
 				},
 			"When": {
 				"SecondBabysitter": "Leah",
-				"HasFile: assets/dialogue/Emily-{{Language}}.json": "false"
+				"HasFile: assets/dialogue/Leah-{{Language}}.json": "false"
 			}
 		},
 		{
@@ -2960,7 +3567,6 @@
 			},
 			"When": {
 				"Hearts:Penny": "{{Range: 0, 5}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Leah"
 			}
 		},
@@ -2988,8 +3594,111 @@
 			"When": {
 				"Hearts:Penny": "{{Range: 6, 14}}",
 				"Hearts:Leah": "{{Range: 6, 14}}",
-				"Day": "9, 23",
 				"SecondBabysitter": "Leah"
+			}
+		},
+		
+		//SecondChild Elliott Schedule
+		{
+			"LogName": "SecondChild Elliott Schedule Dialogue",
+			"Action": "Load",
+			"Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"FromFile": "assets/dialogue/Elliott.json",
+			"When": {
+				"SecondBabysitter": "Elliott",
+				"HasFile: assets/dialogue/Elliott-{{Language}}.json": "false"
+			}
+		},
+		{
+			"LogName": "SecondChild Elliott Schedule Dialogue Language",
+			"Action": "Load",
+			"Target": "Strings/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"FromFile": "assets/dialogue/Elliott-{{Language}}.json",
+			"When": {
+				"SecondBabysitter": "Elliott",
+				"HasFile: assets/dialogue/Elliott-{{Language}}.json": "true"
+			}
+		},				
+		{
+			"LogName": "SecondChild Elliott Schedule Dialogue Edit Schedule",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"rain": "800 ElliottHouse 11 4 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.000\"/1100 ElliottHouse 6 4 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.001\"/1330 ElliottHouse 13 7 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:rain.002\"/1800 ElliottHouse 5 8 1/2000 ElliottHouse 6 4 0/2400 ElliottHouse 14 5 1 child_sleep",
+				"winter_17": "800 ArchaeologyHouse 17 12 0/1400 Town 84 92 1/1620 Town 16 89 2/1750 Beach 39 32 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:winter_17.003\"/2500 ElliottHouse 14 5 1 child_sleep",
+				"fall": "800 ElliottHouse 11 4 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.000\"/1100 ElliottHouse 6 4 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.001\"/1130 ArchaeologyHouse 15 9 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.002\"/1730 ElliottHouse 5 8 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.003\"/2100 ElliottHouse 13 7 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:fall.004\"/2400 ElliottHouse 14 5 1 child_sleep",
+				"Thu": "800 ElliottHouse 11 4 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Thu.000\"/1100 ElliottHouse 6 4 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Thu.001\"/1130 SeedShop 2 21 3 square_1_5_3/1730 ElliottHouse 5 8 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Thu.002\"/2100 ElliottHouse 13 7 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Thu.003\"/2400 ElliottHouse 14 5 1 child_sleep",
+				"summer": "800 ElliottHouse 11 4 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.000\"/1100 ElliottHouse 6 4 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.001\"/1130 Forest 94 39 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.002\"/1800 ElliottHouse 5 8 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.003\"/2200 ElliottHouse 13 7 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:summer.004\"/2400 ElliottHouse 14 5 1 child_sleep",
+				"spring": "800 ElliottHouse 11 4 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.000\"/1100 ElliottHouse 6 4 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.001\"/1200 Beach 50 21 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.006\"/1330 ElliottHouse 13 7 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.002\"/1500 town 53 103 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.003\"/1800 ElliottHouse 5 8 1 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.004\"/2000 ElliottHouse 6 4 0 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:spring.005\"/2400 ElliottHouse 14 5 1 child_sleep"
+			},
+			"When": {
+				"SecondBabysitter": "Elliott"
+			}
+		},
+		{
+			"LogName": "SecondChild Elliott Sunday Leah No Hearts 6",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"Sun": "800 ElliottHouse 11 4 3 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Sun.000\"/1100 Beach 26 36 2 \"Strings\\schedules\\{{Loe2run.ChildToNPC/SecondChildName}}:Sun.003\"/1700 Saloon 5 20 3/2340 ElliottHouse 14 5 1 child_sleep"
+			},
+			"When": {
+				"Hearts:Leah": "{{Range: 0, 5}}",
+				"DayOfWeek": "Sunday",
+				"SecondBabysitter": "Elliott"
+			}
+		},
+		{
+			"LogName": "SecondChild Elliott Sunday Leah Hearts 6",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"Sun": "GOTO spring",
+			},
+			"When": {
+				"Hearts:Leah": "{{Range: 6, 14}}",
+				"DayOfWeek": "Sunday",
+				"SecondBabysitter": "Elliott"
+			}
+		},
+		{
+			"LogName": "SecondChild Elliott No School Penny 9 23",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"9": "GOTO {{season}}",
+				"23": "GOTO {{season}}"
+			},
+			"When": {
+				"Hearts:Penny": "{{Range: 0, 5}}",
+				"SecondBabysitter": "Elliott"
+			}
+		},
+		{
+			"LogName": "SecondChild Elliott No School Sam 9 23",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"9": "GOTO {{season}}",
+				"23": "GOTO 9",
+			},
+			"When": {
+				"Hearts:Sam": "{{Range: 0, 5}}",
+				"SecondBabysitter": "Elliott"
+			}
+		},
+		{
+			"LogName": "SecondChild Elliott School 9 23",
+			"Action": "EditData",
+			"Target": "Characters/schedules/{{Loe2run.ChildToNPC/SecondChildName}}",
+			"Entries": {
+				"9": "GOTO Tue",
+				"23": "GOTO Tue"
+			},
+			"When": {
+				"Hearts:Penny": "{{Range: 6, 14}}",
+				"Hearts:Sam": "{{Range: 6, 14}}",
+				"SecondBabysitter": "Elliott"
 			}
 		},
 

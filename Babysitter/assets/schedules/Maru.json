@@ -2,7 +2,7 @@
 	"9": "GOTO Tue",
 	"23": "GOTO Tue",
 	"rain": "800 ScienceHouse 5 5 0/1230 ScienceHouse 3 21 3/1430 ScienceHouse 22 17 0/1630 ScienceHouse 7 6 3/1800 ScienceHouse 1 7 0/2000 ScienceHouse 5 5 0/2300 ScienceHouse 4 4 1 child_sleep",
-	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 17 90 3/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
+	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 15 89 2/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
 	"Wed": "GOTO Tue",
 	"Thu": "830 Hospital 2 15 2/1400 Hospital 9 16 0/1600 Hospital 9 17 3/1640 ScienceHouse 27 11 2/2200 ScienceHouse 5 5 0/2400 ScienceHouse 4 4 2 child_sleep",
 	"Fri": "GOTO Tue",

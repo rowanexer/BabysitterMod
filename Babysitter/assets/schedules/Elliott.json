@@ -1,0 +1,16 @@
+{	
+	"9": "GOTO season",
+	"23": "GOTO 9",
+	"rain": "800 ElliottHouse 11 4 3/1100 ElliottHouse 6 4 0/1330 ElliottHouse 13 7 1/1800 ElliottHouse 5 8 1/2000 ElliottHouse 6 4 0/2400 ElliottHouse 14 5 1 child_sleep",
+	"winter_17": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 15 89 2/1750 Beach 39 32 1/2500 ElliottHouse 14 5 1 child_sleep",
+	"winter": "GOTO fall",
+	"fall": "800 ElliottHouse 11 4 3/1100 ElliottHouse 6 4 0/1130 ArchaeologyHouse 15 9 0/1730 ElliottHouse 5 8 1/2100 ElliottHouse 13 7 1/2400 ElliottHouse 14 5 1 child_sleep",
+	"Tue": "800 ArchaeologyHouse 18 12 0/1400 Town 83 98 3/1620 Town 15 89 2/1740 SamHouse 3 5 2/2000 SamHouse 9 22 1 child_sleep",
+	"Wed": "GOTO Tue",
+	"Fri": "GOTO Tue",
+	"Thu": "800 ElliottHouse 11 4 3/1100 ElliottHouse 6 4 0/1130 SeedShop 2 21 3 square_1_5_3/1730 ElliottHouse 5 8 1/2100 ElliottHouse 13 7 1/2400 ElliottHouse 14 5 1 child_sleep",
+	"Sat": "900 Town 32 91 0/1200 Town 15 16 1 square_3_3/1700 Town 28 92 2/2000 SamHouse 9 22 1 child_sleep",
+	"Sun": "800 ElliottHouse 11 4 3/1100 ElliottHouse 6 4 0/1130 SeedShop 2 21 3 square_1_5_3/1730 ElliottHouse 5 8 1/2100 ElliottHouse 6 4 0/2400 ElliottHouse 14 5 1 child_sleep",
+	"summer": "800 ElliottHouse 11 4 3/1100 ElliottHouse 6 4 0/1130 Forest 94 39 2/1800 ElliottHouse 5 8 1/2200 ElliottHouse 13 7 1/2400 ElliottHouse 14 5 1 child_sleep",
+	"spring": "800 ElliottHouse 11 4 3/1100 ElliottHouse 6 4 0/1200 Beach 50 21 3/1330 ElliottHouse 13 7 1/1500 Town 53 103 1/1800 ElliottHouse 5 8 1/2000 ElliottHouse 6 4 0/2400 ElliottHouse 14 5 1 child_sleep"
+}
